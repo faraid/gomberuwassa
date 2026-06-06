@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Phone } from "lucide-react";
 
 const navItems = [
@@ -19,7 +20,7 @@ export default function SiteHeader({ activePage = "Home" }: SiteHeaderProps) {
   return (
     <header className="topbar">
       <div className="wrap header-grid">
-        <a href="/" aria-label="Gombe State RUWASA — Go to homepage">
+        <Link href="/" aria-label="Gombe State RUWASA - Go to homepage">
           <Image
             className="logo"
             src="/brand-logo.png"
@@ -28,17 +29,17 @@ export default function SiteHeader({ activePage = "Home" }: SiteHeaderProps) {
             alt=""
             priority
           />
-        </a>
+        </Link>
         <nav className="nav" aria-label="Primary navigation">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
               href={item.href}
               className={item.label === activePage ? "is-active" : ""}
               aria-current={item.label === activePage ? "page" : undefined}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <a className="phone" href="tel:08132696321">

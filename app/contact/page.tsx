@@ -6,12 +6,17 @@ import ContactFormSection from "../components/contact/ContactFormSection";
 import ContactHero from "../components/contact/ContactHero";
 import ContactInformation from "../components/contact/ContactInformation";
 import OfficeAddress from "../components/contact/OfficeAddress";
+import { createPageMetadata, siteRoutes } from "../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact RUWASA | Gombe State Rural Water Supply and Sanitation Agency",
+const route = siteRoutes.find((item) => item.path === "/contact");
+
+export const metadata: Metadata = createPageMetadata({
+  title: route?.title ?? "Contact RUWASA",
   description:
+    route?.description ??
     "Contact Gombe State RUWASA for enquiries, community water reports, partnerships, office address, and official correspondence.",
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

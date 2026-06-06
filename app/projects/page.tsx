@@ -7,12 +7,17 @@ import ProjectsClient from "../components/projects/ProjectsClient";
 import ProjectMapPlaceholder from "../components/projects/ProjectMapPlaceholder";
 import ProjectsStatistics from "../components/projects/ProjectsStatistics";
 import ProjectsCTA from "../components/projects/ProjectsCTA";
+import { createPageMetadata, siteRoutes } from "../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Projects | Gombe State RUWASA",
+const route = siteRoutes.find((item) => item.path === "/projects");
+
+export const metadata: Metadata = createPageMetadata({
+  title: route?.title ?? "Projects",
   description:
-    "Explore RUWASA's water supply and sanitation infrastructure projects across all 11 LGAs of Gombe State — from solar boreholes to piped water schemes and sanitation facilities.",
-};
+    route?.description ??
+    "Explore RUWASA water supply and sanitation infrastructure projects across all 11 LGAs of Gombe State, from solar boreholes to piped water schemes.",
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
   return (

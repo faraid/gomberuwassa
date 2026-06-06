@@ -9,12 +9,17 @@ import OrganizationStructure from "../components/about/OrganizationStructure";
 import ManagementTeam from "../components/about/ManagementTeam";
 import PartnersSection from "../components/about/PartnersSection";
 import AboutCTA from "../components/about/AboutCTA";
+import { createPageMetadata, siteRoutes } from "../lib/seo";
 
-export const metadata: Metadata = {
-  title: "About RUWASA | Gombe State Rural Water Supply and Sanitation Agency",
+const route = siteRoutes.find((item) => item.path === "/about");
+
+export const metadata: Metadata = createPageMetadata({
+  title: route?.title ?? "About RUWASA",
   description:
-    "Learn about RUWASA — our vision, mission, mandate, management team, and commitment to delivering clean water and sanitation services across rural Gombe State.",
-};
+    route?.description ??
+    "Learn about RUWASA, including the agency vision, mission, mandate, management team, and commitment to clean water and sanitation in rural Gombe State.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

@@ -7,12 +7,17 @@ import ProgramPillars from "../components/programs/ProgramPillars";
 import ProgramsList from "../components/programs/ProgramsList";
 import ProgramsProcess from "../components/programs/ProgramsProcess";
 import ProgramsCTA from "../components/programs/ProgramsCTA";
+import { createPageMetadata, siteRoutes } from "../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Programs | Gombe State RUWASA",
+const route = siteRoutes.find((item) => item.path === "/programs");
+
+export const metadata: Metadata = createPageMetadata({
+  title: route?.title ?? "Programs",
   description:
+    route?.description ??
     "Explore RUWASA programmes for rural water supply, sanitation and hygiene promotion, capacity building, and community engagement across Gombe State.",
-};
+  path: "/programs",
+});
 
 export default function ProgramsPage() {
   return (

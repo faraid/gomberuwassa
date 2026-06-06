@@ -1,9 +1,7 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import StatCounter from "./components/StatCounter";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
-import { createPageMetadata, siteRoutes } from "./lib/seo";
 import {
   Award,
   Droplet,
@@ -131,16 +129,6 @@ const stats = [
   { icon: Handshake, value: "25+", label: "Partners & Donors" },
   { icon: Award, value: "100%", label: "Commitment to Service Excellence" },
 ];
-
-const homeRoute = siteRoutes.find((route) => route.path === "/");
-
-export const metadata: Metadata = createPageMetadata({
-  title: homeRoute?.title ?? "Gombe State RUWASA",
-  description:
-    homeRoute?.description ??
-    "Official website of Gombe State RUWASA, providing sustainable rural water supply and sanitation services across communities in Gombe State.",
-  path: "/",
-});
 
 export default function Home() {
   return (

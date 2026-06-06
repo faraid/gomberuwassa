@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 import ProgramsHero from "../components/programs/ProgramsHero";
 import ProgramsOverview from "../components/programs/ProgramsOverview";
@@ -26,7 +25,6 @@ export default function ProgramsPage() {
         <ProgramsProcess />
         <ProgramsCTA />
       </main>
-      <SiteFooter />
     </div>
   );
 }

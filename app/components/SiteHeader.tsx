@@ -1,10 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Menu, Phone, X } from "lucide-react";
-import { useState } from "react";
+import { Phone } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -20,24 +16,9 @@ interface SiteHeaderProps {
   activePage?: string;
 }
 
-export default function SiteHeader({ activePage }: SiteHeaderProps) {
-  const pathname = usePathname();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const isActive = (label: string, href: string) => {
-    if (activePage) {
-      return label === activePage;
-    }
-
-    if (href === "/") {
-      return pathname === "/";
-    }
-
-    return pathname === href || pathname.startsWith(`${href}/`);
-  };
-
+export default function SiteHeader({ activePage = "Home" }: SiteHeaderProps) {
   return (
-    <header className={`topbar${isMenuOpen ? " menu-open" : ""}`}>
+    <header className="topbar">
       <div className="wrap header-grid">
         <Link href="/" aria-label="Gombe State RUWASA - Go to homepage">
           <Image
@@ -49,24 +30,13 @@ export default function SiteHeader({ activePage }: SiteHeaderProps) {
             priority
           />
         </Link>
-        <button
-          className="menu-toggle"
-          type="button"
-          aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-          aria-expanded={isMenuOpen}
-          aria-controls="primary-navigation"
-          onClick={() => setIsMenuOpen((open) => !open)}
-        >
-          {isMenuOpen ? <X size={22} strokeWidth={2.5} /> : <Menu size={22} strokeWidth={2.5} />}
-        </button>
-        <nav id="primary-navigation" className="nav" aria-label="Primary navigation">
+        <nav className="nav" aria-label="Primary navigation">
           {navItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className={isActive(item.label, item.href) ? "is-active" : ""}
-              aria-current={isActive(item.label, item.href) ? "page" : undefined}
-              onClick={() => setIsMenuOpen(false)}
+              className={item.label === activePage ? "is-active" : ""}
+              aria-current={item.label === activePage ? "page" : undefined}
             >
               {item.label}
             </Link>

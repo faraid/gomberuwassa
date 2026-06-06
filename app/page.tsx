@@ -1,27 +1,18 @@
 import Image from "next/image";
 import StatCounter from "./components/StatCounter";
+import SiteFooter from "./components/SiteFooter";
+import SiteHeader from "./components/SiteHeader";
 import {
   Award,
   Droplet,
   Handshake,
   MapPin,
-  Phone,
   Sprout,
   Toilet,
   TrendingUp,
   Users,
   Wrench,
 } from "lucide-react";
-
-const nav = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "Programs", href: "/programs" },
-  { label: "News & Updates", href: "/news" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" },
-];
 
 const values = [
   {
@@ -141,39 +132,9 @@ const stats = [
 
 export default function Home() {
   return (
-    <main className="page-shell">
-      <header className="topbar">
-        <div className="wrap header-grid">
-          <Image
-            className="logo"
-            src="/brand-logo.png"
-            width={265}
-            height={88}
-            alt="Gombe State RUWASA"
-            priority
-          />
-          <nav className="nav" aria-label="Primary navigation">
-            {nav.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className={item.label === "Home" ? "is-active" : ""}
-                aria-current={item.label === "Home" ? "page" : undefined}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-          <a className="phone" href="tel:08132696321">
-            <Phone size={22} strokeWidth={3} />
-            <span>
-              <strong>0813 269 6321</strong>
-              <small>info@ruwasa.gombe.gov.ng</small>
-            </span>
-          </a>
-        </div>
-      </header>
-
+    <div className="page-shell">
+      <SiteHeader activePage="Home" />
+      <main>
       <section className="hero">
         <div className="wrap hero-grid">
           <div className="hero-copy">
@@ -305,6 +266,8 @@ export default function Home() {
           ))}
         </div>
       </section>
-    </main>
+      </main>
+      <SiteFooter />
+    </div>
   );
 }

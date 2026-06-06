@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 import ContactCTA from "../components/contact/ContactCTA";
 import ContactFormSection from "../components/contact/ContactFormSection";
@@ -23,6 +24,7 @@ export default function ContactPage() {
         <OfficeAddress />
         <ContactCTA />
       </main>
+      <SiteFooter />
     </div>
   );
 }

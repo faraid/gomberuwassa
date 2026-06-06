@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 import ProjectsHero from "../components/projects/ProjectsHero";
 import ProjectStats from "../components/projects/ProjectStats";
@@ -25,6 +26,7 @@ export default function ProjectsPage() {
         <ProjectsStatistics />
         <ProjectsCTA />
       </main>
+      <SiteFooter />
     </div>
   );
 }

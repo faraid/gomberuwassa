@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 import AboutHero from "../components/about/AboutHero";
 import AgencyOverview from "../components/about/AgencyOverview";
@@ -29,6 +30,7 @@ export default function AboutPage() {
         <PartnersSection />
         <AboutCTA />
       </main>
+      <SiteFooter />
     </div>
   );
 }

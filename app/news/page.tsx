@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 import NewsHero from "../components/news/NewsHero";
 import NewsOverview from "../components/news/NewsOverview";
@@ -25,6 +26,7 @@ export default function NewsPage() {
         <NewsCategories />
         <NewsCTA />
       </main>
+      <SiteFooter />
     </div>
   );
 }

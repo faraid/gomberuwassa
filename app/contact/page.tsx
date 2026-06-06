@@ -5,6 +5,7 @@ import ContactFormSection from "../components/contact/ContactFormSection";
 import ContactHero from "../components/contact/ContactHero";
 import ContactInformation from "../components/contact/ContactInformation";
 import OfficeAddress from "../components/contact/OfficeAddress";
+import ContactGuidance from "./ContactGuidance";
 
 export const metadata: Metadata = {
   title: "Contact RUWASA | Gombe State Rural Water Supply and Sanitation Agency",
@@ -20,6 +21,7 @@ export default function ContactPage() {
         <ContactHero />
         <ContactInformation />
         <ContactFormSection />
+        <ContactGuidance />
         <OfficeAddress />
         <ContactCTA />
       </main>

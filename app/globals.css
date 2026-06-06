@@ -2888,3 +2888,495 @@ a {
     height: 180px;
   }
 }
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+
+.contact-hero .page-hero-bg {
+  background:
+    url("/hero-water-facility.png") center / cover no-repeat,
+    linear-gradient(135deg, #003d6b 0%, #005fa3 100%);
+}
+
+.contact-information {
+  padding: 68px 0 56px;
+  background: #fff;
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.contact-info-card {
+  min-height: 220px;
+  padding: 26px 22px;
+  border-radius: 8px;
+  background: #f7fbff;
+  border: 1px solid #dcedf8;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.contact-info-card:hover {
+  transform: translateY(-3px);
+  background: #fff;
+  box-shadow: 0 12px 34px rgba(10, 66, 118, 0.11);
+}
+
+.contact-info-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  color: #fff;
+}
+
+.contact-info-icon.blue {
+  background: linear-gradient(135deg, #0775d8, #0065bf);
+}
+
+.contact-info-icon.green {
+  background: linear-gradient(135deg, #55c763, #2fa542);
+}
+
+.contact-info-label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.contact-info-card strong {
+  display: block;
+  color: var(--blue-dark);
+  font-size: 15px;
+  line-height: 1.25;
+  font-weight: 900;
+}
+
+.contact-info-note {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.48;
+}
+
+.contact-service-note {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 10px;
+  align-items: start;
+  margin-top: 28px;
+  padding: 16px 18px;
+  border-radius: 8px;
+  background: #eef8ff;
+  border: 1px solid #cfe7f8;
+  color: var(--blue-dark);
+}
+
+.contact-service-note svg {
+  margin-top: 1px;
+  color: var(--blue);
+}
+
+.contact-service-note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.contact-form-section {
+  padding: 68px 0;
+  background: linear-gradient(90deg, #f5fbff 0%, #fff 48%, #f7fcff 100%);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contact-form-copy h2,
+.office-address-card h2 {
+  margin: 10px 0 18px;
+  color: var(--blue-dark);
+  font-size: 29px;
+  line-height: 1.13;
+  font-weight: 900;
+}
+
+.contact-form-copy > p:not(.eyebrow),
+.office-address-card > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.contact-support-list {
+  display: grid;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.contact-support-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #dcedf8;
+  box-shadow: 0 4px 18px rgba(10, 66, 118, 0.06);
+}
+
+.contact-support-item span {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e8f5ff;
+  color: var(--blue);
+}
+
+.contact-support-item h3 {
+  margin: 0 0 6px;
+  color: var(--blue-dark);
+  font-size: 13.5px;
+  line-height: 1.25;
+  font-weight: 900;
+}
+
+.contact-support-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+.contact-form-card {
+  padding: 30px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 10px 36px rgba(10, 66, 118, 0.12);
+}
+
+.form-head {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.form-head span {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, #0775d8, #0065bf);
+}
+
+.form-head h3 {
+  margin: 0 0 5px;
+  color: var(--blue-dark);
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.form-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.contact-form-card label {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: var(--blue-dark);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.contact-form-card input,
+.contact-form-card select,
+.contact-form-card textarea {
+  width: 100%;
+  border: 1.4px solid #cddfeb;
+  border-radius: 5px;
+  background: #fafdff;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.35;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.contact-form-card input,
+.contact-form-card select {
+  height: 42px;
+  padding: 0 13px;
+}
+
+.contact-form-card textarea {
+  min-height: 132px;
+  resize: vertical;
+  padding: 12px 13px;
+}
+
+.contact-form-card input:focus,
+.contact-form-card select:focus,
+.contact-form-card textarea:focus {
+  background: #fff;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(0, 104, 201, 0.12);
+}
+
+.contact-submit {
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+}
+
+.office-address {
+  padding: 68px 0;
+  background: #fff;
+}
+
+.office-address-grid {
+  display: grid;
+  grid-template-columns: 0.86fr 1.14fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+.office-address-card {
+  padding: 34px 32px;
+  border-radius: 8px;
+  background: #f7fbff;
+  border: 1px solid #dcedf8;
+}
+
+.address-list {
+  display: grid;
+  gap: 14px;
+  margin: 28px 0 0;
+}
+
+.address-list div {
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.address-list dt {
+  margin-bottom: 5px;
+  color: #7b8a9a;
+  font-size: 9.5px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.address-list dd {
+  margin: 0;
+  color: var(--blue-dark);
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 800;
+}
+
+.office-guidance {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 9px;
+  margin-top: 24px;
+  padding: 14px;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.office-guidance svg {
+  color: var(--green);
+}
+
+.google-map-placeholder {
+  min-height: 430px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  border: 1px solid #cfe7f8;
+  background:
+    linear-gradient(135deg, rgba(229, 245, 255, 0.92), rgba(247, 251, 255, 0.96)),
+    #e8f5ff;
+  box-shadow: 0 10px 34px rgba(10, 66, 118, 0.1);
+}
+
+.map-grid-lines {
+  position: absolute;
+  inset: -1px;
+  opacity: 0.46;
+  background:
+    linear-gradient(#c7e1f3 1px, transparent 1px),
+    linear-gradient(90deg, #c7e1f3 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.map-marker {
+  position: absolute;
+  top: 26%;
+  left: 55%;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--blue);
+  box-shadow: 0 10px 28px rgba(0, 104, 201, 0.28);
+}
+
+.map-placeholder-content {
+  position: relative;
+  z-index: 2;
+  width: min(320px, calc(100% - 48px));
+  padding: 30px 28px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #dcedf8;
+  text-align: center;
+  box-shadow: 0 10px 34px rgba(10, 66, 118, 0.12);
+}
+
+.map-placeholder-content svg {
+  color: var(--blue);
+}
+
+.map-placeholder-content h3 {
+  margin: 14px 0 8px;
+  color: var(--blue-dark);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.map-placeholder-content p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+.map-location-chip,
+.map-gov-chip {
+  position: absolute;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 11px;
+  border-radius: 4px;
+  color: var(--blue-dark);
+  background: #fff;
+  border: 1px solid #dcedf8;
+  font-size: 10.5px;
+  font-weight: 900;
+  box-shadow: 0 8px 24px rgba(10, 66, 118, 0.11);
+}
+
+.map-location-chip {
+  left: 24px;
+  bottom: 24px;
+}
+
+.map-gov-chip {
+  top: 24px;
+  right: 24px;
+}
+
+@media (max-width: 940px) {
+  .contact-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-form-grid,
+  .office-address-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .google-map-placeholder {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 620px) {
+  .contact-info-grid,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info-card {
+    min-height: 0;
+  }
+
+  .contact-form-card,
+  .office-address-card {
+    padding: 24px 20px;
+  }
+
+  .contact-form-copy h2,
+  .office-address-card h2 {
+    font-size: 24px;
+  }
+
+  .google-map-placeholder {
+    min-height: 330px;
+  }
+
+  .map-placeholder-content {
+    width: calc(100% - 36px);
+    padding: 26px 22px;
+  }
+
+  .map-location-chip,
+  .map-gov-chip {
+    position: relative;
+    inset: auto;
+    justify-self: center;
+    margin-top: 10px;
+  }
+}

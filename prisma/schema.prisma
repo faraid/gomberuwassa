@@ -1,0 +1,272 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Enums ───────────────────────────────────────────────────────────────────
+
+enum Role {
+  Super_Admin
+  Editor
+  Viewer
+}
+
+enum ArticleStatus {
+  draft
+  review
+  scheduled
+  published
+  deleted
+}
+
+enum ProjectStatus {
+  planned
+  ongoing
+  completed
+}
+
+enum ProgramStatus {
+  active
+  expanding
+  planned
+}
+
+enum Tone {
+  blue
+  green
+}
+
+// ─── Users & Sessions ────────────────────────────────────────────────────────
+
+model User {
+  id             String    @id @default(uuid())
+  fullName       String
+  email          String    @unique
+  passwordHash   String
+  role           Role
+  active         Boolean   @default(true)
+  failedAttempts Int       @default(0)
+  lockedAt       DateTime?
+  createdById    String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  createdBy    User?      @relation("CreatedByRelation", fields: [createdById], references: [id])
+  createdUsers User[]     @relation("CreatedByRelation")
+  sessions     Session[]
+  auditLogs    AuditLog[]
+
+  @@map("users")
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  lastSeen  DateTime @default(now())
+
+  @@map("sessions")
+}
+
+model PasswordResetToken {
+  id        String    @id @default(uuid())
+  userId    String
+  tokenHash String    @unique
+  usedAt    DateTime?
+  expiresAt DateTime
+  createdAt DateTime  @default(now())
+
+  @@map("password_reset_tokens")
+}
+
+// ─── News ─────────────────────────────────────────────────────────────────────
+
+model NewsCategory {
+  id       String        @id @default(uuid())
+  name     String        @unique
+  articles NewsArticle[]
+
+  @@map("news_categories")
+}
+
+model NewsTag {
+  id       String       @id @default(uuid())
+  name     String       @unique
+  articles ArticleTag[]
+
+  @@map("news_tags")
+}
+
+model ArticleTag {
+  articleId String
+  tagId     String
+  article   NewsArticle @relation(fields: [articleId], references: [id])
+  tag       NewsTag     @relation(fields: [tagId], references: [id])
+
+  @@id([articleId, tagId])
+  @@map("article_tags")
+}
+
+model NewsArticle {
+  id               String        @id @default(uuid())
+  slug             String        @unique
+  title            String
+  categoryId       String
+  category         NewsCategory  @relation(fields: [categoryId], references: [id])
+  excerpt          String
+  body             String
+  featuredImageUrl String
+  thumbnailUrl     String
+  status           ArticleStatus @default(draft)
+  featured         Boolean       @default(false)
+  scheduledAt      DateTime?
+  publishedAt      DateTime?
+  createdById      String
+  updatedById      String
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  deletedAt        DateTime?
+
+  tags ArticleTag[]
+
+  @@map("news_articles")
+}
+
+// ─── Projects ────────────────────────────────────────────────────────────────
+
+model ProjectType {
+  id       String    @id @default(uuid())
+  name     String    @unique
+  projects Project[]
+
+  @@map("project_types")
+}
+
+model Project {
+  id               String        @id @default(uuid())
+  title            String
+  lga              String
+  community        String
+  typeId           String
+  projectType      ProjectType   @relation(fields: [typeId], references: [id])
+  status           ProjectStatus @default(planned)
+  year             Int
+  progress         Int           @default(0)
+  beneficiaries    Int
+  description      String
+  featuredImageUrl String
+  thumbnailUrl     String
+  featured         Boolean       @default(false)
+  completionDate   DateTime?
+  createdById      String
+  updatedById      String
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  deletedAt        DateTime?
+
+  @@map("projects")
+}
+
+// ─── Gallery ──────────────────────────────────────────────────────────────────
+
+model GalleryCategory {
+  id    String        @id @default(uuid())
+  name  String        @unique
+  items GalleryItem[]
+
+  @@map("gallery_categories")
+}
+
+model GalleryItem {
+  id           String          @id @default(uuid())
+  title        String
+  categoryId   String
+  category     GalleryCategory @relation(fields: [categoryId], references: [id])
+  location     String
+  year         Int
+  description  String
+  imageUrl     String
+  optimisedUrl String
+  thumbnailUrl String
+  featured     Boolean         @default(false)
+  displayOrder Int
+  createdById  String
+  updatedById  String
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+  deletedAt    DateTime?
+
+  @@map("gallery_items")
+}
+
+// ─── Programs ────────────────────────────────────────────────────────────────
+
+model Program {
+  id             String        @id @default(uuid())
+  title          String
+  category       String
+  status         ProgramStatus @default(active)
+  iconName       String
+  tone           Tone          @default(blue)
+  summary        String
+  objectives     Json
+  beneficiaries  String
+  coverage       String
+  leadUnit       String
+  bannerImageUrl String?
+  displayOrder   Int
+  createdById    String
+  updatedById    String
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@map("programs")
+}
+
+// ─── Contact ──────────────────────────────────────────────────────────────────
+
+model ContactSubmission {
+  id        String    @id @default(uuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  read      Boolean   @default(false)
+  createdAt DateTime  @default(now())
+  deletedAt DateTime?
+
+  @@map("contact_submissions")
+}
+
+// ─── Site Settings ───────────────────────────────────────────────────────────
+
+model SiteSetting {
+  key         String   @id
+  value       String
+  updatedById String
+  updatedAt   DateTime @updatedAt
+
+  @@map("site_settings")
+}
+
+// ─── Audit Log ───────────────────────────────────────────────────────────────
+
+model AuditLog {
+  id            String   @id @default(uuid())
+  contentType   String
+  contentId     String
+  action        String
+  actorId       String
+  actor         User     @relation(fields: [actorId], references: [id])
+  previousState Json?
+  newState      Json?
+  createdAt     DateTime @default(now())
+
+  @@map("audit_logs")
+}

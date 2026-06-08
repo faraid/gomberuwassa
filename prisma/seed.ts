@@ -1,7 +1,13 @@
+import 'dotenv/config';
 import { PrismaClient, Role } from '../generated/prisma';
+import { PrismaPg } from '@prisma/adapter-pg';
 import bcrypt from 'bcryptjs';
 
-const prisma = new PrismaClient();
+const adapter = new PrismaPg({
+  connectionString: process.env.DATABASE_URL!,
+});
+
+const prisma = new PrismaClient({ adapter });
 
 async function main() {
   // Seed Super Admin
@@ -37,6 +43,7 @@ async function main() {
       create: { name },
     });
   }
+
   console.log('Seeded news categories:', newsCategories.length);
 
   // Project Types
@@ -55,6 +62,7 @@ async function main() {
       create: { name },
     });
   }
+
   console.log('Seeded project types:', projectTypes.length);
 
   // Gallery Categories
@@ -72,16 +80,26 @@ async function main() {
       create: { name },
     });
   }
+
   console.log('Seeded gallery categories:', galleryCategories.length);
 
-  // Default site settings
+  // Default Site Settings
   const siteSettings = [
     { key: 'phone_primary', value: '08012345678' },
     { key: 'phone_secondary', value: '08012345679' },
     { key: 'email_primary', value: 'info@ruwasa.go.ng' },
-    { key: 'office_address', value: 'RUWASA Headquarters, Gombe, Gombe State, Nigeria' },
-    { key: 'facebook_url', value: 'https://facebook.com/gomberuwasa' },
-    { key: 'twitter_url', value: 'https://twitter.com/gomberuwasa' },
+    {
+      key: 'office_address',
+      value: 'RUWASA Headquarters, Gombe, Gombe State, Nigeria',
+    },
+    {
+      key: 'facebook_url',
+      value: 'https://facebook.com/gomberuwasa',
+    },
+    {
+      key: 'twitter_url',
+      value: 'https://twitter.com/gomberuwasa',
+    },
   ];
 
   for (const setting of siteSettings) {
@@ -95,6 +113,7 @@ async function main() {
       },
     });
   }
+
   console.log('Seeded site settings:', siteSettings.length);
 }
 
@@ -102,8 +121,8 @@ main()
   .then(async () => {
     await prisma.$disconnect();
   })
-  .catch(async (e) => {
-    console.error(e);
+  .catch(async (error) => {
+    console.error(error);
     await prisma.$disconnect();
     process.exit(1);
   });

@@ -1,20 +1,28 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// ─── Public routes — always pass through, no auth check ──────────────────────
-const PUBLIC_PATHS: string[] = [
+/**
+ * Public paths: always pass through, no authentication check whatsoever.
+ * This list must cover /admin/login and all /api/auth/* variants.
+ */
+const PUBLIC_PREFIXES: string[] = [
   '/admin/login',
-  '/api/auth/login',
-  '/api/auth/logout',
-  '/api/auth/me',
-  '/api/auth/password-reset/request',
-  '/api/auth/password-reset/confirm',
+  '/api/auth/',
+  // Next.js internals (belt-and-suspenders — framework also excludes these)
+  '/_next/',
+  '/favicon.ico',
 ];
 
-// ─── Super_Admin-only routes ──────────────────────────────────────────────────
-const SUPER_ADMIN_ROUTES: string[] = [
+/**
+ * Super_Admin-only admin pages. Route handlers do the fine-grained DB check;
+ * middleware only enforces the cookie-presence gate.
+ */
+const SUPER_ADMIN_PAGE_PREFIXES: string[] = [
   '/admin/users',
   '/admin/settings',
   '/admin/audit',
+];
+
+const SUPER_ADMIN_API_PREFIXES: string[] = [
   '/api/users',
   '/api/settings',
   '/api/audit',
@@ -22,97 +30,82 @@ const SUPER_ADMIN_ROUTES: string[] = [
 
 const SESSION_COOKIE = 'sid';
 
-function isPublicPath(pathname: string): boolean {
-  return PUBLIC_PATHS.some(
-    (p) => pathname === p || pathname.startsWith(p + '/'),
+function isPublic(pathname: string): boolean {
+  return PUBLIC_PREFIXES.some(
+    (p) => pathname === p.replace(/\/$/, '') || pathname.startsWith(p),
   );
 }
 
-function isProtectedAdminRoute(pathname: string): boolean {
-  return pathname.startsWith('/admin/') || pathname === '/admin';
+function requiresAdmin(pathname: string): boolean {
+  return pathname === '/admin' || pathname.startsWith('/admin/');
 }
 
-function isProtectedApiRoute(pathname: string): boolean {
+function requiresApi(pathname: string): boolean {
   return pathname.startsWith('/api/');
-}
-
-function isSuperAdminRoute(pathname: string): boolean {
-  return SUPER_ADMIN_ROUTES.some(
-    (route) => pathname === route || pathname.startsWith(route + '/'),
-  );
 }
 
 export function middleware(req: NextRequest): NextResponse {
   const { pathname } = req.nextUrl;
 
-  // ── Always allow public paths ──────────────────────────────────────────────
-  if (isPublicPath(pathname)) {
-    // If an authenticated user visits /admin/login, send them to the dashboard
-    const sessionId = req.cookies.get(SESSION_COOKIE)?.value;
-    if (sessionId && pathname === '/admin/login') {
-      const dashboardUrl = req.nextUrl.clone();
-      dashboardUrl.pathname = '/admin';
-      dashboardUrl.search = '';
-      return NextResponse.redirect(dashboardUrl);
-    }
+  // ── 1. Always let public paths through — no cookie check, no redirect ──────
+  if (isPublic(pathname)) {
     return NextResponse.next();
   }
 
-  const isAdmin = isProtectedAdminRoute(pathname);
-  const isApi = isProtectedApiRoute(pathname);
+  // ── 2. Only run auth logic for /admin/* and /api/* ─────────────────────────
+  const needsAdminAuth = requiresAdmin(pathname);
+  const needsApiAuth = requiresApi(pathname);
 
-  // ── Pass through non-admin, non-API routes (public website) ───────────────
-  if (!isAdmin && !isApi) {
-    return NextResponse.next();
+  if (!needsAdminAuth && !needsApiAuth) {
+    return NextResponse.next(); // public website — untouched
   }
 
-  // ── Check session cookie ───────────────────────────────────────────────────
-  // We only check cookie presence here — full session validation (expiry,
-  // active flag) happens in the Route Handler / Server Component via
-  // getSession(). This avoids recursive middleware invocations from
-  // internal fetch calls and keeps middleware on the Edge runtime.
-  const sessionId = req.cookies.get(SESSION_COOKIE)?.value;
+  // ── 3. Cookie presence check ───────────────────────────────────────────────
+  // We only check that the cookie exists. Full validation (expiry, DB lookup)
+  // happens in the Server Component layout / Route Handler via getSession().
+  // This keeps middleware stateless and avoids recursive fetch calls.
+  const hasCookie = Boolean(req.cookies.get(SESSION_COOKIE)?.value);
 
-  if (!sessionId) {
-    if (isApi) {
+  if (!hasCookie) {
+    if (needsApiAuth) {
       return NextResponse.json(
         { error: { code: 'UNAUTHENTICATED', message: 'Authentication required.' } },
         { status: 401 },
       );
     }
-    // Redirect to login, preserving intended destination
-    const loginUrl = req.nextUrl.clone();
-    loginUrl.pathname = '/admin/login';
-    loginUrl.search = '';
-    loginUrl.searchParams.set('from', pathname);
-    return NextResponse.redirect(loginUrl);
+    // Admin page — redirect to login
+    const url = req.nextUrl.clone();
+    url.pathname = '/admin/login';
+    url.search = '';
+    url.searchParams.set('from', pathname);
+    return NextResponse.redirect(url);
   }
 
-  // ── Role enforcement via x-user-role header (set by /api/auth/me) ─────────
-  // For Super_Admin-only routes we rely on the route handler to do fine-grained
-  // checks after calling getSession(). The middleware only enforces the cookie
-  // presence gate to keep it stateless and avoid DB calls on the Edge.
-  //
-  // The x-user-role header is read from a previous request; if absent we let
-  // the downstream handler enforce role (it always calls getSession()).
-  const role = req.headers.get('x-user-role');
+  // ── 4. Super_Admin page enforcement (cookie-only, best-effort) ────────────
+  // Real role enforcement is always re-checked server-side in the layout/handler.
+  // Here we can only act if the role header was forwarded from a prior response.
+  const role = req.headers.get('x-user-role') ?? '';
 
-  if (role && isSuperAdminRoute(pathname) && role !== 'Super_Admin') {
-    if (isApi) {
-      return NextResponse.json(
-        {
-          error: {
-            code: 'FORBIDDEN',
-            message: 'You do not have permission to access this resource.',
-          },
-        },
-        { status: 403 },
-      );
+  if (role) {
+    const isAdminOnlyPage = SUPER_ADMIN_PAGE_PREFIXES.some(
+      (p) => pathname === p || pathname.startsWith(p + '/'),
+    );
+    const isAdminOnlyApi = SUPER_ADMIN_API_PREFIXES.some(
+      (p) => pathname === p || pathname.startsWith(p + '/'),
+    );
+
+    if ((isAdminOnlyPage || isAdminOnlyApi) && role !== 'Super_Admin') {
+      if (needsApiAuth) {
+        return NextResponse.json(
+          { error: { code: 'FORBIDDEN', message: 'Access denied.' } },
+          { status: 403 },
+        );
+      }
+      const url = req.nextUrl.clone();
+      url.pathname = '/admin';
+      url.search = '';
+      return NextResponse.redirect(url);
     }
-    const dashboardUrl = req.nextUrl.clone();
-    dashboardUrl.pathname = '/admin';
-    dashboardUrl.search = '';
-    return NextResponse.redirect(dashboardUrl);
   }
 
   return NextResponse.next();
@@ -121,15 +114,9 @@ export function middleware(req: NextRequest): NextResponse {
 export const config = {
   matcher: [
     /*
-     * Run middleware on:
-     *   /admin  and  /admin/<anything>
-     *   /api/<anything>
-     *
-     * Next.js internals (_next/*, favicon.ico, public files) are
-     * automatically excluded by the framework before reaching middleware.
+     * Run on every request EXCEPT Next.js internals and static files.
+     * Public paths are handled inside the function body (early return).
      */
-    '/admin',
-    '/admin/:path*',
-    '/api/:path*',
+    '/((?!_next/static|_next/image|favicon\\.ico).*)',
   ],
 };

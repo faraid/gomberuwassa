@@ -24,9 +24,9 @@ export default async function NewArticlePage() {
           Back to News
         </Link>
         <h1 className="text-2xl font-bold text-gray-900">New Article</h1>
-        <p className="text-sm text-gray-500 mt-1">Article will be saved as Draft.</p>
+        <p className="text-sm text-gray-500 mt-1">Article will be saved as Draft unless you choose Published.</p>
       </div>
-      <ArticleForm categories={categories} mode="create" />
+      <ArticleForm categories={categories} mode="create" isSuperAdmin={session.role === 'Super_Admin'} />
     </div>
   );
 }

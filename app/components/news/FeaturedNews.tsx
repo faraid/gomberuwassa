@@ -1,11 +1,20 @@
-import Image from "next/image";
-import { CalendarDays, Tag } from "lucide-react";
-import { newsArticles } from "../../data/news";
+import Image from 'next/image';
+import { CalendarDays, Tag } from 'lucide-react';
+import type { PublicArticle } from '@/lib/services/news.service';
 
-export default function FeaturedNews() {
-  const featured = newsArticles.filter((article) => article.featured).slice(0, 3);
-  const lead = featured[0];
-  const side = featured.slice(1);
+interface Props {
+  articles: PublicArticle[];
+}
+
+function formatDate(d: Date): string {
+  return new Date(d).toLocaleDateString('en-GB', {
+    day: '2-digit', month: 'short', year: 'numeric',
+  });
+}
+
+export default function FeaturedNews({ articles }: Props) {
+  const lead = articles[0];
+  const side = articles.slice(1, 3);
 
   if (!lead) return null;
 
@@ -24,12 +33,15 @@ export default function FeaturedNews() {
         <div className="featured-news-grid">
           <article className="featured-news-lead">
             <div className="featured-news-image">
-              <Image src={lead.image} fill sizes="520px" alt={lead.title} />
+              <Image
+                src={lead.featuredImageUrl || '/news-meeting.png'}
+                fill sizes="520px" alt={lead.title}
+              />
             </div>
             <div className="featured-news-body">
               <div className="news-meta-line">
-                <span><Tag size={13} /> {lead.category}</span>
-                <span><CalendarDays size={13} /> {lead.date}</span>
+                <span><Tag size={13} /> {lead.category.name}</span>
+                <span><CalendarDays size={13} /> {formatDate(lead.publishedAt)}</span>
               </div>
               <h3>{lead.title}</h3>
               <p>{lead.excerpt}</p>
@@ -42,11 +54,14 @@ export default function FeaturedNews() {
           <div className="featured-news-side">
             {side.map((article) => (
               <article className="featured-news-small" key={article.id}>
-                <Image src={article.image} width={147} height={84} alt={article.title} />
+                <Image
+                  src={article.thumbnailUrl || '/news-water-day.png'}
+                  width={147} height={84} alt={article.title}
+                />
                 <div>
                   <div className="news-meta-line compact">
-                    <span>{article.category}</span>
-                    <span>{article.date}</span>
+                    <span>{article.category.name}</span>
+                    <span>{formatDate(article.publishedAt)}</span>
                   </div>
                   <h3>{article.title}</h3>
                   <p>{article.excerpt}</p>

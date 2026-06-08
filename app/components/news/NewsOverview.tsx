@@ -1,11 +1,15 @@
-import { newsArticles, newsCategories } from "../../data/news";
+import type { NewsStats } from '@/lib/services/news.service';
 
-export default function NewsOverview() {
+interface Props {
+  stats: NewsStats;
+}
+
+export default function NewsOverview({ stats }: Props) {
   const items = [
-    { value: newsArticles.length, label: "Published Updates" },
-    { value: newsCategories.length, label: "News Categories" },
-    { value: newsArticles.filter((item) => item.featured).length, label: "Featured Stories" },
-    { value: "2024", label: "Latest Reporting Year" },
+    { value: stats.publishedCount, label: 'Published Updates' },
+    { value: stats.categoryCount, label: 'News Categories' },
+    { value: stats.featuredCount, label: 'Featured Stories' },
+    { value: stats.latestYear, label: 'Latest Reporting Year' },
   ];
 
   return (

@@ -60,6 +60,8 @@ export interface CreateArticleData {
   categoryId: string;
   featuredImageUrl: string;
   thumbnailUrl: string;
+  featured: boolean;
+  status: ArticleStatus;
   userId: string;
 }
 
@@ -81,7 +83,9 @@ export async function createArticle(data: CreateArticleData) {
       categoryId: data.categoryId,
       featuredImageUrl: data.featuredImageUrl,
       thumbnailUrl: data.thumbnailUrl,
-      status: ArticleStatus.draft,
+      status: data.status,
+      featured: data.featured,
+      publishedAt: data.status === ArticleStatus.published ? new Date() : null,
       createdById: data.userId,
       updatedById: data.userId,
     },
@@ -97,11 +101,13 @@ export interface UpdateArticleData {
   categoryId?: string;
   featuredImageUrl?: string;
   thumbnailUrl?: string;
+  featured?: boolean;
+  status?: ArticleStatus;
   userId: string;
 }
 
 export async function updateArticle(id: string, data: UpdateArticleData) {
-  const { userId, ...rest } = data;
+  const { userId, status, ...rest } = data;
   return prisma.newsArticle.update({
     where: { id },
     data: {
@@ -109,6 +115,10 @@ export async function updateArticle(id: string, data: UpdateArticleData) {
       ...(rest.title ? { title: rest.title.trim() } : {}),
       ...(rest.excerpt ? { excerpt: rest.excerpt.trim() } : {}),
       ...(rest.body ? { body: rest.body.trim() } : {}),
+      ...(status !== undefined ? {
+        status,
+        publishedAt: status === ArticleStatus.published ? new Date() : undefined,
+      } : {}),
       updatedById: userId,
     },
   });
@@ -156,3 +166,62 @@ export async function deleteArticle(id: string, userId: string) {
 export async function listCategories() {
   return prisma.newsCategory.findMany({ orderBy: { name: 'asc' } });
 }
+
+// ─── Public-facing queries (published only) ───────────────────────────────────
+
+export interface PublicArticle {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  featuredImageUrl: string;
+  thumbnailUrl: string;
+  featured: boolean;
+  publishedAt: Date;
+  category: { name: string };
+}
+
+export async function listPublishedArticles(): Promise<PublicArticle[]> {
+  return prisma.newsArticle.findMany({
+    where: { status: ArticleStatus.published, deletedAt: null },
+    orderBy: { publishedAt: 'desc' },
+    select: {
+      id: true,
+      slug: true,
+      title: true,
+      excerpt: true,
+      featuredImageUrl: true,
+      thumbnailUrl: true,
+      featured: true,
+      publishedAt: true,
+      category: { select: { name: true } },
+    },
+  }) as Promise<PublicArticle[]>;
+}
+
+export interface NewsStats {
+  publishedCount: number;
+  categoryCount: number;
+  featuredCount: number;
+  latestYear: string;
+}
+
+export async function getNewsStats(): Promise<NewsStats> {
+  const [publishedCount, categoryCount, featuredCount, latest] = await Promise.all([
+    prisma.newsArticle.count({ where: { status: ArticleStatus.published, deletedAt: null } }),
+    prisma.newsCategory.count(),
+    prisma.newsArticle.count({ where: { status: ArticleStatus.published, featured: true, deletedAt: null } }),
+    prisma.newsArticle.findFirst({
+      where: { status: ArticleStatus.published, deletedAt: null },
+      orderBy: { publishedAt: 'desc' },
+      select: { publishedAt: true },
+    }),
+  ]);
+
+  const latestYear = latest?.publishedAt
+    ? new Date(latest.publishedAt).getFullYear().toString()
+    : new Date().getFullYear().toString();
+
+  return { publishedCount, categoryCount, featuredCount, latestYear };
+}
+

@@ -42,6 +42,7 @@ export default async function EditArticlePage({
         categories={categories}
         mode="edit"
         articleId={article.id}
+        isSuperAdmin={session.role === 'Super_Admin'}
         defaultValues={{
           title: article.title,
           excerpt: article.excerpt,
@@ -49,6 +50,8 @@ export default async function EditArticlePage({
           categoryId: article.categoryId,
           featuredImageUrl: article.featuredImageUrl,
           thumbnailUrl: article.thumbnailUrl,
+          status: article.status,
+          featured: article.featured,
         }}
       />
     </div>

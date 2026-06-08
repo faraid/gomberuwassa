@@ -10,6 +10,7 @@ interface Props {
   categories: Category[];
   mode: 'create' | 'edit';
   articleId?: string;
+  isSuperAdmin?: boolean;
   defaultValues?: {
     title?: string;
     excerpt?: string;
@@ -17,12 +18,14 @@ interface Props {
     categoryId?: string;
     featuredImageUrl?: string;
     thumbnailUrl?: string;
+    status?: string;
+    featured?: boolean;
   };
 }
 
 const initialState: ActionState = {};
 
-export default function ArticleForm({ categories, mode, articleId, defaultValues }: Props) {
+export default function ArticleForm({ categories, mode, articleId, isSuperAdmin, defaultValues }: Props) {
   const action = mode === 'edit' && articleId
     ? updateArticleAction.bind(null, articleId)
     : createArticleAction;
@@ -73,6 +76,49 @@ export default function ArticleForm({ categories, mode, articleId, defaultValues
         )}
       </div>
 
+      {/* Status + Featured row */}
+      <div className="grid grid-cols-2 gap-4">
+        {/* Status — Super_Admin only */}
+        <div>
+          <label htmlFor="status" className="block text-sm font-medium text-gray-700 mb-1">
+            Status
+          </label>
+          {isSuperAdmin ? (
+            <select
+              id="status" name="status"
+              defaultValue={defaultValues?.status ?? 'draft'}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="draft">Draft</option>
+              <option value="published">Published</option>
+            </select>
+          ) : (
+            <>
+              <input type="hidden" name="status" value="draft" />
+              <div className="px-3 py-2 border border-gray-200 rounded-lg text-sm bg-gray-50 text-gray-500">
+                Draft (Editors cannot publish directly)
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* Featured toggle */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Featured</label>
+          <label className="flex items-center gap-3 px-3 py-2.5 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+            <input
+              type="checkbox"
+              name="featured"
+              value="on"
+              defaultChecked={defaultValues?.featured ?? false}
+              className="w-4 h-4 text-blue-600 rounded"
+            />
+            <span className="text-sm text-gray-700">Mark as featured</span>
+          </label>
+          <p className="text-xs text-gray-400 mt-1">Featured articles appear in the top section.</p>
+        </div>
+      </div>
+
       {/* Excerpt */}
       <div>
         <label htmlFor="excerpt" className="block text-sm font-medium text-gray-700 mb-1">
@@ -107,28 +153,32 @@ export default function ArticleForm({ categories, mode, articleId, defaultValues
         )}
       </div>
 
-      {/* Image URLs — placeholder fields; image upload service added in later wave */}
-      <div className="grid grid-cols-2 gap-4">
+      {/* Image URLs */}
+      <div className="space-y-3">
+        <p className="text-sm font-medium text-gray-700">Images</p>
         <div>
-          <label htmlFor="featuredImageUrl" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="featuredImageUrl" className="block text-xs font-medium text-gray-600 mb-1">
             Featured Image URL
           </label>
           <input
             id="featuredImageUrl" name="featuredImageUrl" type="text"
             defaultValue={defaultValues?.featuredImageUrl ?? ''}
             className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="/uploads/image.jpg"
+            placeholder="/uploads/image.jpg or https://..."
           />
+          <p className="text-xs text-gray-400 mt-1">
+            Paste an image URL or leave blank to use the default placeholder.
+          </p>
         </div>
         <div>
-          <label htmlFor="thumbnailUrl" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="thumbnailUrl" className="block text-xs font-medium text-gray-600 mb-1">
             Thumbnail URL
           </label>
           <input
             id="thumbnailUrl" name="thumbnailUrl" type="text"
             defaultValue={defaultValues?.thumbnailUrl ?? ''}
             className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="/uploads/thumb.jpg"
+            placeholder="/uploads/thumb.jpg or https://..."
           />
         </div>
       </div>

@@ -48,6 +48,8 @@ const articleSchema = z.object({
   categoryId: z.string().trim().min(1, 'Please select a category.'),
   featuredImageUrl: z.string().trim().default('/uploads/placeholder.png'),
   thumbnailUrl: z.string().trim().default('/uploads/placeholder.png'),
+  status: z.enum(['draft', 'published']).default('draft'),
+  featured: z.enum(['on', 'off']).default('off'),
 });
 
 export async function createArticleAction(
@@ -56,6 +58,11 @@ export async function createArticleAction(
 ): Promise<ActionState> {
   const session = await requireEditor();
 
+  // Only Super_Admin can publish directly
+  const rawStatus = session.role === 'Super_Admin'
+    ? (formData.get('status') ?? 'draft')
+    : 'draft';
+
   const raw = {
     title: formData.get('title'),
     excerpt: formData.get('excerpt'),
@@ -63,6 +70,8 @@ export async function createArticleAction(
     categoryId: formData.get('categoryId'),
     featuredImageUrl: formData.get('featuredImageUrl') || '/uploads/placeholder.png',
     thumbnailUrl: formData.get('thumbnailUrl') || '/uploads/placeholder.png',
+    status: rawStatus,
+    featured: formData.get('featured') === 'on' ? 'on' : 'off',
   };
 
   const result = articleSchema.safeParse(raw);
@@ -71,12 +80,18 @@ export async function createArticleAction(
   }
 
   try {
-    await createArticle({ ...result.data, userId: session.userId });
+    await createArticle({
+      ...result.data,
+      featured: result.data.featured === 'on',
+      status: result.data.status as import('@/generated/prisma').ArticleStatus,
+      userId: session.userId,
+    });
   } catch {
     return { error: 'Failed to create article. Please try again.' };
   }
 
   revalidatePath('/admin/news');
+  revalidatePath('/news');
   redirect('/admin/news');
 }
 
@@ -89,6 +104,10 @@ export async function updateArticleAction(
 ): Promise<ActionState> {
   const session = await requireEditor();
 
+  const rawStatus = session.role === 'Super_Admin'
+    ? (formData.get('status') ?? 'draft')
+    : undefined;
+
   const raw = {
     title: formData.get('title'),
     excerpt: formData.get('excerpt'),
@@ -96,6 +115,8 @@ export async function updateArticleAction(
     categoryId: formData.get('categoryId'),
     featuredImageUrl: formData.get('featuredImageUrl') || undefined,
     thumbnailUrl: formData.get('thumbnailUrl') || undefined,
+    status: rawStatus ?? 'draft',
+    featured: formData.get('featured') === 'on' ? 'on' : 'off',
   };
 
   const result = articleSchema.safeParse(raw);
@@ -104,12 +125,20 @@ export async function updateArticleAction(
   }
 
   try {
-    await updateArticle(articleId, { ...result.data, userId: session.userId });
+    await updateArticle(articleId, {
+      ...result.data,
+      featured: result.data.featured === 'on',
+      status: rawStatus !== undefined
+        ? result.data.status as import('@/generated/prisma').ArticleStatus
+        : undefined,
+      userId: session.userId,
+    });
   } catch {
     return { error: 'Failed to update article. Please try again.' };
   }
 
   revalidatePath('/admin/news');
+  revalidatePath('/news');
   redirect('/admin/news');
 }
 
@@ -127,6 +156,7 @@ export async function publishArticleAction(
   }
 
   revalidatePath('/admin/news');
+  revalidatePath('/news');
   return { success: true };
 }
 
@@ -144,6 +174,7 @@ export async function unpublishArticleAction(
   }
 
   revalidatePath('/admin/news');
+  revalidatePath('/news');
   return { success: true };
 }
 

@@ -1,29 +1,29 @@
 import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 import { getSession } from '@/lib/services/auth.service';
-import AdminSidebar from './components/AdminSidebar';
+import AdminSidebar from '../components/AdminSidebar';
 
 interface AdminLayoutProps {
   children: React.ReactNode;
 }
 
-export default async function AdminLayout({ children }: AdminLayoutProps) {
+/**
+ * This layout only applies to routes inside app/admin/(protected)/.
+ * It does NOT apply to /admin/login because that sits outside this group.
+ */
+export default async function AdminProtectedLayout({ children }: AdminLayoutProps) {
   const cookieStore = await cookies();
   const sessionId = cookieStore.get('sid')?.value;
 
-  // No cookie at all — safe to redirect directly to login
   if (!sessionId) {
     redirect('/admin/login');
   }
 
-  // Cookie exists — validate the session against the DB
   const session = await getSession(sessionId).catch(() => null);
 
   if (!session) {
-    // The cookie is stale (expired or invalidated). Redirect through the
-    // GET logout endpoint which clears the cookie before landing on /admin/login.
-    // This breaks the middleware loop: once the cookie is cleared, middleware
-    // lets /admin/login through unconditionally.
+    // Stale cookie — redirect through logout to clear it first, preventing
+    // the middleware from seeing the cookie and looping back here.
     redirect('/api/auth/logout');
   }
 

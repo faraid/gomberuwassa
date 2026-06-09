@@ -1,15 +1,15 @@
-import Image from "next/image";
-import { MapPin } from "lucide-react";
-import type { Project } from "../../data/projects";
+import Image from 'next/image';
+import { MapPin } from 'lucide-react';
+import type { PublicProject } from '@/lib/services/projects.service';
 
 const STATUS_LABEL: Record<string, string> = {
-  completed: "Completed",
-  ongoing: "In Progress",
-  planned: "Planned",
+  completed: 'Completed',
+  ongoing: 'In Progress',
+  planned: 'Planned',
 };
 
 interface Props {
-  projects: Project[];
+  projects: PublicProject[];
 }
 
 export default function ProjectsGrid({ projects }: Props) {
@@ -44,7 +44,7 @@ export default function ProjectsGrid({ projects }: Props) {
           {projects.map((project) => (
             <article className="project-card" key={project.id}>
               <div className="card-image">
-                <Image src={project.image} fill sizes="320px" alt={project.title} />
+                <Image src={project.featuredImageUrl || '/project-solar.png'} fill sizes="320px" alt={project.title} />
                 <b className={project.status === "completed" ? "done" : project.status === "planned" ? "planned-badge" : ""}>
                   {STATUS_LABEL[project.status]}
                 </b>

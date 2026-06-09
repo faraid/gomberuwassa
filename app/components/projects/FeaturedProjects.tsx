@@ -1,15 +1,15 @@
-import Image from "next/image";
-import { MapPin } from "lucide-react";
-import type { Project } from "../../data/projects";
+import Image from 'next/image';
+import { MapPin } from 'lucide-react';
+import type { PublicProject } from '@/lib/services/projects.service';
 
 const STATUS_LABEL: Record<string, string> = {
-  completed: "Completed",
-  ongoing: "In Progress",
-  planned: "Planned",
+  completed: 'Completed',
+  ongoing: 'In Progress',
+  planned: 'Planned',
 };
 
 interface Props {
-  projects: Project[];
+  projects: PublicProject[];
 }
 
 export default function FeaturedProjects({ projects }: Props) {
@@ -30,9 +30,9 @@ export default function FeaturedProjects({ projects }: Props) {
         <div className="featured-grid">
           {projects.map((project) => (
             <article className="featured-card" key={project.id}>
-              <div className="featured-card-image">
+                            <div className="featured-card-image">
                 <Image
-                  src={project.image}
+                  src={project.featuredImageUrl || '/project-solar.png'}
                   alt={project.title}
                   fill
                   sizes="(max-width: 940px) 100vw, 50vw"
@@ -51,8 +51,8 @@ export default function FeaturedProjects({ projects }: Props) {
                 <div className="featured-footer">
                   <div className="featured-progress">
                     <div className="featured-progress-labels">
-                      <span>{project.type}</span>
-                      <strong>{project.progress}% Complete</strong>
+                        <span>{project.projectType.name}</span>
+                        <strong>{project.progress}% Complete</strong>
                     </div>
                     <span className="meter">
                       <i className={`meter-fill-${project.status}`} style={{ width: `${project.progress}%` }} />

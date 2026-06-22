@@ -187,17 +187,20 @@ model GalleryCategory {
 
 model GalleryItem {
   id           String          @id @default(uuid())
+  slug         String          @unique @default(uuid())
   title        String
   categoryId   String
   category     GalleryCategory @relation(fields: [categoryId], references: [id])
-  location     String
-  year         Int
-  description  String
-  imageUrl     String
-  optimisedUrl String
-  thumbnailUrl String
+  caption      String          @default("")
+  location     String          @default("")
+  year         Int             @default(2024)
+  description  String          @default("")
+  imageUrl     String          @default("/uploads/placeholder.png")
+  optimisedUrl String          @default("")
+  thumbnailUrl String          @default("")
+  published    Boolean         @default(false)
   featured     Boolean         @default(false)
-  displayOrder Int
+  displayOrder Int             @default(0)
   createdById  String
   updatedById  String
   createdAt    DateTime        @default(now())
@@ -211,22 +214,28 @@ model GalleryItem {
 
 model Program {
   id             String        @id @default(uuid())
+  slug           String        @unique
   title          String
   category       String
   status         ProgramStatus @default(active)
   iconName       String
   tone           Tone          @default(blue)
   summary        String
+  description    String        @default("")
   objectives     Json
   beneficiaries  String
   coverage       String
   leadUnit       String
+  featuredImageUrl String?
   bannerImageUrl String?
-  displayOrder   Int
+  displayOrder   Int           @default(0)
+  published      Boolean       @default(false)
+  featured       Boolean       @default(false)
   createdById    String
   updatedById    String
   createdAt      DateTime      @default(now())
   updatedAt      DateTime      @updatedAt
+  deletedAt      DateTime?
 
   @@map("programs")
 }
@@ -234,14 +243,18 @@ model Program {
 // ─── Contact ──────────────────────────────────────────────────────────────────
 
 model ContactSubmission {
-  id        String    @id @default(uuid())
-  name      String
-  email     String
-  subject   String
-  message   String
-  read      Boolean   @default(false)
-  createdAt DateTime  @default(now())
-  deletedAt DateTime?
+  id          String    @id @default(uuid())
+  name        String
+  phone       String    @default("")
+  email       String
+  subject     String
+  enquiryType String    @default("General enquiry")
+  message     String
+  status      String    @default("New")
+  read        Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
 
   @@map("contact_submissions")
 }
@@ -272,3 +285,6 @@ model AuditLog {
 
   @@map("audit_logs")
 }
+
+
+

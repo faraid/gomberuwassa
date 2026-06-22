@@ -21,19 +21,10 @@ export interface Project {
   beneficiaries: number;
 }
 
-export const ALL_LGAS = [
-  "Gombe",
-  "Funakaye",
-  "Dukku",
-  "Billiri",
-  "Kwami",
-  "Shomgom",
-  "Nafada",
-  "Balanga",
-  "Akko",
-  "Yamaltu/Deba",
-  "Kaltungo",
-];
+import { GOMBE_LGA_NAMES } from '@/lib/constants/gombe-lgas';
+
+/** @deprecated Import GOMBE_LGAS / GOMBE_LGA_NAMES from '@/lib/constants/gombe-lgas' instead */
+export const ALL_LGAS: string[] = GOMBE_LGA_NAMES;
 
 export const ALL_TYPES: ProjectType[] = [
   "Borehole",

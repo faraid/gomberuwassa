@@ -1,35 +1,36 @@
-import { ClipboardCheck, FileText, MapPinned } from "lucide-react";
+import { ClipboardCheck, FileText, MapPinned } from 'lucide-react';
+import { contactDefaults, type ContactSettings } from '@/lib/constants/contact';
 
-const guidanceItems = [
-  {
-    icon: ClipboardCheck,
-    title: "Prepare Your Enquiry",
-    body: "Include your name, phone number, LGA, ward, community, and the specific water or sanitation matter that needs attention.",
-  },
-  {
-    icon: MapPinned,
-    title: "Share Location Details",
-    body: "For facility reports, mention the nearest landmark and whether the issue affects a borehole, hand pump, overhead tank, or sanitation facility.",
-  },
-  {
-    icon: FileText,
-    title: "Official Requests",
-    body: "For partnerships, procurement, media, or formal correspondence, provide a clear subject and organization details for proper routing.",
-  },
-];
+interface Props {
+  settings?: ContactSettings;
+}
 
-export default function ContactGuidance() {
+export default function ContactGuidance({ settings = contactDefaults }: Props) {
+  const guidanceItems = [
+    {
+      icon: ClipboardCheck,
+      title: settings.prepareTitle,
+      body: settings.prepareDescription,
+    },
+    {
+      icon: MapPinned,
+      title: settings.locationTitle,
+      body: settings.locationDescription,
+    },
+    {
+      icon: FileText,
+      title: settings.officialRequestsTitle,
+      body: settings.officialRequestsDescription,
+    },
+  ];
+
   return (
     <section className="contact-form-section" aria-labelledby="contact-guidance-title">
       <div className="wrap">
         <div className="section-header">
-          <p className="eyebrow">CONTACT GUIDANCE</p>
-          <h2 id="contact-guidance-title">Help Us Route Your Request Quickly</h2>
-          <p>
-            Clear details help RUWASA direct enquiries, community reports, and
-            official requests to the appropriate administrative or technical
-            desk.
-          </p>
+          <p className="eyebrow">{settings.guidanceSectionLabel}</p>
+          <h2 id="contact-guidance-title">{settings.guidanceHeading}</h2>
+          <p>{settings.guidanceDescription}</p>
         </div>
 
         <div className="contact-support-list">
@@ -49,3 +50,4 @@ export default function ContactGuidance() {
     </section>
   );
 }
+

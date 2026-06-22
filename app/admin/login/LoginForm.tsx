@@ -22,13 +22,26 @@ export default function LoginForm() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const submittedEmail = String(formData.get('email') ?? '').trim();
+    const submittedPassword = String(formData.get('password') ?? '');
+
+    setEmail(submittedEmail);
+    setPassword(submittedPassword);
+
+    if (!submittedEmail || !submittedPassword) {
+      setError('Enter your email address and password.');
+      return;
+    }
+
     setLoading(true);
 
     try {
       const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email: submittedEmail, password: submittedPassword }),
       });
 
       const json = (await res.json()) as {
@@ -90,6 +103,7 @@ export default function LoginForm() {
               </label>
               <input
                 id="email"
+                name="email"
                 type="email"
                 autoComplete="email"
                 required
@@ -110,6 +124,7 @@ export default function LoginForm() {
               </label>
               <input
                 id="password"
+                name="password"
                 type="password"
                 autoComplete="current-password"
                 required
@@ -132,7 +147,7 @@ export default function LoginForm() {
 
             <button
               type="submit"
-              disabled={loading || !email || !password}
+              disabled={loading}
               className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-300 text-white font-medium text-sm py-2.5 px-4 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed"
             >
               {loading && <Loader2 className="w-4 h-4 animate-spin" />}
@@ -148,3 +163,5 @@ export default function LoginForm() {
     </div>
   );
 }
+
+

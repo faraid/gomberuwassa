@@ -1,8 +1,35 @@
-import Image from "next/image";
-import { MapPin, Tag } from "lucide-react";
-import { galleryItems } from "../../data/gallery";
+import Image from 'next/image';
+import { MapPin, Tag } from 'lucide-react';
+import { galleryItems } from '../../data/gallery';
+import type { PublicGalleryItem } from '@/lib/services/gallery.service';
 
-export default function GalleryGrid() {
+type GalleryDisplayItem = PublicGalleryItem & {
+  location?: string;
+  date?: string;
+};
+
+function fallbackItems(): GalleryDisplayItem[] {
+  return galleryItems.map((item) => ({
+    id: item.id,
+    slug: item.id,
+    title: item.title,
+    category: item.category,
+    caption: item.description,
+    imageUrl: item.image,
+    featured: Boolean(item.featured),
+    displayOrder: 0,
+    location: item.location,
+    date: item.date,
+  }));
+}
+
+interface Props {
+  items?: PublicGalleryItem[];
+}
+
+export default function GalleryGrid({ items }: Props) {
+  const gallery = items && items.length > 0 ? items : fallbackItems();
+
   return (
     <section className="gallery-grid-section">
       <div className="wrap">
@@ -16,19 +43,19 @@ export default function GalleryGrid() {
         </div>
 
         <div className="gallery-grid">
-          {galleryItems.map((item) => (
+          {(gallery as GalleryDisplayItem[]).map((item) => (
             <article className="gallery-card" key={item.id}>
               <div className="gallery-card-image">
-                <Image src={item.image} fill sizes="320px" alt={item.title} />
-                <b>{item.date}</b>
+                <Image src={item.imageUrl} fill sizes="320px" alt={item.title} />
+                {item.date && <b>{item.date}</b>}
               </div>
               <div className="gallery-card-body">
                 <div className="gallery-meta-line compact">
                   <span><Tag size={12} /> {item.category}</span>
-                  <span><MapPin size={12} /> {item.location}</span>
+                  {item.location && <span><MapPin size={12} /> {item.location}</span>}
                 </div>
                 <h3>{item.title}</h3>
-                <p>{item.description}</p>
+                <p>{item.caption}</p>
               </div>
             </article>
           ))}

@@ -13451,14 +13451,17 @@ export namespace Prisma {
 
   export type GalleryItemMinAggregateOutputType = {
     id: string | null
+    slug: string | null
     title: string | null
     categoryId: string | null
+    caption: string | null
     location: string | null
     year: number | null
     description: string | null
     imageUrl: string | null
     optimisedUrl: string | null
     thumbnailUrl: string | null
+    published: boolean | null
     featured: boolean | null
     displayOrder: number | null
     createdById: string | null
@@ -13470,14 +13473,17 @@ export namespace Prisma {
 
   export type GalleryItemMaxAggregateOutputType = {
     id: string | null
+    slug: string | null
     title: string | null
     categoryId: string | null
+    caption: string | null
     location: string | null
     year: number | null
     description: string | null
     imageUrl: string | null
     optimisedUrl: string | null
     thumbnailUrl: string | null
+    published: boolean | null
     featured: boolean | null
     displayOrder: number | null
     createdById: string | null
@@ -13489,14 +13495,17 @@ export namespace Prisma {
 
   export type GalleryItemCountAggregateOutputType = {
     id: number
+    slug: number
     title: number
     categoryId: number
+    caption: number
     location: number
     year: number
     description: number
     imageUrl: number
     optimisedUrl: number
     thumbnailUrl: number
+    published: number
     featured: number
     displayOrder: number
     createdById: number
@@ -13520,14 +13529,17 @@ export namespace Prisma {
 
   export type GalleryItemMinAggregateInputType = {
     id?: true
+    slug?: true
     title?: true
     categoryId?: true
+    caption?: true
     location?: true
     year?: true
     description?: true
     imageUrl?: true
     optimisedUrl?: true
     thumbnailUrl?: true
+    published?: true
     featured?: true
     displayOrder?: true
     createdById?: true
@@ -13539,14 +13551,17 @@ export namespace Prisma {
 
   export type GalleryItemMaxAggregateInputType = {
     id?: true
+    slug?: true
     title?: true
     categoryId?: true
+    caption?: true
     location?: true
     year?: true
     description?: true
     imageUrl?: true
     optimisedUrl?: true
     thumbnailUrl?: true
+    published?: true
     featured?: true
     displayOrder?: true
     createdById?: true
@@ -13558,14 +13573,17 @@ export namespace Prisma {
 
   export type GalleryItemCountAggregateInputType = {
     id?: true
+    slug?: true
     title?: true
     categoryId?: true
+    caption?: true
     location?: true
     year?: true
     description?: true
     imageUrl?: true
     optimisedUrl?: true
     thumbnailUrl?: true
+    published?: true
     featured?: true
     displayOrder?: true
     createdById?: true
@@ -13664,14 +13682,17 @@ export namespace Prisma {
 
   export type GalleryItemGroupByOutputType = {
     id: string
+    slug: string
     title: string
     categoryId: string
+    caption: string
     location: string
     year: number
     description: string
     imageUrl: string
     optimisedUrl: string
     thumbnailUrl: string
+    published: boolean
     featured: boolean
     displayOrder: number
     createdById: string
@@ -13702,14 +13723,17 @@ export namespace Prisma {
 
   export type GalleryItemSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    slug?: boolean
     title?: boolean
     categoryId?: boolean
+    caption?: boolean
     location?: boolean
     year?: boolean
     description?: boolean
     imageUrl?: boolean
     optimisedUrl?: boolean
     thumbnailUrl?: boolean
+    published?: boolean
     featured?: boolean
     displayOrder?: boolean
     createdById?: boolean
@@ -13722,14 +13746,17 @@ export namespace Prisma {
 
   export type GalleryItemSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    slug?: boolean
     title?: boolean
     categoryId?: boolean
+    caption?: boolean
     location?: boolean
     year?: boolean
     description?: boolean
     imageUrl?: boolean
     optimisedUrl?: boolean
     thumbnailUrl?: boolean
+    published?: boolean
     featured?: boolean
     displayOrder?: boolean
     createdById?: boolean
@@ -13742,14 +13769,17 @@ export namespace Prisma {
 
   export type GalleryItemSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    slug?: boolean
     title?: boolean
     categoryId?: boolean
+    caption?: boolean
     location?: boolean
     year?: boolean
     description?: boolean
     imageUrl?: boolean
     optimisedUrl?: boolean
     thumbnailUrl?: boolean
+    published?: boolean
     featured?: boolean
     displayOrder?: boolean
     createdById?: boolean
@@ -13762,14 +13792,17 @@ export namespace Prisma {
 
   export type GalleryItemSelectScalar = {
     id?: boolean
+    slug?: boolean
     title?: boolean
     categoryId?: boolean
+    caption?: boolean
     location?: boolean
     year?: boolean
     description?: boolean
     imageUrl?: boolean
     optimisedUrl?: boolean
     thumbnailUrl?: boolean
+    published?: boolean
     featured?: boolean
     displayOrder?: boolean
     createdById?: boolean
@@ -13779,7 +13812,7 @@ export namespace Prisma {
     deletedAt?: boolean
   }
 
-  export type GalleryItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "categoryId" | "location" | "year" | "description" | "imageUrl" | "optimisedUrl" | "thumbnailUrl" | "featured" | "displayOrder" | "createdById" | "updatedById" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["galleryItem"]>
+  export type GalleryItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slug" | "title" | "categoryId" | "caption" | "location" | "year" | "description" | "imageUrl" | "optimisedUrl" | "thumbnailUrl" | "published" | "featured" | "displayOrder" | "createdById" | "updatedById" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["galleryItem"]>
   export type GalleryItemInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     category?: boolean | GalleryCategoryDefaultArgs<ExtArgs>
   }
@@ -13797,14 +13830,17 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
+      slug: string
       title: string
       categoryId: string
+      caption: string
       location: string
       year: number
       description: string
       imageUrl: string
       optimisedUrl: string
       thumbnailUrl: string
+      published: boolean
       featured: boolean
       displayOrder: number
       createdById: string
@@ -14237,14 +14273,17 @@ export namespace Prisma {
    */
   interface GalleryItemFieldRefs {
     readonly id: FieldRef<"GalleryItem", 'String'>
+    readonly slug: FieldRef<"GalleryItem", 'String'>
     readonly title: FieldRef<"GalleryItem", 'String'>
     readonly categoryId: FieldRef<"GalleryItem", 'String'>
+    readonly caption: FieldRef<"GalleryItem", 'String'>
     readonly location: FieldRef<"GalleryItem", 'String'>
     readonly year: FieldRef<"GalleryItem", 'Int'>
     readonly description: FieldRef<"GalleryItem", 'String'>
     readonly imageUrl: FieldRef<"GalleryItem", 'String'>
     readonly optimisedUrl: FieldRef<"GalleryItem", 'String'>
     readonly thumbnailUrl: FieldRef<"GalleryItem", 'String'>
+    readonly published: FieldRef<"GalleryItem", 'Boolean'>
     readonly featured: FieldRef<"GalleryItem", 'Boolean'>
     readonly displayOrder: FieldRef<"GalleryItem", 'Int'>
     readonly createdById: FieldRef<"GalleryItem", 'String'>
@@ -14688,60 +14727,78 @@ export namespace Prisma {
 
   export type ProgramMinAggregateOutputType = {
     id: string | null
+    slug: string | null
     title: string | null
     category: string | null
     status: $Enums.ProgramStatus | null
     iconName: string | null
     tone: $Enums.Tone | null
     summary: string | null
+    description: string | null
     beneficiaries: string | null
     coverage: string | null
     leadUnit: string | null
+    featuredImageUrl: string | null
     bannerImageUrl: string | null
     displayOrder: number | null
+    published: boolean | null
+    featured: boolean | null
     createdById: string | null
     updatedById: string | null
     createdAt: Date | null
     updatedAt: Date | null
+    deletedAt: Date | null
   }
 
   export type ProgramMaxAggregateOutputType = {
     id: string | null
+    slug: string | null
     title: string | null
     category: string | null
     status: $Enums.ProgramStatus | null
     iconName: string | null
     tone: $Enums.Tone | null
     summary: string | null
+    description: string | null
     beneficiaries: string | null
     coverage: string | null
     leadUnit: string | null
+    featuredImageUrl: string | null
     bannerImageUrl: string | null
     displayOrder: number | null
+    published: boolean | null
+    featured: boolean | null
     createdById: string | null
     updatedById: string | null
     createdAt: Date | null
     updatedAt: Date | null
+    deletedAt: Date | null
   }
 
   export type ProgramCountAggregateOutputType = {
     id: number
+    slug: number
     title: number
     category: number
     status: number
     iconName: number
     tone: number
     summary: number
+    description: number
     objectives: number
     beneficiaries: number
     coverage: number
     leadUnit: number
+    featuredImageUrl: number
     bannerImageUrl: number
     displayOrder: number
+    published: number
+    featured: number
     createdById: number
     updatedById: number
     createdAt: number
     updatedAt: number
+    deletedAt: number
     _all: number
   }
 
@@ -14756,60 +14813,78 @@ export namespace Prisma {
 
   export type ProgramMinAggregateInputType = {
     id?: true
+    slug?: true
     title?: true
     category?: true
     status?: true
     iconName?: true
     tone?: true
     summary?: true
+    description?: true
     beneficiaries?: true
     coverage?: true
     leadUnit?: true
+    featuredImageUrl?: true
     bannerImageUrl?: true
     displayOrder?: true
+    published?: true
+    featured?: true
     createdById?: true
     updatedById?: true
     createdAt?: true
     updatedAt?: true
+    deletedAt?: true
   }
 
   export type ProgramMaxAggregateInputType = {
     id?: true
+    slug?: true
     title?: true
     category?: true
     status?: true
     iconName?: true
     tone?: true
     summary?: true
+    description?: true
     beneficiaries?: true
     coverage?: true
     leadUnit?: true
+    featuredImageUrl?: true
     bannerImageUrl?: true
     displayOrder?: true
+    published?: true
+    featured?: true
     createdById?: true
     updatedById?: true
     createdAt?: true
     updatedAt?: true
+    deletedAt?: true
   }
 
   export type ProgramCountAggregateInputType = {
     id?: true
+    slug?: true
     title?: true
     category?: true
     status?: true
     iconName?: true
     tone?: true
     summary?: true
+    description?: true
     objectives?: true
     beneficiaries?: true
     coverage?: true
     leadUnit?: true
+    featuredImageUrl?: true
     bannerImageUrl?: true
     displayOrder?: true
+    published?: true
+    featured?: true
     createdById?: true
     updatedById?: true
     createdAt?: true
     updatedAt?: true
+    deletedAt?: true
     _all?: true
   }
 
@@ -14901,22 +14976,28 @@ export namespace Prisma {
 
   export type ProgramGroupByOutputType = {
     id: string
+    slug: string
     title: string
     category: string
     status: $Enums.ProgramStatus
     iconName: string
     tone: $Enums.Tone
     summary: string
+    description: string
     objectives: JsonValue
     beneficiaries: string
     coverage: string
     leadUnit: string
+    featuredImageUrl: string | null
     bannerImageUrl: string | null
     displayOrder: number
+    published: boolean
+    featured: boolean
     createdById: string
     updatedById: string
     createdAt: Date
     updatedAt: Date
+    deletedAt: Date | null
     _count: ProgramCountAggregateOutputType | null
     _avg: ProgramAvgAggregateOutputType | null
     _sum: ProgramSumAggregateOutputType | null
@@ -14940,107 +15021,137 @@ export namespace Prisma {
 
   export type ProgramSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    slug?: boolean
     title?: boolean
     category?: boolean
     status?: boolean
     iconName?: boolean
     tone?: boolean
     summary?: boolean
+    description?: boolean
     objectives?: boolean
     beneficiaries?: boolean
     coverage?: boolean
     leadUnit?: boolean
+    featuredImageUrl?: boolean
     bannerImageUrl?: boolean
     displayOrder?: boolean
+    published?: boolean
+    featured?: boolean
     createdById?: boolean
     updatedById?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    deletedAt?: boolean
   }, ExtArgs["result"]["program"]>
 
   export type ProgramSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    slug?: boolean
     title?: boolean
     category?: boolean
     status?: boolean
     iconName?: boolean
     tone?: boolean
     summary?: boolean
+    description?: boolean
     objectives?: boolean
     beneficiaries?: boolean
     coverage?: boolean
     leadUnit?: boolean
+    featuredImageUrl?: boolean
     bannerImageUrl?: boolean
     displayOrder?: boolean
+    published?: boolean
+    featured?: boolean
     createdById?: boolean
     updatedById?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    deletedAt?: boolean
   }, ExtArgs["result"]["program"]>
 
   export type ProgramSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    slug?: boolean
     title?: boolean
     category?: boolean
     status?: boolean
     iconName?: boolean
     tone?: boolean
     summary?: boolean
+    description?: boolean
     objectives?: boolean
     beneficiaries?: boolean
     coverage?: boolean
     leadUnit?: boolean
+    featuredImageUrl?: boolean
     bannerImageUrl?: boolean
     displayOrder?: boolean
+    published?: boolean
+    featured?: boolean
     createdById?: boolean
     updatedById?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    deletedAt?: boolean
   }, ExtArgs["result"]["program"]>
 
   export type ProgramSelectScalar = {
     id?: boolean
+    slug?: boolean
     title?: boolean
     category?: boolean
     status?: boolean
     iconName?: boolean
     tone?: boolean
     summary?: boolean
+    description?: boolean
     objectives?: boolean
     beneficiaries?: boolean
     coverage?: boolean
     leadUnit?: boolean
+    featuredImageUrl?: boolean
     bannerImageUrl?: boolean
     displayOrder?: boolean
+    published?: boolean
+    featured?: boolean
     createdById?: boolean
     updatedById?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    deletedAt?: boolean
   }
 
-  export type ProgramOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "category" | "status" | "iconName" | "tone" | "summary" | "objectives" | "beneficiaries" | "coverage" | "leadUnit" | "bannerImageUrl" | "displayOrder" | "createdById" | "updatedById" | "createdAt" | "updatedAt", ExtArgs["result"]["program"]>
+  export type ProgramOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slug" | "title" | "category" | "status" | "iconName" | "tone" | "summary" | "description" | "objectives" | "beneficiaries" | "coverage" | "leadUnit" | "featuredImageUrl" | "bannerImageUrl" | "displayOrder" | "published" | "featured" | "createdById" | "updatedById" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["program"]>
 
   export type $ProgramPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Program"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
+      slug: string
       title: string
       category: string
       status: $Enums.ProgramStatus
       iconName: string
       tone: $Enums.Tone
       summary: string
+      description: string
       objectives: Prisma.JsonValue
       beneficiaries: string
       coverage: string
       leadUnit: string
+      featuredImageUrl: string | null
       bannerImageUrl: string | null
       displayOrder: number
+      published: boolean
+      featured: boolean
       createdById: string
       updatedById: string
       createdAt: Date
       updatedAt: Date
+      deletedAt: Date | null
     }, ExtArgs["result"]["program"]>
     composites: {}
   }
@@ -15465,22 +15576,28 @@ export namespace Prisma {
    */
   interface ProgramFieldRefs {
     readonly id: FieldRef<"Program", 'String'>
+    readonly slug: FieldRef<"Program", 'String'>
     readonly title: FieldRef<"Program", 'String'>
     readonly category: FieldRef<"Program", 'String'>
     readonly status: FieldRef<"Program", 'ProgramStatus'>
     readonly iconName: FieldRef<"Program", 'String'>
     readonly tone: FieldRef<"Program", 'Tone'>
     readonly summary: FieldRef<"Program", 'String'>
+    readonly description: FieldRef<"Program", 'String'>
     readonly objectives: FieldRef<"Program", 'Json'>
     readonly beneficiaries: FieldRef<"Program", 'String'>
     readonly coverage: FieldRef<"Program", 'String'>
     readonly leadUnit: FieldRef<"Program", 'String'>
+    readonly featuredImageUrl: FieldRef<"Program", 'String'>
     readonly bannerImageUrl: FieldRef<"Program", 'String'>
     readonly displayOrder: FieldRef<"Program", 'Int'>
+    readonly published: FieldRef<"Program", 'Boolean'>
+    readonly featured: FieldRef<"Program", 'Boolean'>
     readonly createdById: FieldRef<"Program", 'String'>
     readonly updatedById: FieldRef<"Program", 'String'>
     readonly createdAt: FieldRef<"Program", 'DateTime'>
     readonly updatedAt: FieldRef<"Program", 'DateTime'>
+    readonly deletedAt: FieldRef<"Program", 'DateTime'>
   }
     
 
@@ -15860,33 +15977,45 @@ export namespace Prisma {
   export type ContactSubmissionMinAggregateOutputType = {
     id: string | null
     name: string | null
+    phone: string | null
     email: string | null
     subject: string | null
+    enquiryType: string | null
     message: string | null
+    status: string | null
     read: boolean | null
     createdAt: Date | null
+    updatedAt: Date | null
     deletedAt: Date | null
   }
 
   export type ContactSubmissionMaxAggregateOutputType = {
     id: string | null
     name: string | null
+    phone: string | null
     email: string | null
     subject: string | null
+    enquiryType: string | null
     message: string | null
+    status: string | null
     read: boolean | null
     createdAt: Date | null
+    updatedAt: Date | null
     deletedAt: Date | null
   }
 
   export type ContactSubmissionCountAggregateOutputType = {
     id: number
     name: number
+    phone: number
     email: number
     subject: number
+    enquiryType: number
     message: number
+    status: number
     read: number
     createdAt: number
+    updatedAt: number
     deletedAt: number
     _all: number
   }
@@ -15895,33 +16024,45 @@ export namespace Prisma {
   export type ContactSubmissionMinAggregateInputType = {
     id?: true
     name?: true
+    phone?: true
     email?: true
     subject?: true
+    enquiryType?: true
     message?: true
+    status?: true
     read?: true
     createdAt?: true
+    updatedAt?: true
     deletedAt?: true
   }
 
   export type ContactSubmissionMaxAggregateInputType = {
     id?: true
     name?: true
+    phone?: true
     email?: true
     subject?: true
+    enquiryType?: true
     message?: true
+    status?: true
     read?: true
     createdAt?: true
+    updatedAt?: true
     deletedAt?: true
   }
 
   export type ContactSubmissionCountAggregateInputType = {
     id?: true
     name?: true
+    phone?: true
     email?: true
     subject?: true
+    enquiryType?: true
     message?: true
+    status?: true
     read?: true
     createdAt?: true
+    updatedAt?: true
     deletedAt?: true
     _all?: true
   }
@@ -16001,11 +16142,15 @@ export namespace Prisma {
   export type ContactSubmissionGroupByOutputType = {
     id: string
     name: string
+    phone: string
     email: string
     subject: string
+    enquiryType: string
     message: string
+    status: string
     read: boolean
     createdAt: Date
+    updatedAt: Date
     deletedAt: Date | null
     _count: ContactSubmissionCountAggregateOutputType | null
     _min: ContactSubmissionMinAggregateOutputType | null
@@ -16029,48 +16174,64 @@ export namespace Prisma {
   export type ContactSubmissionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    phone?: boolean
     email?: boolean
     subject?: boolean
+    enquiryType?: boolean
     message?: boolean
+    status?: boolean
     read?: boolean
     createdAt?: boolean
+    updatedAt?: boolean
     deletedAt?: boolean
   }, ExtArgs["result"]["contactSubmission"]>
 
   export type ContactSubmissionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    phone?: boolean
     email?: boolean
     subject?: boolean
+    enquiryType?: boolean
     message?: boolean
+    status?: boolean
     read?: boolean
     createdAt?: boolean
+    updatedAt?: boolean
     deletedAt?: boolean
   }, ExtArgs["result"]["contactSubmission"]>
 
   export type ContactSubmissionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    phone?: boolean
     email?: boolean
     subject?: boolean
+    enquiryType?: boolean
     message?: boolean
+    status?: boolean
     read?: boolean
     createdAt?: boolean
+    updatedAt?: boolean
     deletedAt?: boolean
   }, ExtArgs["result"]["contactSubmission"]>
 
   export type ContactSubmissionSelectScalar = {
     id?: boolean
     name?: boolean
+    phone?: boolean
     email?: boolean
     subject?: boolean
+    enquiryType?: boolean
     message?: boolean
+    status?: boolean
     read?: boolean
     createdAt?: boolean
+    updatedAt?: boolean
     deletedAt?: boolean
   }
 
-  export type ContactSubmissionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "subject" | "message" | "read" | "createdAt" | "deletedAt", ExtArgs["result"]["contactSubmission"]>
+  export type ContactSubmissionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "phone" | "email" | "subject" | "enquiryType" | "message" | "status" | "read" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["contactSubmission"]>
 
   export type $ContactSubmissionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "ContactSubmission"
@@ -16078,11 +16239,15 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: string
       name: string
+      phone: string
       email: string
       subject: string
+      enquiryType: string
       message: string
+      status: string
       read: boolean
       createdAt: Date
+      updatedAt: Date
       deletedAt: Date | null
     }, ExtArgs["result"]["contactSubmission"]>
     composites: {}
@@ -16509,11 +16674,15 @@ export namespace Prisma {
   interface ContactSubmissionFieldRefs {
     readonly id: FieldRef<"ContactSubmission", 'String'>
     readonly name: FieldRef<"ContactSubmission", 'String'>
+    readonly phone: FieldRef<"ContactSubmission", 'String'>
     readonly email: FieldRef<"ContactSubmission", 'String'>
     readonly subject: FieldRef<"ContactSubmission", 'String'>
+    readonly enquiryType: FieldRef<"ContactSubmission", 'String'>
     readonly message: FieldRef<"ContactSubmission", 'String'>
+    readonly status: FieldRef<"ContactSubmission", 'String'>
     readonly read: FieldRef<"ContactSubmission", 'Boolean'>
     readonly createdAt: FieldRef<"ContactSubmission", 'DateTime'>
+    readonly updatedAt: FieldRef<"ContactSubmission", 'DateTime'>
     readonly deletedAt: FieldRef<"ContactSubmission", 'DateTime'>
   }
     
@@ -19096,14 +19265,17 @@ export namespace Prisma {
 
   export const GalleryItemScalarFieldEnum: {
     id: 'id',
+    slug: 'slug',
     title: 'title',
     categoryId: 'categoryId',
+    caption: 'caption',
     location: 'location',
     year: 'year',
     description: 'description',
     imageUrl: 'imageUrl',
     optimisedUrl: 'optimisedUrl',
     thumbnailUrl: 'thumbnailUrl',
+    published: 'published',
     featured: 'featured',
     displayOrder: 'displayOrder',
     createdById: 'createdById',
@@ -19118,22 +19290,28 @@ export namespace Prisma {
 
   export const ProgramScalarFieldEnum: {
     id: 'id',
+    slug: 'slug',
     title: 'title',
     category: 'category',
     status: 'status',
     iconName: 'iconName',
     tone: 'tone',
     summary: 'summary',
+    description: 'description',
     objectives: 'objectives',
     beneficiaries: 'beneficiaries',
     coverage: 'coverage',
     leadUnit: 'leadUnit',
+    featuredImageUrl: 'featuredImageUrl',
     bannerImageUrl: 'bannerImageUrl',
     displayOrder: 'displayOrder',
+    published: 'published',
+    featured: 'featured',
     createdById: 'createdById',
     updatedById: 'updatedById',
     createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
+    updatedAt: 'updatedAt',
+    deletedAt: 'deletedAt'
   };
 
   export type ProgramScalarFieldEnum = (typeof ProgramScalarFieldEnum)[keyof typeof ProgramScalarFieldEnum]
@@ -19142,11 +19320,15 @@ export namespace Prisma {
   export const ContactSubmissionScalarFieldEnum: {
     id: 'id',
     name: 'name',
+    phone: 'phone',
     email: 'email',
     subject: 'subject',
+    enquiryType: 'enquiryType',
     message: 'message',
+    status: 'status',
     read: 'read',
     createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
     deletedAt: 'deletedAt'
   };
 
@@ -20042,14 +20224,17 @@ export namespace Prisma {
     OR?: GalleryItemWhereInput[]
     NOT?: GalleryItemWhereInput | GalleryItemWhereInput[]
     id?: StringFilter<"GalleryItem"> | string
+    slug?: StringFilter<"GalleryItem"> | string
     title?: StringFilter<"GalleryItem"> | string
     categoryId?: StringFilter<"GalleryItem"> | string
+    caption?: StringFilter<"GalleryItem"> | string
     location?: StringFilter<"GalleryItem"> | string
     year?: IntFilter<"GalleryItem"> | number
     description?: StringFilter<"GalleryItem"> | string
     imageUrl?: StringFilter<"GalleryItem"> | string
     optimisedUrl?: StringFilter<"GalleryItem"> | string
     thumbnailUrl?: StringFilter<"GalleryItem"> | string
+    published?: BoolFilter<"GalleryItem"> | boolean
     featured?: BoolFilter<"GalleryItem"> | boolean
     displayOrder?: IntFilter<"GalleryItem"> | number
     createdById?: StringFilter<"GalleryItem"> | string
@@ -20062,14 +20247,17 @@ export namespace Prisma {
 
   export type GalleryItemOrderByWithRelationInput = {
     id?: SortOrder
+    slug?: SortOrder
     title?: SortOrder
     categoryId?: SortOrder
+    caption?: SortOrder
     location?: SortOrder
     year?: SortOrder
     description?: SortOrder
     imageUrl?: SortOrder
     optimisedUrl?: SortOrder
     thumbnailUrl?: SortOrder
+    published?: SortOrder
     featured?: SortOrder
     displayOrder?: SortOrder
     createdById?: SortOrder
@@ -20082,17 +20270,20 @@ export namespace Prisma {
 
   export type GalleryItemWhereUniqueInput = Prisma.AtLeast<{
     id?: string
+    slug?: string
     AND?: GalleryItemWhereInput | GalleryItemWhereInput[]
     OR?: GalleryItemWhereInput[]
     NOT?: GalleryItemWhereInput | GalleryItemWhereInput[]
     title?: StringFilter<"GalleryItem"> | string
     categoryId?: StringFilter<"GalleryItem"> | string
+    caption?: StringFilter<"GalleryItem"> | string
     location?: StringFilter<"GalleryItem"> | string
     year?: IntFilter<"GalleryItem"> | number
     description?: StringFilter<"GalleryItem"> | string
     imageUrl?: StringFilter<"GalleryItem"> | string
     optimisedUrl?: StringFilter<"GalleryItem"> | string
     thumbnailUrl?: StringFilter<"GalleryItem"> | string
+    published?: BoolFilter<"GalleryItem"> | boolean
     featured?: BoolFilter<"GalleryItem"> | boolean
     displayOrder?: IntFilter<"GalleryItem"> | number
     createdById?: StringFilter<"GalleryItem"> | string
@@ -20101,18 +20292,21 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"GalleryItem"> | Date | string
     deletedAt?: DateTimeNullableFilter<"GalleryItem"> | Date | string | null
     category?: XOR<GalleryCategoryScalarRelationFilter, GalleryCategoryWhereInput>
-  }, "id">
+  }, "id" | "slug">
 
   export type GalleryItemOrderByWithAggregationInput = {
     id?: SortOrder
+    slug?: SortOrder
     title?: SortOrder
     categoryId?: SortOrder
+    caption?: SortOrder
     location?: SortOrder
     year?: SortOrder
     description?: SortOrder
     imageUrl?: SortOrder
     optimisedUrl?: SortOrder
     thumbnailUrl?: SortOrder
+    published?: SortOrder
     featured?: SortOrder
     displayOrder?: SortOrder
     createdById?: SortOrder
@@ -20132,14 +20326,17 @@ export namespace Prisma {
     OR?: GalleryItemScalarWhereWithAggregatesInput[]
     NOT?: GalleryItemScalarWhereWithAggregatesInput | GalleryItemScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"GalleryItem"> | string
+    slug?: StringWithAggregatesFilter<"GalleryItem"> | string
     title?: StringWithAggregatesFilter<"GalleryItem"> | string
     categoryId?: StringWithAggregatesFilter<"GalleryItem"> | string
+    caption?: StringWithAggregatesFilter<"GalleryItem"> | string
     location?: StringWithAggregatesFilter<"GalleryItem"> | string
     year?: IntWithAggregatesFilter<"GalleryItem"> | number
     description?: StringWithAggregatesFilter<"GalleryItem"> | string
     imageUrl?: StringWithAggregatesFilter<"GalleryItem"> | string
     optimisedUrl?: StringWithAggregatesFilter<"GalleryItem"> | string
     thumbnailUrl?: StringWithAggregatesFilter<"GalleryItem"> | string
+    published?: BoolWithAggregatesFilter<"GalleryItem"> | boolean
     featured?: BoolWithAggregatesFilter<"GalleryItem"> | boolean
     displayOrder?: IntWithAggregatesFilter<"GalleryItem"> | number
     createdById?: StringWithAggregatesFilter<"GalleryItem"> | string
@@ -20154,46 +20351,59 @@ export namespace Prisma {
     OR?: ProgramWhereInput[]
     NOT?: ProgramWhereInput | ProgramWhereInput[]
     id?: StringFilter<"Program"> | string
+    slug?: StringFilter<"Program"> | string
     title?: StringFilter<"Program"> | string
     category?: StringFilter<"Program"> | string
     status?: EnumProgramStatusFilter<"Program"> | $Enums.ProgramStatus
     iconName?: StringFilter<"Program"> | string
     tone?: EnumToneFilter<"Program"> | $Enums.Tone
     summary?: StringFilter<"Program"> | string
+    description?: StringFilter<"Program"> | string
     objectives?: JsonFilter<"Program">
     beneficiaries?: StringFilter<"Program"> | string
     coverage?: StringFilter<"Program"> | string
     leadUnit?: StringFilter<"Program"> | string
+    featuredImageUrl?: StringNullableFilter<"Program"> | string | null
     bannerImageUrl?: StringNullableFilter<"Program"> | string | null
     displayOrder?: IntFilter<"Program"> | number
+    published?: BoolFilter<"Program"> | boolean
+    featured?: BoolFilter<"Program"> | boolean
     createdById?: StringFilter<"Program"> | string
     updatedById?: StringFilter<"Program"> | string
     createdAt?: DateTimeFilter<"Program"> | Date | string
     updatedAt?: DateTimeFilter<"Program"> | Date | string
+    deletedAt?: DateTimeNullableFilter<"Program"> | Date | string | null
   }
 
   export type ProgramOrderByWithRelationInput = {
     id?: SortOrder
+    slug?: SortOrder
     title?: SortOrder
     category?: SortOrder
     status?: SortOrder
     iconName?: SortOrder
     tone?: SortOrder
     summary?: SortOrder
+    description?: SortOrder
     objectives?: SortOrder
     beneficiaries?: SortOrder
     coverage?: SortOrder
     leadUnit?: SortOrder
+    featuredImageUrl?: SortOrderInput | SortOrder
     bannerImageUrl?: SortOrderInput | SortOrder
     displayOrder?: SortOrder
+    published?: SortOrder
+    featured?: SortOrder
     createdById?: SortOrder
     updatedById?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    deletedAt?: SortOrderInput | SortOrder
   }
 
   export type ProgramWhereUniqueInput = Prisma.AtLeast<{
     id?: string
+    slug?: string
     AND?: ProgramWhereInput | ProgramWhereInput[]
     OR?: ProgramWhereInput[]
     NOT?: ProgramWhereInput | ProgramWhereInput[]
@@ -20203,36 +20413,47 @@ export namespace Prisma {
     iconName?: StringFilter<"Program"> | string
     tone?: EnumToneFilter<"Program"> | $Enums.Tone
     summary?: StringFilter<"Program"> | string
+    description?: StringFilter<"Program"> | string
     objectives?: JsonFilter<"Program">
     beneficiaries?: StringFilter<"Program"> | string
     coverage?: StringFilter<"Program"> | string
     leadUnit?: StringFilter<"Program"> | string
+    featuredImageUrl?: StringNullableFilter<"Program"> | string | null
     bannerImageUrl?: StringNullableFilter<"Program"> | string | null
     displayOrder?: IntFilter<"Program"> | number
+    published?: BoolFilter<"Program"> | boolean
+    featured?: BoolFilter<"Program"> | boolean
     createdById?: StringFilter<"Program"> | string
     updatedById?: StringFilter<"Program"> | string
     createdAt?: DateTimeFilter<"Program"> | Date | string
     updatedAt?: DateTimeFilter<"Program"> | Date | string
-  }, "id">
+    deletedAt?: DateTimeNullableFilter<"Program"> | Date | string | null
+  }, "id" | "slug">
 
   export type ProgramOrderByWithAggregationInput = {
     id?: SortOrder
+    slug?: SortOrder
     title?: SortOrder
     category?: SortOrder
     status?: SortOrder
     iconName?: SortOrder
     tone?: SortOrder
     summary?: SortOrder
+    description?: SortOrder
     objectives?: SortOrder
     beneficiaries?: SortOrder
     coverage?: SortOrder
     leadUnit?: SortOrder
+    featuredImageUrl?: SortOrderInput | SortOrder
     bannerImageUrl?: SortOrderInput | SortOrder
     displayOrder?: SortOrder
+    published?: SortOrder
+    featured?: SortOrder
     createdById?: SortOrder
     updatedById?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    deletedAt?: SortOrderInput | SortOrder
     _count?: ProgramCountOrderByAggregateInput
     _avg?: ProgramAvgOrderByAggregateInput
     _max?: ProgramMaxOrderByAggregateInput
@@ -20245,22 +20466,28 @@ export namespace Prisma {
     OR?: ProgramScalarWhereWithAggregatesInput[]
     NOT?: ProgramScalarWhereWithAggregatesInput | ProgramScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Program"> | string
+    slug?: StringWithAggregatesFilter<"Program"> | string
     title?: StringWithAggregatesFilter<"Program"> | string
     category?: StringWithAggregatesFilter<"Program"> | string
     status?: EnumProgramStatusWithAggregatesFilter<"Program"> | $Enums.ProgramStatus
     iconName?: StringWithAggregatesFilter<"Program"> | string
     tone?: EnumToneWithAggregatesFilter<"Program"> | $Enums.Tone
     summary?: StringWithAggregatesFilter<"Program"> | string
+    description?: StringWithAggregatesFilter<"Program"> | string
     objectives?: JsonWithAggregatesFilter<"Program">
     beneficiaries?: StringWithAggregatesFilter<"Program"> | string
     coverage?: StringWithAggregatesFilter<"Program"> | string
     leadUnit?: StringWithAggregatesFilter<"Program"> | string
+    featuredImageUrl?: StringNullableWithAggregatesFilter<"Program"> | string | null
     bannerImageUrl?: StringNullableWithAggregatesFilter<"Program"> | string | null
     displayOrder?: IntWithAggregatesFilter<"Program"> | number
+    published?: BoolWithAggregatesFilter<"Program"> | boolean
+    featured?: BoolWithAggregatesFilter<"Program"> | boolean
     createdById?: StringWithAggregatesFilter<"Program"> | string
     updatedById?: StringWithAggregatesFilter<"Program"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Program"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Program"> | Date | string
+    deletedAt?: DateTimeNullableWithAggregatesFilter<"Program"> | Date | string | null
   }
 
   export type ContactSubmissionWhereInput = {
@@ -20269,22 +20496,30 @@ export namespace Prisma {
     NOT?: ContactSubmissionWhereInput | ContactSubmissionWhereInput[]
     id?: StringFilter<"ContactSubmission"> | string
     name?: StringFilter<"ContactSubmission"> | string
+    phone?: StringFilter<"ContactSubmission"> | string
     email?: StringFilter<"ContactSubmission"> | string
     subject?: StringFilter<"ContactSubmission"> | string
+    enquiryType?: StringFilter<"ContactSubmission"> | string
     message?: StringFilter<"ContactSubmission"> | string
+    status?: StringFilter<"ContactSubmission"> | string
     read?: BoolFilter<"ContactSubmission"> | boolean
     createdAt?: DateTimeFilter<"ContactSubmission"> | Date | string
+    updatedAt?: DateTimeFilter<"ContactSubmission"> | Date | string
     deletedAt?: DateTimeNullableFilter<"ContactSubmission"> | Date | string | null
   }
 
   export type ContactSubmissionOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
+    phone?: SortOrder
     email?: SortOrder
     subject?: SortOrder
+    enquiryType?: SortOrder
     message?: SortOrder
+    status?: SortOrder
     read?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
     deletedAt?: SortOrderInput | SortOrder
   }
 
@@ -20294,22 +20529,30 @@ export namespace Prisma {
     OR?: ContactSubmissionWhereInput[]
     NOT?: ContactSubmissionWhereInput | ContactSubmissionWhereInput[]
     name?: StringFilter<"ContactSubmission"> | string
+    phone?: StringFilter<"ContactSubmission"> | string
     email?: StringFilter<"ContactSubmission"> | string
     subject?: StringFilter<"ContactSubmission"> | string
+    enquiryType?: StringFilter<"ContactSubmission"> | string
     message?: StringFilter<"ContactSubmission"> | string
+    status?: StringFilter<"ContactSubmission"> | string
     read?: BoolFilter<"ContactSubmission"> | boolean
     createdAt?: DateTimeFilter<"ContactSubmission"> | Date | string
+    updatedAt?: DateTimeFilter<"ContactSubmission"> | Date | string
     deletedAt?: DateTimeNullableFilter<"ContactSubmission"> | Date | string | null
   }, "id">
 
   export type ContactSubmissionOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
+    phone?: SortOrder
     email?: SortOrder
     subject?: SortOrder
+    enquiryType?: SortOrder
     message?: SortOrder
+    status?: SortOrder
     read?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
     deletedAt?: SortOrderInput | SortOrder
     _count?: ContactSubmissionCountOrderByAggregateInput
     _max?: ContactSubmissionMaxOrderByAggregateInput
@@ -20322,11 +20565,15 @@ export namespace Prisma {
     NOT?: ContactSubmissionScalarWhereWithAggregatesInput | ContactSubmissionScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"ContactSubmission"> | string
     name?: StringWithAggregatesFilter<"ContactSubmission"> | string
+    phone?: StringWithAggregatesFilter<"ContactSubmission"> | string
     email?: StringWithAggregatesFilter<"ContactSubmission"> | string
     subject?: StringWithAggregatesFilter<"ContactSubmission"> | string
+    enquiryType?: StringWithAggregatesFilter<"ContactSubmission"> | string
     message?: StringWithAggregatesFilter<"ContactSubmission"> | string
+    status?: StringWithAggregatesFilter<"ContactSubmission"> | string
     read?: BoolWithAggregatesFilter<"ContactSubmission"> | boolean
     createdAt?: DateTimeWithAggregatesFilter<"ContactSubmission"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"ContactSubmission"> | Date | string
     deletedAt?: DateTimeNullableWithAggregatesFilter<"ContactSubmission"> | Date | string | null
   }
 
@@ -21162,15 +21409,18 @@ export namespace Prisma {
 
   export type GalleryItemCreateInput = {
     id?: string
+    slug?: string
     title: string
-    location: string
-    year: number
-    description: string
-    imageUrl: string
-    optimisedUrl: string
-    thumbnailUrl: string
+    caption?: string
+    location?: string
+    year?: number
+    description?: string
+    imageUrl?: string
+    optimisedUrl?: string
+    thumbnailUrl?: string
+    published?: boolean
     featured?: boolean
-    displayOrder: number
+    displayOrder?: number
     createdById: string
     updatedById: string
     createdAt?: Date | string
@@ -21181,16 +21431,19 @@ export namespace Prisma {
 
   export type GalleryItemUncheckedCreateInput = {
     id?: string
+    slug?: string
     title: string
     categoryId: string
-    location: string
-    year: number
-    description: string
-    imageUrl: string
-    optimisedUrl: string
-    thumbnailUrl: string
+    caption?: string
+    location?: string
+    year?: number
+    description?: string
+    imageUrl?: string
+    optimisedUrl?: string
+    thumbnailUrl?: string
+    published?: boolean
     featured?: boolean
-    displayOrder: number
+    displayOrder?: number
     createdById: string
     updatedById: string
     createdAt?: Date | string
@@ -21200,13 +21453,16 @@ export namespace Prisma {
 
   export type GalleryItemUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
+    caption?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     year?: IntFieldUpdateOperationsInput | number
     description?: StringFieldUpdateOperationsInput | string
     imageUrl?: StringFieldUpdateOperationsInput | string
     optimisedUrl?: StringFieldUpdateOperationsInput | string
     thumbnailUrl?: StringFieldUpdateOperationsInput | string
+    published?: BoolFieldUpdateOperationsInput | boolean
     featured?: BoolFieldUpdateOperationsInput | boolean
     displayOrder?: IntFieldUpdateOperationsInput | number
     createdById?: StringFieldUpdateOperationsInput | string
@@ -21219,14 +21475,17 @@ export namespace Prisma {
 
   export type GalleryItemUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     categoryId?: StringFieldUpdateOperationsInput | string
+    caption?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     year?: IntFieldUpdateOperationsInput | number
     description?: StringFieldUpdateOperationsInput | string
     imageUrl?: StringFieldUpdateOperationsInput | string
     optimisedUrl?: StringFieldUpdateOperationsInput | string
     thumbnailUrl?: StringFieldUpdateOperationsInput | string
+    published?: BoolFieldUpdateOperationsInput | boolean
     featured?: BoolFieldUpdateOperationsInput | boolean
     displayOrder?: IntFieldUpdateOperationsInput | number
     createdById?: StringFieldUpdateOperationsInput | string
@@ -21238,16 +21497,19 @@ export namespace Prisma {
 
   export type GalleryItemCreateManyInput = {
     id?: string
+    slug?: string
     title: string
     categoryId: string
-    location: string
-    year: number
-    description: string
-    imageUrl: string
-    optimisedUrl: string
-    thumbnailUrl: string
+    caption?: string
+    location?: string
+    year?: number
+    description?: string
+    imageUrl?: string
+    optimisedUrl?: string
+    thumbnailUrl?: string
+    published?: boolean
     featured?: boolean
-    displayOrder: number
+    displayOrder?: number
     createdById: string
     updatedById: string
     createdAt?: Date | string
@@ -21257,13 +21519,16 @@ export namespace Prisma {
 
   export type GalleryItemUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
+    caption?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     year?: IntFieldUpdateOperationsInput | number
     description?: StringFieldUpdateOperationsInput | string
     imageUrl?: StringFieldUpdateOperationsInput | string
     optimisedUrl?: StringFieldUpdateOperationsInput | string
     thumbnailUrl?: StringFieldUpdateOperationsInput | string
+    published?: BoolFieldUpdateOperationsInput | boolean
     featured?: BoolFieldUpdateOperationsInput | boolean
     displayOrder?: IntFieldUpdateOperationsInput | number
     createdById?: StringFieldUpdateOperationsInput | string
@@ -21275,14 +21540,17 @@ export namespace Prisma {
 
   export type GalleryItemUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     categoryId?: StringFieldUpdateOperationsInput | string
+    caption?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     year?: IntFieldUpdateOperationsInput | number
     description?: StringFieldUpdateOperationsInput | string
     imageUrl?: StringFieldUpdateOperationsInput | string
     optimisedUrl?: StringFieldUpdateOperationsInput | string
     thumbnailUrl?: StringFieldUpdateOperationsInput | string
+    published?: BoolFieldUpdateOperationsInput | boolean
     featured?: BoolFieldUpdateOperationsInput | boolean
     displayOrder?: IntFieldUpdateOperationsInput | number
     createdById?: StringFieldUpdateOperationsInput | string
@@ -21294,218 +21562,288 @@ export namespace Prisma {
 
   export type ProgramCreateInput = {
     id?: string
+    slug: string
     title: string
     category: string
     status?: $Enums.ProgramStatus
     iconName: string
     tone?: $Enums.Tone
     summary: string
+    description?: string
     objectives: JsonNullValueInput | InputJsonValue
     beneficiaries: string
     coverage: string
     leadUnit: string
+    featuredImageUrl?: string | null
     bannerImageUrl?: string | null
-    displayOrder: number
+    displayOrder?: number
+    published?: boolean
+    featured?: boolean
     createdById: string
     updatedById: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    deletedAt?: Date | string | null
   }
 
   export type ProgramUncheckedCreateInput = {
     id?: string
+    slug: string
     title: string
     category: string
     status?: $Enums.ProgramStatus
     iconName: string
     tone?: $Enums.Tone
     summary: string
+    description?: string
     objectives: JsonNullValueInput | InputJsonValue
     beneficiaries: string
     coverage: string
     leadUnit: string
+    featuredImageUrl?: string | null
     bannerImageUrl?: string | null
-    displayOrder: number
+    displayOrder?: number
+    published?: boolean
+    featured?: boolean
     createdById: string
     updatedById: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    deletedAt?: Date | string | null
   }
 
   export type ProgramUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     category?: StringFieldUpdateOperationsInput | string
     status?: EnumProgramStatusFieldUpdateOperationsInput | $Enums.ProgramStatus
     iconName?: StringFieldUpdateOperationsInput | string
     tone?: EnumToneFieldUpdateOperationsInput | $Enums.Tone
     summary?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
     objectives?: JsonNullValueInput | InputJsonValue
     beneficiaries?: StringFieldUpdateOperationsInput | string
     coverage?: StringFieldUpdateOperationsInput | string
     leadUnit?: StringFieldUpdateOperationsInput | string
+    featuredImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     bannerImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     displayOrder?: IntFieldUpdateOperationsInput | number
+    published?: BoolFieldUpdateOperationsInput | boolean
+    featured?: BoolFieldUpdateOperationsInput | boolean
     createdById?: StringFieldUpdateOperationsInput | string
     updatedById?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ProgramUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     category?: StringFieldUpdateOperationsInput | string
     status?: EnumProgramStatusFieldUpdateOperationsInput | $Enums.ProgramStatus
     iconName?: StringFieldUpdateOperationsInput | string
     tone?: EnumToneFieldUpdateOperationsInput | $Enums.Tone
     summary?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
     objectives?: JsonNullValueInput | InputJsonValue
     beneficiaries?: StringFieldUpdateOperationsInput | string
     coverage?: StringFieldUpdateOperationsInput | string
     leadUnit?: StringFieldUpdateOperationsInput | string
+    featuredImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     bannerImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     displayOrder?: IntFieldUpdateOperationsInput | number
+    published?: BoolFieldUpdateOperationsInput | boolean
+    featured?: BoolFieldUpdateOperationsInput | boolean
     createdById?: StringFieldUpdateOperationsInput | string
     updatedById?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ProgramCreateManyInput = {
     id?: string
+    slug: string
     title: string
     category: string
     status?: $Enums.ProgramStatus
     iconName: string
     tone?: $Enums.Tone
     summary: string
+    description?: string
     objectives: JsonNullValueInput | InputJsonValue
     beneficiaries: string
     coverage: string
     leadUnit: string
+    featuredImageUrl?: string | null
     bannerImageUrl?: string | null
-    displayOrder: number
+    displayOrder?: number
+    published?: boolean
+    featured?: boolean
     createdById: string
     updatedById: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    deletedAt?: Date | string | null
   }
 
   export type ProgramUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     category?: StringFieldUpdateOperationsInput | string
     status?: EnumProgramStatusFieldUpdateOperationsInput | $Enums.ProgramStatus
     iconName?: StringFieldUpdateOperationsInput | string
     tone?: EnumToneFieldUpdateOperationsInput | $Enums.Tone
     summary?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
     objectives?: JsonNullValueInput | InputJsonValue
     beneficiaries?: StringFieldUpdateOperationsInput | string
     coverage?: StringFieldUpdateOperationsInput | string
     leadUnit?: StringFieldUpdateOperationsInput | string
+    featuredImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     bannerImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     displayOrder?: IntFieldUpdateOperationsInput | number
+    published?: BoolFieldUpdateOperationsInput | boolean
+    featured?: BoolFieldUpdateOperationsInput | boolean
     createdById?: StringFieldUpdateOperationsInput | string
     updatedById?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ProgramUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     category?: StringFieldUpdateOperationsInput | string
     status?: EnumProgramStatusFieldUpdateOperationsInput | $Enums.ProgramStatus
     iconName?: StringFieldUpdateOperationsInput | string
     tone?: EnumToneFieldUpdateOperationsInput | $Enums.Tone
     summary?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
     objectives?: JsonNullValueInput | InputJsonValue
     beneficiaries?: StringFieldUpdateOperationsInput | string
     coverage?: StringFieldUpdateOperationsInput | string
     leadUnit?: StringFieldUpdateOperationsInput | string
+    featuredImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     bannerImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     displayOrder?: IntFieldUpdateOperationsInput | number
+    published?: BoolFieldUpdateOperationsInput | boolean
+    featured?: BoolFieldUpdateOperationsInput | boolean
     createdById?: StringFieldUpdateOperationsInput | string
     updatedById?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ContactSubmissionCreateInput = {
     id?: string
     name: string
+    phone?: string
     email: string
     subject: string
+    enquiryType?: string
     message: string
+    status?: string
     read?: boolean
     createdAt?: Date | string
+    updatedAt?: Date | string
     deletedAt?: Date | string | null
   }
 
   export type ContactSubmissionUncheckedCreateInput = {
     id?: string
     name: string
+    phone?: string
     email: string
     subject: string
+    enquiryType?: string
     message: string
+    status?: string
     read?: boolean
     createdAt?: Date | string
+    updatedAt?: Date | string
     deletedAt?: Date | string | null
   }
 
   export type ContactSubmissionUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    phone?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     subject?: StringFieldUpdateOperationsInput | string
+    enquiryType?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     read?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ContactSubmissionUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    phone?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     subject?: StringFieldUpdateOperationsInput | string
+    enquiryType?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     read?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ContactSubmissionCreateManyInput = {
     id?: string
     name: string
+    phone?: string
     email: string
     subject: string
+    enquiryType?: string
     message: string
+    status?: string
     read?: boolean
     createdAt?: Date | string
+    updatedAt?: Date | string
     deletedAt?: Date | string | null
   }
 
   export type ContactSubmissionUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    phone?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     subject?: StringFieldUpdateOperationsInput | string
+    enquiryType?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     read?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ContactSubmissionUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    phone?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     subject?: StringFieldUpdateOperationsInput | string
+    enquiryType?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
     read?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
@@ -22272,14 +22610,17 @@ export namespace Prisma {
 
   export type GalleryItemCountOrderByAggregateInput = {
     id?: SortOrder
+    slug?: SortOrder
     title?: SortOrder
     categoryId?: SortOrder
+    caption?: SortOrder
     location?: SortOrder
     year?: SortOrder
     description?: SortOrder
     imageUrl?: SortOrder
     optimisedUrl?: SortOrder
     thumbnailUrl?: SortOrder
+    published?: SortOrder
     featured?: SortOrder
     displayOrder?: SortOrder
     createdById?: SortOrder
@@ -22296,14 +22637,17 @@ export namespace Prisma {
 
   export type GalleryItemMaxOrderByAggregateInput = {
     id?: SortOrder
+    slug?: SortOrder
     title?: SortOrder
     categoryId?: SortOrder
+    caption?: SortOrder
     location?: SortOrder
     year?: SortOrder
     description?: SortOrder
     imageUrl?: SortOrder
     optimisedUrl?: SortOrder
     thumbnailUrl?: SortOrder
+    published?: SortOrder
     featured?: SortOrder
     displayOrder?: SortOrder
     createdById?: SortOrder
@@ -22315,14 +22659,17 @@ export namespace Prisma {
 
   export type GalleryItemMinOrderByAggregateInput = {
     id?: SortOrder
+    slug?: SortOrder
     title?: SortOrder
     categoryId?: SortOrder
+    caption?: SortOrder
     location?: SortOrder
     year?: SortOrder
     description?: SortOrder
     imageUrl?: SortOrder
     optimisedUrl?: SortOrder
     thumbnailUrl?: SortOrder
+    published?: SortOrder
     featured?: SortOrder
     displayOrder?: SortOrder
     createdById?: SortOrder
@@ -22376,22 +22723,28 @@ export namespace Prisma {
 
   export type ProgramCountOrderByAggregateInput = {
     id?: SortOrder
+    slug?: SortOrder
     title?: SortOrder
     category?: SortOrder
     status?: SortOrder
     iconName?: SortOrder
     tone?: SortOrder
     summary?: SortOrder
+    description?: SortOrder
     objectives?: SortOrder
     beneficiaries?: SortOrder
     coverage?: SortOrder
     leadUnit?: SortOrder
+    featuredImageUrl?: SortOrder
     bannerImageUrl?: SortOrder
     displayOrder?: SortOrder
+    published?: SortOrder
+    featured?: SortOrder
     createdById?: SortOrder
     updatedById?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    deletedAt?: SortOrder
   }
 
   export type ProgramAvgOrderByAggregateInput = {
@@ -22400,40 +22753,52 @@ export namespace Prisma {
 
   export type ProgramMaxOrderByAggregateInput = {
     id?: SortOrder
+    slug?: SortOrder
     title?: SortOrder
     category?: SortOrder
     status?: SortOrder
     iconName?: SortOrder
     tone?: SortOrder
     summary?: SortOrder
+    description?: SortOrder
     beneficiaries?: SortOrder
     coverage?: SortOrder
     leadUnit?: SortOrder
+    featuredImageUrl?: SortOrder
     bannerImageUrl?: SortOrder
     displayOrder?: SortOrder
+    published?: SortOrder
+    featured?: SortOrder
     createdById?: SortOrder
     updatedById?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    deletedAt?: SortOrder
   }
 
   export type ProgramMinOrderByAggregateInput = {
     id?: SortOrder
+    slug?: SortOrder
     title?: SortOrder
     category?: SortOrder
     status?: SortOrder
     iconName?: SortOrder
     tone?: SortOrder
     summary?: SortOrder
+    description?: SortOrder
     beneficiaries?: SortOrder
     coverage?: SortOrder
     leadUnit?: SortOrder
+    featuredImageUrl?: SortOrder
     bannerImageUrl?: SortOrder
     displayOrder?: SortOrder
+    published?: SortOrder
+    featured?: SortOrder
     createdById?: SortOrder
     updatedById?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    deletedAt?: SortOrder
   }
 
   export type ProgramSumOrderByAggregateInput = {
@@ -22489,33 +22854,45 @@ export namespace Prisma {
   export type ContactSubmissionCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    phone?: SortOrder
     email?: SortOrder
     subject?: SortOrder
+    enquiryType?: SortOrder
     message?: SortOrder
+    status?: SortOrder
     read?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
     deletedAt?: SortOrder
   }
 
   export type ContactSubmissionMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    phone?: SortOrder
     email?: SortOrder
     subject?: SortOrder
+    enquiryType?: SortOrder
     message?: SortOrder
+    status?: SortOrder
     read?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
     deletedAt?: SortOrder
   }
 
   export type ContactSubmissionMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    phone?: SortOrder
     email?: SortOrder
     subject?: SortOrder
+    enquiryType?: SortOrder
     message?: SortOrder
+    status?: SortOrder
     read?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
     deletedAt?: SortOrder
   }
 
@@ -24231,15 +24608,18 @@ export namespace Prisma {
 
   export type GalleryItemCreateWithoutCategoryInput = {
     id?: string
+    slug?: string
     title: string
-    location: string
-    year: number
-    description: string
-    imageUrl: string
-    optimisedUrl: string
-    thumbnailUrl: string
+    caption?: string
+    location?: string
+    year?: number
+    description?: string
+    imageUrl?: string
+    optimisedUrl?: string
+    thumbnailUrl?: string
+    published?: boolean
     featured?: boolean
-    displayOrder: number
+    displayOrder?: number
     createdById: string
     updatedById: string
     createdAt?: Date | string
@@ -24249,15 +24629,18 @@ export namespace Prisma {
 
   export type GalleryItemUncheckedCreateWithoutCategoryInput = {
     id?: string
+    slug?: string
     title: string
-    location: string
-    year: number
-    description: string
-    imageUrl: string
-    optimisedUrl: string
-    thumbnailUrl: string
+    caption?: string
+    location?: string
+    year?: number
+    description?: string
+    imageUrl?: string
+    optimisedUrl?: string
+    thumbnailUrl?: string
+    published?: boolean
     featured?: boolean
-    displayOrder: number
+    displayOrder?: number
     createdById: string
     updatedById: string
     createdAt?: Date | string
@@ -24296,14 +24679,17 @@ export namespace Prisma {
     OR?: GalleryItemScalarWhereInput[]
     NOT?: GalleryItemScalarWhereInput | GalleryItemScalarWhereInput[]
     id?: StringFilter<"GalleryItem"> | string
+    slug?: StringFilter<"GalleryItem"> | string
     title?: StringFilter<"GalleryItem"> | string
     categoryId?: StringFilter<"GalleryItem"> | string
+    caption?: StringFilter<"GalleryItem"> | string
     location?: StringFilter<"GalleryItem"> | string
     year?: IntFilter<"GalleryItem"> | number
     description?: StringFilter<"GalleryItem"> | string
     imageUrl?: StringFilter<"GalleryItem"> | string
     optimisedUrl?: StringFilter<"GalleryItem"> | string
     thumbnailUrl?: StringFilter<"GalleryItem"> | string
+    published?: BoolFilter<"GalleryItem"> | boolean
     featured?: BoolFilter<"GalleryItem"> | boolean
     displayOrder?: IntFilter<"GalleryItem"> | number
     createdById?: StringFilter<"GalleryItem"> | string
@@ -24751,15 +25137,18 @@ export namespace Prisma {
 
   export type GalleryItemCreateManyCategoryInput = {
     id?: string
+    slug?: string
     title: string
-    location: string
-    year: number
-    description: string
-    imageUrl: string
-    optimisedUrl: string
-    thumbnailUrl: string
+    caption?: string
+    location?: string
+    year?: number
+    description?: string
+    imageUrl?: string
+    optimisedUrl?: string
+    thumbnailUrl?: string
+    published?: boolean
     featured?: boolean
-    displayOrder: number
+    displayOrder?: number
     createdById: string
     updatedById: string
     createdAt?: Date | string
@@ -24769,13 +25158,16 @@ export namespace Prisma {
 
   export type GalleryItemUpdateWithoutCategoryInput = {
     id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
+    caption?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     year?: IntFieldUpdateOperationsInput | number
     description?: StringFieldUpdateOperationsInput | string
     imageUrl?: StringFieldUpdateOperationsInput | string
     optimisedUrl?: StringFieldUpdateOperationsInput | string
     thumbnailUrl?: StringFieldUpdateOperationsInput | string
+    published?: BoolFieldUpdateOperationsInput | boolean
     featured?: BoolFieldUpdateOperationsInput | boolean
     displayOrder?: IntFieldUpdateOperationsInput | number
     createdById?: StringFieldUpdateOperationsInput | string
@@ -24787,13 +25179,16 @@ export namespace Prisma {
 
   export type GalleryItemUncheckedUpdateWithoutCategoryInput = {
     id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
+    caption?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     year?: IntFieldUpdateOperationsInput | number
     description?: StringFieldUpdateOperationsInput | string
     imageUrl?: StringFieldUpdateOperationsInput | string
     optimisedUrl?: StringFieldUpdateOperationsInput | string
     thumbnailUrl?: StringFieldUpdateOperationsInput | string
+    published?: BoolFieldUpdateOperationsInput | boolean
     featured?: BoolFieldUpdateOperationsInput | boolean
     displayOrder?: IntFieldUpdateOperationsInput | number
     createdById?: StringFieldUpdateOperationsInput | string
@@ -24805,13 +25200,16 @@ export namespace Prisma {
 
   export type GalleryItemUncheckedUpdateManyWithoutCategoryInput = {
     id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
+    caption?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     year?: IntFieldUpdateOperationsInput | number
     description?: StringFieldUpdateOperationsInput | string
     imageUrl?: StringFieldUpdateOperationsInput | string
     optimisedUrl?: StringFieldUpdateOperationsInput | string
     thumbnailUrl?: StringFieldUpdateOperationsInput | string
+    published?: BoolFieldUpdateOperationsInput | boolean
     featured?: BoolFieldUpdateOperationsInput | boolean
     displayOrder?: IntFieldUpdateOperationsInput | number
     createdById?: StringFieldUpdateOperationsInput | string

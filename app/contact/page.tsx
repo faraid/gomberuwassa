@@ -1,28 +1,33 @@
-import type { Metadata } from "next";
-import SiteHeader from "../components/SiteHeader";
-import ContactCTA from "../components/contact/ContactCTA";
-import ContactFormSection from "../components/contact/ContactFormSection";
-import ContactHero from "../components/contact/ContactHero";
-import ContactInformation from "../components/contact/ContactInformation";
-import OfficeAddress from "../components/contact/OfficeAddress";
-import ContactGuidance from "./ContactGuidance";
+import type { Metadata } from 'next';
+import SiteHeader from '../components/SiteHeader';
+import ContactCTA from '../components/contact/ContactCTA';
+import ContactFormSection from '../components/contact/ContactFormSection';
+import ContactHero from '../components/contact/ContactHero';
+import ContactInformation from '../components/contact/ContactInformation';
+import OfficeAddress from '../components/contact/OfficeAddress';
+import ContactGuidance from './ContactGuidance';
+import { getContactSettings } from '@/lib/services/contact.service';
 
 export const metadata: Metadata = {
-  title: "Contact RUWASA | Gombe State Rural Water Supply and Sanitation Agency",
+  title: 'Contact RUWASA | Gombe State Rural Water Supply and Sanitation Agency',
   description:
-    "Contact Gombe State RUWASA for enquiries, community water reports, partnerships, office address, and official correspondence.",
+    'Contact Gombe State RUWASA for enquiries, community water reports, partnerships, office address, and official correspondence.',
 };
 
-export default function ContactPage() {
+export const revalidate = 60;
+
+export default async function ContactPage() {
+  const settings = await getContactSettings();
+
   return (
     <div className="page-shell">
       <SiteHeader activePage="Contact" />
       <main id="main-content">
         <ContactHero />
-        <ContactInformation />
-        <ContactFormSection />
-        <ContactGuidance />
-        <OfficeAddress />
+        <ContactInformation settings={settings} />
+        <ContactFormSection settings={settings} />
+        <ContactGuidance settings={settings} />
+        <OfficeAddress settings={settings} />
         <ContactCTA />
       </main>
     </div>

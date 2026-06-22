@@ -1,12 +1,25 @@
-import { programs } from "../../data/programs";
+import {
+  Droplet, GraduationCap, Handshake, Megaphone, ShieldCheck, Toilet, Users, Wrench, FileText,
+} from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import type { PublicProgram } from '@/lib/services/programs.service';
 
-const STATUS_LABEL = {
-  active: "Active",
-  expanding: "Expanding",
-  planned: "Planned",
+const ICON_MAP: Record<string, LucideIcon> = {
+  Droplet, Toilet, GraduationCap, Users,
+  ShieldCheck, Handshake, Megaphone, Wrench, FileText,
 };
 
-export default function ProgramsList() {
+const STATUS_LABEL: Record<string, string> = {
+  active: 'Active',
+  expanding: 'Expanding',
+  planned: 'Planned',
+};
+
+interface Props {
+  programs: PublicProgram[];
+}
+
+export default function ProgramsList({ programs }: Props) {
   return (
     <section className="program-list-section">
       <div className="wrap">
@@ -20,40 +33,47 @@ export default function ProgramsList() {
         </div>
 
         <div className="program-list-grid">
-          {programs.map(({ icon: Icon, tone, title, category, status, summary, objectives, beneficiaries, coverage, leadUnit }) => (
-            <article className="program-detail-card" key={title}>
-              <div className="program-detail-head">
-                <span className={`program-detail-icon ${tone}`} aria-hidden="true">
-                  <Icon size={30} strokeWidth={2.35} />
-                </span>
-                <div>
-                  <span className="program-category">{category}</span>
-                  <h3>{title}</h3>
+          {programs.map((program) => {
+            const Icon = ICON_MAP[program.iconName] || FileText;
+            return (
+              <article className="program-detail-card" key={program.id}>
+                <div className="program-detail-head">
+                  <span className={`program-detail-icon ${program.tone}`} aria-hidden="true">
+                    <Icon size={30} strokeWidth={2.35} />
+                  </span>
+                  <div>
+                    <span className="program-category">{program.category}</span>
+                    <h3>{program.title}</h3>
+                  </div>
+                  <b className={`program-status status-${program.status}`}>{STATUS_LABEL[program.status]}</b>
                 </div>
-                <b className={`program-status status-${status}`}>{STATUS_LABEL[status]}</b>
-              </div>
-              <p className="program-summary">{summary}</p>
-              <ul className="program-objectives">
-                {objectives.map((objective) => (
-                  <li key={objective}>{objective}</li>
-                ))}
-              </ul>
-              <dl className="program-meta">
-                <div>
-                  <dt>Beneficiaries</dt>
-                  <dd>{beneficiaries}</dd>
-                </div>
-                <div>
-                  <dt>Coverage</dt>
-                  <dd>{coverage}</dd>
-                </div>
-                <div>
-                  <dt>Lead Unit</dt>
-                  <dd>{leadUnit}</dd>
-                </div>
-              </dl>
-            </article>
-          ))}
+                <p className="program-summary">{program.summary}</p>
+                {program.description && (
+                  <p className="program-description">{program.description}</p>
+                )}
+                <dl className="program-meta">
+                  {program.beneficiaries && (
+                    <div>
+                      <dt>Beneficiaries</dt>
+                      <dd>{program.beneficiaries}</dd>
+                    </div>
+                  )}
+                  {program.coverage && (
+                    <div>
+                      <dt>Coverage</dt>
+                      <dd>{program.coverage}</dd>
+                    </div>
+                  )}
+                  {program.leadUnit && (
+                    <div>
+                      <dt>Lead Unit</dt>
+                      <dd>{program.leadUnit}</dd>
+                    </div>
+                  )}
+                </dl>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

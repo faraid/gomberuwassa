@@ -221,14 +221,17 @@ exports.Prisma.GalleryCategoryScalarFieldEnum = {
 
 exports.Prisma.GalleryItemScalarFieldEnum = {
   id: 'id',
+  slug: 'slug',
   title: 'title',
   categoryId: 'categoryId',
+  caption: 'caption',
   location: 'location',
   year: 'year',
   description: 'description',
   imageUrl: 'imageUrl',
   optimisedUrl: 'optimisedUrl',
   thumbnailUrl: 'thumbnailUrl',
+  published: 'published',
   featured: 'featured',
   displayOrder: 'displayOrder',
   createdById: 'createdById',
@@ -240,32 +243,42 @@ exports.Prisma.GalleryItemScalarFieldEnum = {
 
 exports.Prisma.ProgramScalarFieldEnum = {
   id: 'id',
+  slug: 'slug',
   title: 'title',
   category: 'category',
   status: 'status',
   iconName: 'iconName',
   tone: 'tone',
   summary: 'summary',
+  description: 'description',
   objectives: 'objectives',
   beneficiaries: 'beneficiaries',
   coverage: 'coverage',
   leadUnit: 'leadUnit',
+  featuredImageUrl: 'featuredImageUrl',
   bannerImageUrl: 'bannerImageUrl',
   displayOrder: 'displayOrder',
+  published: 'published',
+  featured: 'featured',
   createdById: 'createdById',
   updatedById: 'updatedById',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  deletedAt: 'deletedAt'
 };
 
 exports.Prisma.ContactSubmissionScalarFieldEnum = {
   id: 'id',
   name: 'name',
+  phone: 'phone',
   email: 'email',
   subject: 'subject',
+  enquiryType: 'enquiryType',
   message: 'message',
+  status: 'status',
   read: 'read',
   createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
   deletedAt: 'deletedAt'
 };
 

@@ -1,8 +1,11 @@
-import { programs } from "../../data/programs";
+interface Props {
+  count?: number;
+}
 
-export default function ProgramsOverview() {
+export default function ProgramsOverview({ count }: Props) {
+  const coreCount = count ?? 4;
   const items = [
-    { value: programs.length, label: "Core Programs" },
+    { value: String(coreCount), label: "Core Programs" },
     { value: "11", label: "LGAs Covered" },
     { value: "4", label: "Service Pillars" },
     { value: "100%", label: "Community Focus" },

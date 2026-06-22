@@ -244,22 +244,27 @@ export async function getProjectStats(): Promise<ProjectStats> {
 
 // ─── Distinct values for filters ──────────────────────────────────────────────
 
+import { GOMBE_LGA_NAMES } from '@/lib/constants/gombe-lgas';
+
+/**
+ * Returns the full list of Gombe State LGAs from the shared master-data source.
+ * This is used to populate filter dropdowns and form selects.
+ * Using a constant ensures the dropdown is always populated even when the
+ * database is empty — no dependency on DB content.
+ */
 export async function listLGAs(): Promise<string[]> {
-  const result = await prisma.project.findMany({
-    where: { deletedAt: null },
-    select: { lga: true },
-    distinct: ['lga'],
-    orderBy: { lga: 'asc' },
-  });
-  return result.map((r) => r.lga);
+  return GOMBE_LGA_NAMES;
 }
 
+/**
+ * Returns years from 2000 to the current year, newest first.
+ * Always populated — does not depend on DB content.
+ */
 export async function listYears(): Promise<number[]> {
-  const result = await prisma.project.findMany({
-    where: { deletedAt: null },
-    select: { year: true },
-    distinct: ['year'],
-    orderBy: { year: 'desc' },
-  });
-  return result.map((r) => r.year);
+  const currentYear = new Date().getFullYear();
+  const years: number[] = [];
+  for (let y = currentYear; y >= 2000; y--) {
+    years.push(y);
+  }
+  return years;
 }

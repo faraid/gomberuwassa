@@ -1,8 +1,11 @@
 'use client';
 
+
+
 import { useActionState } from 'react';
 import { Loader2 } from 'lucide-react';
 import { createProjectAction, updateProjectAction, type ActionState } from './actions';
+import ImageUpload from '@/app/components/shared/ImageUpload';
 
 interface ProjectType { id: string; name: string }
 
@@ -103,16 +106,32 @@ export default function ProjectForm({ projectTypes, allLgas, allYears, mode, pro
           <label htmlFor="typeId" className="block text-sm font-medium text-gray-700 mb-1">
             Project Type <span className="text-red-500">*</span>
           </label>
-          <select
-            id="typeId" name="typeId" required
-            defaultValue={defaultValues?.typeId ?? ''}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="">Select type…</option>
-            {projectTypes.map((t) => (
-              <option key={t.id} value={t.id}>{t.name}</option>
-            ))}
-          </select>
+
+
+
+
+
+
+
+
+
+
+          {projectTypes.length === 0 ? (
+            <div className="px-3 py-2 border border-gray-200 rounded-lg text-sm bg-yellow-50 text-yellow-800">
+              No project types found. Run seed to populate, or contact the administrator.
+            </div>
+          ) : (
+            <select
+              id="typeId" name="typeId" required
+              defaultValue={defaultValues?.typeId ?? ''}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="">Select type…</option>
+              {projectTypes.map((t) => (
+                <option key={t.id} value={t.id}>{t.name}</option>
+              ))}
+            </select>
+          )}
           {state.fieldErrors?.typeId && (
             <p className="text-xs text-red-600 mt-1">{state.fieldErrors.typeId[0]}</p>
           )}
@@ -214,32 +233,46 @@ export default function ProjectForm({ projectTypes, allLgas, allYears, mode, pro
         )}
       </div>
 
-      {/* Image URLs */}
-      <div className="space-y-3">
+
+
+      
+      {/* Images */}
+      <div className="space-y-4">
         <p className="text-sm font-medium text-gray-700">Images</p>
-        <div>
-          <label htmlFor="featuredImageUrl" className="block text-xs font-medium text-gray-600 mb-1">
-            Featured Image URL
-          </label>
-          <input
-            id="featuredImageUrl" name="featuredImageUrl" type="text"
-            defaultValue={defaultValues?.featuredImageUrl ?? ''}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="/uploads/image.jpg or https://..."
+
+
+
+
+
+
+
+
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <ImageUpload
+            module="projects"
+            inputName="featuredImageUrl"
+            currentUrl={defaultValues?.featuredImageUrl}
+            label="Featured Image"
           />
-          <p className="text-xs text-gray-400 mt-1">
-            Paste an image URL or leave blank to use the default placeholder.
-          </p>
-        </div>
-        <div>
-          <label htmlFor="thumbnailUrl" className="block text-xs font-medium text-gray-600 mb-1">
-            Thumbnail URL
-          </label>
-          <input
-            id="thumbnailUrl" name="thumbnailUrl" type="text"
-            defaultValue={defaultValues?.thumbnailUrl ?? ''}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="/uploads/thumb.jpg or https://..."
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <ImageUpload
+            module="projects"
+            inputName="thumbnailUrl"
+            currentUrl={defaultValues?.thumbnailUrl}
+            label="Thumbnail"
           />
         </div>
       </div>

@@ -1,35 +1,37 @@
-import { Droplet, Handshake, Toilet, Users } from "lucide-react";
-import { galleryCategories } from "../../data/gallery";
-import type { GalleryCategory } from "../../data/gallery";
-import type { LucideIcon } from "lucide-react";
+import { Droplet, Handshake, Image as ImageIcon, Toilet, Users } from 'lucide-react';
+import { galleryCategories } from '../../data/gallery';
+import type { LucideIcon } from 'lucide-react';
 
-const categoryMeta: Record<
-  GalleryCategory,
-  { icon: LucideIcon; tone: "blue" | "green"; body: string }
-> = {
-  "Water Projects": {
+const categoryMeta: Record<string, { icon: LucideIcon; tone: 'blue' | 'green'; body: string }> = {
+  'Water Projects': {
     icon: Droplet,
-    tone: "blue",
-    body: "Photos of boreholes, tanks, water points, and supply schemes.",
+    tone: 'blue',
+    body: 'Photos of boreholes, tanks, water points, and supply schemes.',
   },
-  "Community Engagement": {
+  'Community Engagement': {
     icon: Users,
-    tone: "green",
-    body: "Community participation, outreach, and local ownership activities.",
+    tone: 'green',
+    body: 'Community participation, outreach, and local ownership activities.',
   },
-  "Sanitation & Hygiene": {
+  'Sanitation & Hygiene': {
     icon: Toilet,
-    tone: "blue",
-    body: "Hygiene promotion, sanitation awareness, and school WASH activities.",
+    tone: 'blue',
+    body: 'Hygiene promotion, sanitation awareness, and school WASH activities.',
   },
-  "Stakeholder Meetings": {
+  'Stakeholder Meetings': {
     icon: Handshake,
-    tone: "green",
-    body: "Coordination meetings with partners, agencies, and community leaders.",
+    tone: 'green',
+    body: 'Coordination meetings with partners, agencies, and community leaders.',
   },
 };
 
-export default function GalleryCategories() {
+interface Props {
+  categories?: string[];
+}
+
+export default function GalleryCategories({ categories }: Props) {
+  const visibleCategories = categories && categories.length > 0 ? categories : galleryCategories;
+
   return (
     <section className="gallery-categories">
       <div className="wrap">
@@ -37,14 +39,18 @@ export default function GalleryCategories() {
           <p className="eyebrow">GALLERY AREAS</p>
           <h2>Photo Categories</h2>
           <p>
-            Gallery content is organized by service area so future CMS uploads
+            Gallery content is organized by service area so CMS uploads
             can be classified and displayed consistently.
           </p>
         </div>
 
         <div className="gallery-category-grid">
-          {galleryCategories.map((category) => {
-            const meta = categoryMeta[category];
+          {visibleCategories.map((category) => {
+            const meta = categoryMeta[category] ?? {
+              icon: ImageIcon,
+              tone: 'blue' as const,
+              body: 'Selected RUWASA photo updates and field activity highlights.',
+            };
             const Icon = meta.icon;
 
             return (

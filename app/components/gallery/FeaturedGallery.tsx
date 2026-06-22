@@ -1,11 +1,39 @@
-import Image from "next/image";
-import { CalendarDays, MapPin, Tag } from "lucide-react";
-import { galleryItems } from "../../data/gallery";
+import Image from 'next/image';
+import { CalendarDays, MapPin, Tag } from 'lucide-react';
+import { galleryItems } from '../../data/gallery';
+import type { PublicGalleryItem } from '@/lib/services/gallery.service';
 
-export default function FeaturedGallery() {
-  const featured = galleryItems.filter((item) => item.featured).slice(0, 3);
-  const lead = featured[0];
-  const side = featured.slice(1);
+type GalleryDisplayItem = PublicGalleryItem & {
+  location?: string;
+  date?: string;
+};
+
+function fallbackItems(): GalleryDisplayItem[] {
+  return galleryItems
+    .filter((item) => item.featured)
+    .slice(0, 3)
+    .map((item) => ({
+      id: item.id,
+      slug: item.id,
+      title: item.title,
+      category: item.category,
+      caption: item.description,
+      imageUrl: item.image,
+      featured: Boolean(item.featured),
+      displayOrder: 0,
+      location: item.location,
+      date: item.date,
+    }));
+}
+
+interface Props {
+  items?: PublicGalleryItem[];
+}
+
+export default function FeaturedGallery({ items }: Props) {
+  const featured = items && items.length > 0 ? items : fallbackItems();
+  const lead = featured[0] as GalleryDisplayItem | undefined;
+  const side = featured.slice(1) as GalleryDisplayItem[];
 
   if (!lead) return null;
 
@@ -24,16 +52,16 @@ export default function FeaturedGallery() {
         <div className="featured-gallery-grid">
           <article className="featured-gallery-lead">
             <div className="featured-gallery-image">
-              <Image src={lead.image} fill sizes="560px" alt={lead.title} />
+              <Image src={lead.imageUrl} fill sizes="560px" alt={lead.title} />
             </div>
             <div className="featured-gallery-caption">
               <div className="gallery-meta-line">
                 <span><Tag size={13} /> {lead.category}</span>
-                <span><MapPin size={13} /> {lead.location}</span>
-                <span><CalendarDays size={13} /> {lead.date}</span>
+                {lead.location && <span><MapPin size={13} /> {lead.location}</span>}
+                {lead.date && <span><CalendarDays size={13} /> {lead.date}</span>}
               </div>
               <h3>{lead.title}</h3>
-              <p>{lead.description}</p>
+              <p>{lead.caption}</p>
             </div>
           </article>
 
@@ -41,12 +69,12 @@ export default function FeaturedGallery() {
             {side.map((item) => (
               <article className="featured-gallery-small" key={item.id}>
                 <div className="featured-gallery-small-image">
-                  <Image src={item.image} fill sizes="260px" alt={item.title} />
+                  <Image src={item.imageUrl} fill sizes="260px" alt={item.title} />
                 </div>
                 <div>
                   <span>{item.category}</span>
                   <h3>{item.title}</h3>
-                  <p>{item.location}</p>
+                  <p>{item.location ?? item.caption}</p>
                 </div>
               </article>
             ))}

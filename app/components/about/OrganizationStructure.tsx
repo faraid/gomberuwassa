@@ -10,7 +10,8 @@ interface Props {
 }
 
 export default function OrganizationStructure({ data = aboutDefaults.organization }: Props) {
-  const isPdf = data.mediaUrl.toLowerCase().endsWith('.pdf');
+  const mediaUrl = data.mediaUrl ?? '';
+  const isPdf = mediaUrl.toLowerCase().endsWith('.pdf');
 
   return (
     <section className="org-structure">
@@ -21,13 +22,13 @@ export default function OrganizationStructure({ data = aboutDefaults.organizatio
           <p>{data.description}</p>
         </div>
 
-        {data.mediaUrl && !isPdf ? (
+        {mediaUrl && !isPdf ? (
           <div className="org-chart" role="img" aria-label="RUWASA organisational structure">
-            <Image src={data.mediaUrl} alt="RUWASA organisational structure" width={1100} height={620} className="w-full h-auto" />
+            <Image src={mediaUrl} alt="RUWASA organisational structure" width={1100} height={620} className="w-full h-auto" />
           </div>
-        ) : data.mediaUrl && isPdf ? (
+        ) : mediaUrl && isPdf ? (
           <div className="org-chart" role="img" aria-label="RUWASA organisational structure">
-            <a className="button button-primary" href={data.mediaUrl} target="_blank" rel="noreferrer">
+            <a className="button button-primary" href={mediaUrl} target="_blank" rel="noreferrer">
               View Organisational Structure PDF
             </a>
           </div>
@@ -63,5 +64,6 @@ export default function OrganizationStructure({ data = aboutDefaults.organizatio
     </section>
   );
 }
+
 
 

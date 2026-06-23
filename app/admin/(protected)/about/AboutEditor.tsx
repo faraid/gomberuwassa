@@ -74,7 +74,23 @@ function AboutFileUpload({ value, disabled, onChange }: { value: string; disable
           {uploading ? 'Uploading...' : 'Upload image or PDF'}
         </button>
         <input ref={inputRef} type="file" accept="image/jpeg,image/png,image/webp,image/gif,application/pdf" className="hidden" onChange={(event) => { const file = event.target.files?.[0]; if (file) void upload(file); }} />
-        {value && <p className="text-xs text-gray-500 mt-2 break-all">{value}</p>}
+        {value && (
+          <div className="mt-2 space-y-2">
+            <p className="text-xs text-gray-500 break-all">{value}</p>
+            <button
+              type="button"
+              disabled={disabled || uploading}
+              onClick={() => {
+                onChange('');
+                setError('');
+                if (inputRef.current) inputRef.current.value = '';
+              }}
+              className="text-xs text-red-600 hover:text-red-700 disabled:text-gray-400"
+            >
+              Remove file
+            </button>
+          </div>
+        )}
         {error && <p className="text-xs text-red-600 mt-2">{error}</p>}
       </div>
     </div>
@@ -176,4 +192,5 @@ export default function AboutEditor({ settings, canEdit }: Props) {
     </form>
   );
 }
+
 

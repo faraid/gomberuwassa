@@ -15,6 +15,7 @@ import {
   LogOut,
   ChevronRight,
   Home,
+  Info,
 } from 'lucide-react';
 
 interface NavItem {
@@ -27,6 +28,7 @@ interface NavItem {
 const NAV_ITEMS: NavItem[] = [
   { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
   { label: 'Homepage', href: '/admin/homepage', icon: Home },
+  { label: 'About Us', href: '/admin/about', icon: Info },
   { label: 'News', href: '/admin/news', icon: Newspaper },
   { label: 'Projects', href: '/admin/projects', icon: FolderKanban },
   { label: 'Gallery', href: '/admin/gallery', icon: Images },
@@ -125,3 +127,5 @@ export default function AdminSidebar({ role, fullName, email }: AdminSidebarProp
     </aside>
   );
 }
+
+

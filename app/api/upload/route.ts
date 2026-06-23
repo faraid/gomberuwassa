@@ -1,14 +1,14 @@
-import { NextRequest, NextResponse } from 'next/server';
+﻿import { NextRequest, NextResponse } from 'next/server';
 import { writeFile, mkdir } from 'fs/promises';
 import { existsSync } from 'fs';
 import path from 'path';
 
-// ─── Allowed upload targets ─────────────────────────────────────────────────
+// â”€â”€â”€ Allowed upload targets â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-const ALLOWED_TARGETS = ['projects', 'news', 'programs', 'gallery', 'homepage'] as const;
+const ALLOWED_TARGETS = ['projects', 'news', 'programs', 'gallery', 'homepage', 'about'] as const;
 type UploadTarget = (typeof ALLOWED_TARGETS)[number];
 
-// ─── POST ────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ POST â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export async function POST(request: NextRequest) {
   try {
@@ -28,7 +28,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate file type
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+    const allowedTypes = target === 'about'
+      ? ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'application/pdf']
+      : ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
     if (!allowedTypes.includes(file.type)) {
       return NextResponse.json(
         { error: `Unsupported file type "${file.type}". Allowed: ${allowedTypes.join(', ')}` },
@@ -67,3 +69,5 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Upload failed.' }, { status: 500 });
   }
 }
+
+

@@ -79,6 +79,36 @@ export type Program = $Result.DefaultSelection<Prisma.$ProgramPayload>
  */
 export type ContactSubmission = $Result.DefaultSelection<Prisma.$ContactSubmissionPayload>
 /**
+ * Model HomepageHero
+ * 
+ */
+export type HomepageHero = $Result.DefaultSelection<Prisma.$HomepageHeroPayload>
+/**
+ * Model HomepageValueCard
+ * 
+ */
+export type HomepageValueCard = $Result.DefaultSelection<Prisma.$HomepageValueCardPayload>
+/**
+ * Model HomepageStatistic
+ * 
+ */
+export type HomepageStatistic = $Result.DefaultSelection<Prisma.$HomepageStatisticPayload>
+/**
+ * Model HomepageFeaturedProject
+ * 
+ */
+export type HomepageFeaturedProject = $Result.DefaultSelection<Prisma.$HomepageFeaturedProjectPayload>
+/**
+ * Model HomepageFeaturedNews
+ * 
+ */
+export type HomepageFeaturedNews = $Result.DefaultSelection<Prisma.$HomepageFeaturedNewsPayload>
+/**
+ * Model HomepageProgram
+ * 
+ */
+export type HomepageProgram = $Result.DefaultSelection<Prisma.$HomepageProgramPayload>
+/**
  * Model SiteSetting
  * 
  */
@@ -407,6 +437,66 @@ export class PrismaClient<
     * ```
     */
   get contactSubmission(): Prisma.ContactSubmissionDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.homepageHero`: Exposes CRUD operations for the **HomepageHero** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more HomepageHeroes
+    * const homepageHeroes = await prisma.homepageHero.findMany()
+    * ```
+    */
+  get homepageHero(): Prisma.HomepageHeroDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.homepageValueCard`: Exposes CRUD operations for the **HomepageValueCard** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more HomepageValueCards
+    * const homepageValueCards = await prisma.homepageValueCard.findMany()
+    * ```
+    */
+  get homepageValueCard(): Prisma.HomepageValueCardDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.homepageStatistic`: Exposes CRUD operations for the **HomepageStatistic** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more HomepageStatistics
+    * const homepageStatistics = await prisma.homepageStatistic.findMany()
+    * ```
+    */
+  get homepageStatistic(): Prisma.HomepageStatisticDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.homepageFeaturedProject`: Exposes CRUD operations for the **HomepageFeaturedProject** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more HomepageFeaturedProjects
+    * const homepageFeaturedProjects = await prisma.homepageFeaturedProject.findMany()
+    * ```
+    */
+  get homepageFeaturedProject(): Prisma.HomepageFeaturedProjectDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.homepageFeaturedNews`: Exposes CRUD operations for the **HomepageFeaturedNews** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more HomepageFeaturedNews
+    * const homepageFeaturedNews = await prisma.homepageFeaturedNews.findMany()
+    * ```
+    */
+  get homepageFeaturedNews(): Prisma.HomepageFeaturedNewsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.homepageProgram`: Exposes CRUD operations for the **HomepageProgram** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more HomepagePrograms
+    * const homepagePrograms = await prisma.homepageProgram.findMany()
+    * ```
+    */
+  get homepageProgram(): Prisma.HomepageProgramDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.siteSetting`: Exposes CRUD operations for the **SiteSetting** model.
@@ -881,6 +971,12 @@ export namespace Prisma {
     GalleryItem: 'GalleryItem',
     Program: 'Program',
     ContactSubmission: 'ContactSubmission',
+    HomepageHero: 'HomepageHero',
+    HomepageValueCard: 'HomepageValueCard',
+    HomepageStatistic: 'HomepageStatistic',
+    HomepageFeaturedProject: 'HomepageFeaturedProject',
+    HomepageFeaturedNews: 'HomepageFeaturedNews',
+    HomepageProgram: 'HomepageProgram',
     SiteSetting: 'SiteSetting',
     AuditLog: 'AuditLog'
   };
@@ -901,7 +997,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "session" | "passwordResetToken" | "newsCategory" | "newsTag" | "articleTag" | "newsArticle" | "projectType" | "project" | "galleryCategory" | "galleryItem" | "program" | "contactSubmission" | "siteSetting" | "auditLog"
+      modelProps: "user" | "session" | "passwordResetToken" | "newsCategory" | "newsTag" | "articleTag" | "newsArticle" | "projectType" | "project" | "galleryCategory" | "galleryItem" | "program" | "contactSubmission" | "homepageHero" | "homepageValueCard" | "homepageStatistic" | "homepageFeaturedProject" | "homepageFeaturedNews" | "homepageProgram" | "siteSetting" | "auditLog"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1867,6 +1963,450 @@ export namespace Prisma {
           }
         }
       }
+      HomepageHero: {
+        payload: Prisma.$HomepageHeroPayload<ExtArgs>
+        fields: Prisma.HomepageHeroFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.HomepageHeroFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageHeroPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.HomepageHeroFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageHeroPayload>
+          }
+          findFirst: {
+            args: Prisma.HomepageHeroFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageHeroPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.HomepageHeroFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageHeroPayload>
+          }
+          findMany: {
+            args: Prisma.HomepageHeroFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageHeroPayload>[]
+          }
+          create: {
+            args: Prisma.HomepageHeroCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageHeroPayload>
+          }
+          createMany: {
+            args: Prisma.HomepageHeroCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.HomepageHeroCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageHeroPayload>[]
+          }
+          delete: {
+            args: Prisma.HomepageHeroDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageHeroPayload>
+          }
+          update: {
+            args: Prisma.HomepageHeroUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageHeroPayload>
+          }
+          deleteMany: {
+            args: Prisma.HomepageHeroDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.HomepageHeroUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.HomepageHeroUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageHeroPayload>[]
+          }
+          upsert: {
+            args: Prisma.HomepageHeroUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageHeroPayload>
+          }
+          aggregate: {
+            args: Prisma.HomepageHeroAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHomepageHero>
+          }
+          groupBy: {
+            args: Prisma.HomepageHeroGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HomepageHeroGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.HomepageHeroCountArgs<ExtArgs>
+            result: $Utils.Optional<HomepageHeroCountAggregateOutputType> | number
+          }
+        }
+      }
+      HomepageValueCard: {
+        payload: Prisma.$HomepageValueCardPayload<ExtArgs>
+        fields: Prisma.HomepageValueCardFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.HomepageValueCardFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageValueCardPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.HomepageValueCardFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageValueCardPayload>
+          }
+          findFirst: {
+            args: Prisma.HomepageValueCardFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageValueCardPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.HomepageValueCardFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageValueCardPayload>
+          }
+          findMany: {
+            args: Prisma.HomepageValueCardFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageValueCardPayload>[]
+          }
+          create: {
+            args: Prisma.HomepageValueCardCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageValueCardPayload>
+          }
+          createMany: {
+            args: Prisma.HomepageValueCardCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.HomepageValueCardCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageValueCardPayload>[]
+          }
+          delete: {
+            args: Prisma.HomepageValueCardDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageValueCardPayload>
+          }
+          update: {
+            args: Prisma.HomepageValueCardUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageValueCardPayload>
+          }
+          deleteMany: {
+            args: Prisma.HomepageValueCardDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.HomepageValueCardUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.HomepageValueCardUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageValueCardPayload>[]
+          }
+          upsert: {
+            args: Prisma.HomepageValueCardUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageValueCardPayload>
+          }
+          aggregate: {
+            args: Prisma.HomepageValueCardAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHomepageValueCard>
+          }
+          groupBy: {
+            args: Prisma.HomepageValueCardGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HomepageValueCardGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.HomepageValueCardCountArgs<ExtArgs>
+            result: $Utils.Optional<HomepageValueCardCountAggregateOutputType> | number
+          }
+        }
+      }
+      HomepageStatistic: {
+        payload: Prisma.$HomepageStatisticPayload<ExtArgs>
+        fields: Prisma.HomepageStatisticFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.HomepageStatisticFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageStatisticPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.HomepageStatisticFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageStatisticPayload>
+          }
+          findFirst: {
+            args: Prisma.HomepageStatisticFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageStatisticPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.HomepageStatisticFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageStatisticPayload>
+          }
+          findMany: {
+            args: Prisma.HomepageStatisticFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageStatisticPayload>[]
+          }
+          create: {
+            args: Prisma.HomepageStatisticCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageStatisticPayload>
+          }
+          createMany: {
+            args: Prisma.HomepageStatisticCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.HomepageStatisticCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageStatisticPayload>[]
+          }
+          delete: {
+            args: Prisma.HomepageStatisticDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageStatisticPayload>
+          }
+          update: {
+            args: Prisma.HomepageStatisticUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageStatisticPayload>
+          }
+          deleteMany: {
+            args: Prisma.HomepageStatisticDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.HomepageStatisticUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.HomepageStatisticUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageStatisticPayload>[]
+          }
+          upsert: {
+            args: Prisma.HomepageStatisticUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageStatisticPayload>
+          }
+          aggregate: {
+            args: Prisma.HomepageStatisticAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHomepageStatistic>
+          }
+          groupBy: {
+            args: Prisma.HomepageStatisticGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HomepageStatisticGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.HomepageStatisticCountArgs<ExtArgs>
+            result: $Utils.Optional<HomepageStatisticCountAggregateOutputType> | number
+          }
+        }
+      }
+      HomepageFeaturedProject: {
+        payload: Prisma.$HomepageFeaturedProjectPayload<ExtArgs>
+        fields: Prisma.HomepageFeaturedProjectFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.HomepageFeaturedProjectFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedProjectPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.HomepageFeaturedProjectFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedProjectPayload>
+          }
+          findFirst: {
+            args: Prisma.HomepageFeaturedProjectFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedProjectPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.HomepageFeaturedProjectFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedProjectPayload>
+          }
+          findMany: {
+            args: Prisma.HomepageFeaturedProjectFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedProjectPayload>[]
+          }
+          create: {
+            args: Prisma.HomepageFeaturedProjectCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedProjectPayload>
+          }
+          createMany: {
+            args: Prisma.HomepageFeaturedProjectCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.HomepageFeaturedProjectCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedProjectPayload>[]
+          }
+          delete: {
+            args: Prisma.HomepageFeaturedProjectDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedProjectPayload>
+          }
+          update: {
+            args: Prisma.HomepageFeaturedProjectUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedProjectPayload>
+          }
+          deleteMany: {
+            args: Prisma.HomepageFeaturedProjectDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.HomepageFeaturedProjectUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.HomepageFeaturedProjectUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedProjectPayload>[]
+          }
+          upsert: {
+            args: Prisma.HomepageFeaturedProjectUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedProjectPayload>
+          }
+          aggregate: {
+            args: Prisma.HomepageFeaturedProjectAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHomepageFeaturedProject>
+          }
+          groupBy: {
+            args: Prisma.HomepageFeaturedProjectGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HomepageFeaturedProjectGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.HomepageFeaturedProjectCountArgs<ExtArgs>
+            result: $Utils.Optional<HomepageFeaturedProjectCountAggregateOutputType> | number
+          }
+        }
+      }
+      HomepageFeaturedNews: {
+        payload: Prisma.$HomepageFeaturedNewsPayload<ExtArgs>
+        fields: Prisma.HomepageFeaturedNewsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.HomepageFeaturedNewsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedNewsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.HomepageFeaturedNewsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedNewsPayload>
+          }
+          findFirst: {
+            args: Prisma.HomepageFeaturedNewsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedNewsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.HomepageFeaturedNewsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedNewsPayload>
+          }
+          findMany: {
+            args: Prisma.HomepageFeaturedNewsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedNewsPayload>[]
+          }
+          create: {
+            args: Prisma.HomepageFeaturedNewsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedNewsPayload>
+          }
+          createMany: {
+            args: Prisma.HomepageFeaturedNewsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.HomepageFeaturedNewsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedNewsPayload>[]
+          }
+          delete: {
+            args: Prisma.HomepageFeaturedNewsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedNewsPayload>
+          }
+          update: {
+            args: Prisma.HomepageFeaturedNewsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedNewsPayload>
+          }
+          deleteMany: {
+            args: Prisma.HomepageFeaturedNewsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.HomepageFeaturedNewsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.HomepageFeaturedNewsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedNewsPayload>[]
+          }
+          upsert: {
+            args: Prisma.HomepageFeaturedNewsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageFeaturedNewsPayload>
+          }
+          aggregate: {
+            args: Prisma.HomepageFeaturedNewsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHomepageFeaturedNews>
+          }
+          groupBy: {
+            args: Prisma.HomepageFeaturedNewsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HomepageFeaturedNewsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.HomepageFeaturedNewsCountArgs<ExtArgs>
+            result: $Utils.Optional<HomepageFeaturedNewsCountAggregateOutputType> | number
+          }
+        }
+      }
+      HomepageProgram: {
+        payload: Prisma.$HomepageProgramPayload<ExtArgs>
+        fields: Prisma.HomepageProgramFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.HomepageProgramFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageProgramPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.HomepageProgramFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageProgramPayload>
+          }
+          findFirst: {
+            args: Prisma.HomepageProgramFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageProgramPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.HomepageProgramFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageProgramPayload>
+          }
+          findMany: {
+            args: Prisma.HomepageProgramFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageProgramPayload>[]
+          }
+          create: {
+            args: Prisma.HomepageProgramCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageProgramPayload>
+          }
+          createMany: {
+            args: Prisma.HomepageProgramCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.HomepageProgramCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageProgramPayload>[]
+          }
+          delete: {
+            args: Prisma.HomepageProgramDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageProgramPayload>
+          }
+          update: {
+            args: Prisma.HomepageProgramUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageProgramPayload>
+          }
+          deleteMany: {
+            args: Prisma.HomepageProgramDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.HomepageProgramUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.HomepageProgramUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageProgramPayload>[]
+          }
+          upsert: {
+            args: Prisma.HomepageProgramUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HomepageProgramPayload>
+          }
+          aggregate: {
+            args: Prisma.HomepageProgramAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHomepageProgram>
+          }
+          groupBy: {
+            args: Prisma.HomepageProgramGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HomepageProgramGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.HomepageProgramCountArgs<ExtArgs>
+            result: $Utils.Optional<HomepageProgramCountAggregateOutputType> | number
+          }
+        }
+      }
       SiteSetting: {
         payload: Prisma.$SiteSettingPayload<ExtArgs>
         fields: Prisma.SiteSettingFieldRefs
@@ -2124,6 +2664,12 @@ export namespace Prisma {
     galleryItem?: GalleryItemOmit
     program?: ProgramOmit
     contactSubmission?: ContactSubmissionOmit
+    homepageHero?: HomepageHeroOmit
+    homepageValueCard?: HomepageValueCardOmit
+    homepageStatistic?: HomepageStatisticOmit
+    homepageFeaturedProject?: HomepageFeaturedProjectOmit
+    homepageFeaturedNews?: HomepageFeaturedNewsOmit
+    homepageProgram?: HomepageProgramOmit
     siteSetting?: SiteSettingOmit
     auditLog?: AuditLogOmit
   }
@@ -2317,10 +2863,12 @@ export namespace Prisma {
    */
 
   export type NewsArticleCountOutputType = {
+    homepageFeatured: number
     tags: number
   }
 
   export type NewsArticleCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    homepageFeatured?: boolean | NewsArticleCountOutputTypeCountHomepageFeaturedArgs
     tags?: boolean | NewsArticleCountOutputTypeCountTagsArgs
   }
 
@@ -2333,6 +2881,13 @@ export namespace Prisma {
      * Select specific fields to fetch from the NewsArticleCountOutputType
      */
     select?: NewsArticleCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * NewsArticleCountOutputType without action
+   */
+  export type NewsArticleCountOutputTypeCountHomepageFeaturedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HomepageFeaturedNewsWhereInput
   }
 
   /**
@@ -2371,6 +2926,37 @@ export namespace Prisma {
    */
   export type ProjectTypeCountOutputTypeCountProjectsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ProjectWhereInput
+  }
+
+
+  /**
+   * Count Type ProjectCountOutputType
+   */
+
+  export type ProjectCountOutputType = {
+    featuredHomepage: number
+  }
+
+  export type ProjectCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    featuredHomepage?: boolean | ProjectCountOutputTypeCountFeaturedHomepageArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * ProjectCountOutputType without action
+   */
+  export type ProjectCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProjectCountOutputType
+     */
+    select?: ProjectCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * ProjectCountOutputType without action
+   */
+  export type ProjectCountOutputTypeCountFeaturedHomepageArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HomepageFeaturedProjectWhereInput
   }
 
 
@@ -9100,6 +9686,7 @@ export namespace Prisma {
     updatedAt?: boolean
     deletedAt?: boolean
     category?: boolean | NewsCategoryDefaultArgs<ExtArgs>
+    homepageFeatured?: boolean | NewsArticle$homepageFeaturedArgs<ExtArgs>
     tags?: boolean | NewsArticle$tagsArgs<ExtArgs>
     _count?: boolean | NewsArticleCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["newsArticle"]>
@@ -9169,6 +9756,7 @@ export namespace Prisma {
   export type NewsArticleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slug" | "title" | "categoryId" | "excerpt" | "body" | "featuredImageUrl" | "thumbnailUrl" | "status" | "featured" | "scheduledAt" | "publishedAt" | "createdById" | "updatedById" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["newsArticle"]>
   export type NewsArticleInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     category?: boolean | NewsCategoryDefaultArgs<ExtArgs>
+    homepageFeatured?: boolean | NewsArticle$homepageFeaturedArgs<ExtArgs>
     tags?: boolean | NewsArticle$tagsArgs<ExtArgs>
     _count?: boolean | NewsArticleCountOutputTypeDefaultArgs<ExtArgs>
   }
@@ -9183,6 +9771,7 @@ export namespace Prisma {
     name: "NewsArticle"
     objects: {
       category: Prisma.$NewsCategoryPayload<ExtArgs>
+      homepageFeatured: Prisma.$HomepageFeaturedNewsPayload<ExtArgs>[]
       tags: Prisma.$ArticleTagPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -9598,6 +10187,7 @@ export namespace Prisma {
   export interface Prisma__NewsArticleClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     category<T extends NewsCategoryDefaultArgs<ExtArgs> = {}>(args?: Subset<T, NewsCategoryDefaultArgs<ExtArgs>>): Prisma__NewsCategoryClient<$Result.GetResult<Prisma.$NewsCategoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    homepageFeatured<T extends NewsArticle$homepageFeaturedArgs<ExtArgs> = {}>(args?: Subset<T, NewsArticle$homepageFeaturedArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageFeaturedNewsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     tags<T extends NewsArticle$tagsArgs<ExtArgs> = {}>(args?: Subset<T, NewsArticle$tagsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ArticleTagPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -10038,6 +10628,30 @@ export namespace Prisma {
      * Limit how many NewsArticles to delete.
      */
     limit?: number
+  }
+
+  /**
+   * NewsArticle.homepageFeatured
+   */
+  export type NewsArticle$homepageFeaturedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedNews
+     */
+    select?: HomepageFeaturedNewsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedNews
+     */
+    omit?: HomepageFeaturedNewsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedNewsInclude<ExtArgs> | null
+    where?: HomepageFeaturedNewsWhereInput
+    orderBy?: HomepageFeaturedNewsOrderByWithRelationInput | HomepageFeaturedNewsOrderByWithRelationInput[]
+    cursor?: HomepageFeaturedNewsWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: HomepageFeaturedNewsScalarFieldEnum | HomepageFeaturedNewsScalarFieldEnum[]
   }
 
   /**
@@ -11433,6 +12047,8 @@ export namespace Prisma {
     updatedAt?: boolean
     deletedAt?: boolean
     projectType?: boolean | ProjectTypeDefaultArgs<ExtArgs>
+    featuredHomepage?: boolean | Project$featuredHomepageArgs<ExtArgs>
+    _count?: boolean | ProjectCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["project"]>
 
   export type ProjectSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -11506,6 +12122,8 @@ export namespace Prisma {
   export type ProjectOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "lga" | "community" | "typeId" | "status" | "year" | "progress" | "beneficiaries" | "description" | "featuredImageUrl" | "thumbnailUrl" | "featured" | "completionDate" | "createdById" | "updatedById" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["project"]>
   export type ProjectInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     projectType?: boolean | ProjectTypeDefaultArgs<ExtArgs>
+    featuredHomepage?: boolean | Project$featuredHomepageArgs<ExtArgs>
+    _count?: boolean | ProjectCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type ProjectIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     projectType?: boolean | ProjectTypeDefaultArgs<ExtArgs>
@@ -11518,6 +12136,7 @@ export namespace Prisma {
     name: "Project"
     objects: {
       projectType: Prisma.$ProjectTypePayload<ExtArgs>
+      featuredHomepage: Prisma.$HomepageFeaturedProjectPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -11934,6 +12553,7 @@ export namespace Prisma {
   export interface Prisma__ProjectClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     projectType<T extends ProjectTypeDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ProjectTypeDefaultArgs<ExtArgs>>): Prisma__ProjectTypeClient<$Result.GetResult<Prisma.$ProjectTypePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    featuredHomepage<T extends Project$featuredHomepageArgs<ExtArgs> = {}>(args?: Subset<T, Project$featuredHomepageArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageFeaturedProjectPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -12375,6 +12995,30 @@ export namespace Prisma {
      * Limit how many Projects to delete.
      */
     limit?: number
+  }
+
+  /**
+   * Project.featuredHomepage
+   */
+  export type Project$featuredHomepageArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedProject
+     */
+    select?: HomepageFeaturedProjectSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedProject
+     */
+    omit?: HomepageFeaturedProjectOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedProjectInclude<ExtArgs> | null
+    where?: HomepageFeaturedProjectWhereInput
+    orderBy?: HomepageFeaturedProjectOrderByWithRelationInput | HomepageFeaturedProjectOrderByWithRelationInput[]
+    cursor?: HomepageFeaturedProjectWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: HomepageFeaturedProjectScalarFieldEnum | HomepageFeaturedProjectScalarFieldEnum[]
   }
 
   /**
@@ -17051,6 +17695,6363 @@ export namespace Prisma {
 
 
   /**
+   * Model HomepageHero
+   */
+
+  export type AggregateHomepageHero = {
+    _count: HomepageHeroCountAggregateOutputType | null
+    _min: HomepageHeroMinAggregateOutputType | null
+    _max: HomepageHeroMaxAggregateOutputType | null
+  }
+
+  export type HomepageHeroMinAggregateOutputType = {
+    id: string | null
+    title: string | null
+    subtitle: string | null
+    description: string | null
+    heroImageUrl: string | null
+    primaryBtnText: string | null
+    primaryBtnLink: string | null
+    secondaryBtnText: string | null
+    secondaryBtnLink: string | null
+    updatedAt: Date | null
+  }
+
+  export type HomepageHeroMaxAggregateOutputType = {
+    id: string | null
+    title: string | null
+    subtitle: string | null
+    description: string | null
+    heroImageUrl: string | null
+    primaryBtnText: string | null
+    primaryBtnLink: string | null
+    secondaryBtnText: string | null
+    secondaryBtnLink: string | null
+    updatedAt: Date | null
+  }
+
+  export type HomepageHeroCountAggregateOutputType = {
+    id: number
+    title: number
+    subtitle: number
+    description: number
+    heroImageUrl: number
+    primaryBtnText: number
+    primaryBtnLink: number
+    secondaryBtnText: number
+    secondaryBtnLink: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type HomepageHeroMinAggregateInputType = {
+    id?: true
+    title?: true
+    subtitle?: true
+    description?: true
+    heroImageUrl?: true
+    primaryBtnText?: true
+    primaryBtnLink?: true
+    secondaryBtnText?: true
+    secondaryBtnLink?: true
+    updatedAt?: true
+  }
+
+  export type HomepageHeroMaxAggregateInputType = {
+    id?: true
+    title?: true
+    subtitle?: true
+    description?: true
+    heroImageUrl?: true
+    primaryBtnText?: true
+    primaryBtnLink?: true
+    secondaryBtnText?: true
+    secondaryBtnLink?: true
+    updatedAt?: true
+  }
+
+  export type HomepageHeroCountAggregateInputType = {
+    id?: true
+    title?: true
+    subtitle?: true
+    description?: true
+    heroImageUrl?: true
+    primaryBtnText?: true
+    primaryBtnLink?: true
+    secondaryBtnText?: true
+    secondaryBtnLink?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type HomepageHeroAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HomepageHero to aggregate.
+     */
+    where?: HomepageHeroWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageHeroes to fetch.
+     */
+    orderBy?: HomepageHeroOrderByWithRelationInput | HomepageHeroOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: HomepageHeroWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageHeroes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageHeroes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned HomepageHeroes
+    **/
+    _count?: true | HomepageHeroCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: HomepageHeroMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: HomepageHeroMaxAggregateInputType
+  }
+
+  export type GetHomepageHeroAggregateType<T extends HomepageHeroAggregateArgs> = {
+        [P in keyof T & keyof AggregateHomepageHero]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateHomepageHero[P]>
+      : GetScalarType<T[P], AggregateHomepageHero[P]>
+  }
+
+
+
+
+  export type HomepageHeroGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HomepageHeroWhereInput
+    orderBy?: HomepageHeroOrderByWithAggregationInput | HomepageHeroOrderByWithAggregationInput[]
+    by: HomepageHeroScalarFieldEnum[] | HomepageHeroScalarFieldEnum
+    having?: HomepageHeroScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: HomepageHeroCountAggregateInputType | true
+    _min?: HomepageHeroMinAggregateInputType
+    _max?: HomepageHeroMaxAggregateInputType
+  }
+
+  export type HomepageHeroGroupByOutputType = {
+    id: string
+    title: string
+    subtitle: string
+    description: string
+    heroImageUrl: string
+    primaryBtnText: string
+    primaryBtnLink: string
+    secondaryBtnText: string
+    secondaryBtnLink: string
+    updatedAt: Date
+    _count: HomepageHeroCountAggregateOutputType | null
+    _min: HomepageHeroMinAggregateOutputType | null
+    _max: HomepageHeroMaxAggregateOutputType | null
+  }
+
+  type GetHomepageHeroGroupByPayload<T extends HomepageHeroGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<HomepageHeroGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof HomepageHeroGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], HomepageHeroGroupByOutputType[P]>
+            : GetScalarType<T[P], HomepageHeroGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type HomepageHeroSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    subtitle?: boolean
+    description?: boolean
+    heroImageUrl?: boolean
+    primaryBtnText?: boolean
+    primaryBtnLink?: boolean
+    secondaryBtnText?: boolean
+    secondaryBtnLink?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["homepageHero"]>
+
+  export type HomepageHeroSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    subtitle?: boolean
+    description?: boolean
+    heroImageUrl?: boolean
+    primaryBtnText?: boolean
+    primaryBtnLink?: boolean
+    secondaryBtnText?: boolean
+    secondaryBtnLink?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["homepageHero"]>
+
+  export type HomepageHeroSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    subtitle?: boolean
+    description?: boolean
+    heroImageUrl?: boolean
+    primaryBtnText?: boolean
+    primaryBtnLink?: boolean
+    secondaryBtnText?: boolean
+    secondaryBtnLink?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["homepageHero"]>
+
+  export type HomepageHeroSelectScalar = {
+    id?: boolean
+    title?: boolean
+    subtitle?: boolean
+    description?: boolean
+    heroImageUrl?: boolean
+    primaryBtnText?: boolean
+    primaryBtnLink?: boolean
+    secondaryBtnText?: boolean
+    secondaryBtnLink?: boolean
+    updatedAt?: boolean
+  }
+
+  export type HomepageHeroOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "subtitle" | "description" | "heroImageUrl" | "primaryBtnText" | "primaryBtnLink" | "secondaryBtnText" | "secondaryBtnLink" | "updatedAt", ExtArgs["result"]["homepageHero"]>
+
+  export type $HomepageHeroPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "HomepageHero"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      title: string
+      subtitle: string
+      description: string
+      heroImageUrl: string
+      primaryBtnText: string
+      primaryBtnLink: string
+      secondaryBtnText: string
+      secondaryBtnLink: string
+      updatedAt: Date
+    }, ExtArgs["result"]["homepageHero"]>
+    composites: {}
+  }
+
+  type HomepageHeroGetPayload<S extends boolean | null | undefined | HomepageHeroDefaultArgs> = $Result.GetResult<Prisma.$HomepageHeroPayload, S>
+
+  type HomepageHeroCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HomepageHeroFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HomepageHeroCountAggregateInputType | true
+    }
+
+  export interface HomepageHeroDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['HomepageHero'], meta: { name: 'HomepageHero' } }
+    /**
+     * Find zero or one HomepageHero that matches the filter.
+     * @param {HomepageHeroFindUniqueArgs} args - Arguments to find a HomepageHero
+     * @example
+     * // Get one HomepageHero
+     * const homepageHero = await prisma.homepageHero.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends HomepageHeroFindUniqueArgs>(args: SelectSubset<T, HomepageHeroFindUniqueArgs<ExtArgs>>): Prisma__HomepageHeroClient<$Result.GetResult<Prisma.$HomepageHeroPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one HomepageHero that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {HomepageHeroFindUniqueOrThrowArgs} args - Arguments to find a HomepageHero
+     * @example
+     * // Get one HomepageHero
+     * const homepageHero = await prisma.homepageHero.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends HomepageHeroFindUniqueOrThrowArgs>(args: SelectSubset<T, HomepageHeroFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HomepageHeroClient<$Result.GetResult<Prisma.$HomepageHeroPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HomepageHero that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageHeroFindFirstArgs} args - Arguments to find a HomepageHero
+     * @example
+     * // Get one HomepageHero
+     * const homepageHero = await prisma.homepageHero.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends HomepageHeroFindFirstArgs>(args?: SelectSubset<T, HomepageHeroFindFirstArgs<ExtArgs>>): Prisma__HomepageHeroClient<$Result.GetResult<Prisma.$HomepageHeroPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HomepageHero that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageHeroFindFirstOrThrowArgs} args - Arguments to find a HomepageHero
+     * @example
+     * // Get one HomepageHero
+     * const homepageHero = await prisma.homepageHero.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends HomepageHeroFindFirstOrThrowArgs>(args?: SelectSubset<T, HomepageHeroFindFirstOrThrowArgs<ExtArgs>>): Prisma__HomepageHeroClient<$Result.GetResult<Prisma.$HomepageHeroPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more HomepageHeroes that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageHeroFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all HomepageHeroes
+     * const homepageHeroes = await prisma.homepageHero.findMany()
+     * 
+     * // Get first 10 HomepageHeroes
+     * const homepageHeroes = await prisma.homepageHero.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const homepageHeroWithIdOnly = await prisma.homepageHero.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends HomepageHeroFindManyArgs>(args?: SelectSubset<T, HomepageHeroFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageHeroPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a HomepageHero.
+     * @param {HomepageHeroCreateArgs} args - Arguments to create a HomepageHero.
+     * @example
+     * // Create one HomepageHero
+     * const HomepageHero = await prisma.homepageHero.create({
+     *   data: {
+     *     // ... data to create a HomepageHero
+     *   }
+     * })
+     * 
+     */
+    create<T extends HomepageHeroCreateArgs>(args: SelectSubset<T, HomepageHeroCreateArgs<ExtArgs>>): Prisma__HomepageHeroClient<$Result.GetResult<Prisma.$HomepageHeroPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many HomepageHeroes.
+     * @param {HomepageHeroCreateManyArgs} args - Arguments to create many HomepageHeroes.
+     * @example
+     * // Create many HomepageHeroes
+     * const homepageHero = await prisma.homepageHero.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends HomepageHeroCreateManyArgs>(args?: SelectSubset<T, HomepageHeroCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many HomepageHeroes and returns the data saved in the database.
+     * @param {HomepageHeroCreateManyAndReturnArgs} args - Arguments to create many HomepageHeroes.
+     * @example
+     * // Create many HomepageHeroes
+     * const homepageHero = await prisma.homepageHero.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many HomepageHeroes and only return the `id`
+     * const homepageHeroWithIdOnly = await prisma.homepageHero.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends HomepageHeroCreateManyAndReturnArgs>(args?: SelectSubset<T, HomepageHeroCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageHeroPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a HomepageHero.
+     * @param {HomepageHeroDeleteArgs} args - Arguments to delete one HomepageHero.
+     * @example
+     * // Delete one HomepageHero
+     * const HomepageHero = await prisma.homepageHero.delete({
+     *   where: {
+     *     // ... filter to delete one HomepageHero
+     *   }
+     * })
+     * 
+     */
+    delete<T extends HomepageHeroDeleteArgs>(args: SelectSubset<T, HomepageHeroDeleteArgs<ExtArgs>>): Prisma__HomepageHeroClient<$Result.GetResult<Prisma.$HomepageHeroPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one HomepageHero.
+     * @param {HomepageHeroUpdateArgs} args - Arguments to update one HomepageHero.
+     * @example
+     * // Update one HomepageHero
+     * const homepageHero = await prisma.homepageHero.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends HomepageHeroUpdateArgs>(args: SelectSubset<T, HomepageHeroUpdateArgs<ExtArgs>>): Prisma__HomepageHeroClient<$Result.GetResult<Prisma.$HomepageHeroPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more HomepageHeroes.
+     * @param {HomepageHeroDeleteManyArgs} args - Arguments to filter HomepageHeroes to delete.
+     * @example
+     * // Delete a few HomepageHeroes
+     * const { count } = await prisma.homepageHero.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends HomepageHeroDeleteManyArgs>(args?: SelectSubset<T, HomepageHeroDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HomepageHeroes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageHeroUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many HomepageHeroes
+     * const homepageHero = await prisma.homepageHero.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends HomepageHeroUpdateManyArgs>(args: SelectSubset<T, HomepageHeroUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HomepageHeroes and returns the data updated in the database.
+     * @param {HomepageHeroUpdateManyAndReturnArgs} args - Arguments to update many HomepageHeroes.
+     * @example
+     * // Update many HomepageHeroes
+     * const homepageHero = await prisma.homepageHero.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more HomepageHeroes and only return the `id`
+     * const homepageHeroWithIdOnly = await prisma.homepageHero.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends HomepageHeroUpdateManyAndReturnArgs>(args: SelectSubset<T, HomepageHeroUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageHeroPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one HomepageHero.
+     * @param {HomepageHeroUpsertArgs} args - Arguments to update or create a HomepageHero.
+     * @example
+     * // Update or create a HomepageHero
+     * const homepageHero = await prisma.homepageHero.upsert({
+     *   create: {
+     *     // ... data to create a HomepageHero
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the HomepageHero we want to update
+     *   }
+     * })
+     */
+    upsert<T extends HomepageHeroUpsertArgs>(args: SelectSubset<T, HomepageHeroUpsertArgs<ExtArgs>>): Prisma__HomepageHeroClient<$Result.GetResult<Prisma.$HomepageHeroPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of HomepageHeroes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageHeroCountArgs} args - Arguments to filter HomepageHeroes to count.
+     * @example
+     * // Count the number of HomepageHeroes
+     * const count = await prisma.homepageHero.count({
+     *   where: {
+     *     // ... the filter for the HomepageHeroes we want to count
+     *   }
+     * })
+    **/
+    count<T extends HomepageHeroCountArgs>(
+      args?: Subset<T, HomepageHeroCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], HomepageHeroCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a HomepageHero.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageHeroAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends HomepageHeroAggregateArgs>(args: Subset<T, HomepageHeroAggregateArgs>): Prisma.PrismaPromise<GetHomepageHeroAggregateType<T>>
+
+    /**
+     * Group by HomepageHero.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageHeroGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends HomepageHeroGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: HomepageHeroGroupByArgs['orderBy'] }
+        : { orderBy?: HomepageHeroGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, HomepageHeroGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHomepageHeroGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the HomepageHero model
+   */
+  readonly fields: HomepageHeroFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for HomepageHero.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__HomepageHeroClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the HomepageHero model
+   */
+  interface HomepageHeroFieldRefs {
+    readonly id: FieldRef<"HomepageHero", 'String'>
+    readonly title: FieldRef<"HomepageHero", 'String'>
+    readonly subtitle: FieldRef<"HomepageHero", 'String'>
+    readonly description: FieldRef<"HomepageHero", 'String'>
+    readonly heroImageUrl: FieldRef<"HomepageHero", 'String'>
+    readonly primaryBtnText: FieldRef<"HomepageHero", 'String'>
+    readonly primaryBtnLink: FieldRef<"HomepageHero", 'String'>
+    readonly secondaryBtnText: FieldRef<"HomepageHero", 'String'>
+    readonly secondaryBtnLink: FieldRef<"HomepageHero", 'String'>
+    readonly updatedAt: FieldRef<"HomepageHero", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * HomepageHero findUnique
+   */
+  export type HomepageHeroFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageHero
+     */
+    select?: HomepageHeroSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageHero
+     */
+    omit?: HomepageHeroOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageHero to fetch.
+     */
+    where: HomepageHeroWhereUniqueInput
+  }
+
+  /**
+   * HomepageHero findUniqueOrThrow
+   */
+  export type HomepageHeroFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageHero
+     */
+    select?: HomepageHeroSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageHero
+     */
+    omit?: HomepageHeroOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageHero to fetch.
+     */
+    where: HomepageHeroWhereUniqueInput
+  }
+
+  /**
+   * HomepageHero findFirst
+   */
+  export type HomepageHeroFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageHero
+     */
+    select?: HomepageHeroSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageHero
+     */
+    omit?: HomepageHeroOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageHero to fetch.
+     */
+    where?: HomepageHeroWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageHeroes to fetch.
+     */
+    orderBy?: HomepageHeroOrderByWithRelationInput | HomepageHeroOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HomepageHeroes.
+     */
+    cursor?: HomepageHeroWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageHeroes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageHeroes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HomepageHeroes.
+     */
+    distinct?: HomepageHeroScalarFieldEnum | HomepageHeroScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageHero findFirstOrThrow
+   */
+  export type HomepageHeroFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageHero
+     */
+    select?: HomepageHeroSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageHero
+     */
+    omit?: HomepageHeroOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageHero to fetch.
+     */
+    where?: HomepageHeroWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageHeroes to fetch.
+     */
+    orderBy?: HomepageHeroOrderByWithRelationInput | HomepageHeroOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HomepageHeroes.
+     */
+    cursor?: HomepageHeroWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageHeroes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageHeroes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HomepageHeroes.
+     */
+    distinct?: HomepageHeroScalarFieldEnum | HomepageHeroScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageHero findMany
+   */
+  export type HomepageHeroFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageHero
+     */
+    select?: HomepageHeroSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageHero
+     */
+    omit?: HomepageHeroOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageHeroes to fetch.
+     */
+    where?: HomepageHeroWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageHeroes to fetch.
+     */
+    orderBy?: HomepageHeroOrderByWithRelationInput | HomepageHeroOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing HomepageHeroes.
+     */
+    cursor?: HomepageHeroWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageHeroes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageHeroes.
+     */
+    skip?: number
+    distinct?: HomepageHeroScalarFieldEnum | HomepageHeroScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageHero create
+   */
+  export type HomepageHeroCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageHero
+     */
+    select?: HomepageHeroSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageHero
+     */
+    omit?: HomepageHeroOmit<ExtArgs> | null
+    /**
+     * The data needed to create a HomepageHero.
+     */
+    data: XOR<HomepageHeroCreateInput, HomepageHeroUncheckedCreateInput>
+  }
+
+  /**
+   * HomepageHero createMany
+   */
+  export type HomepageHeroCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many HomepageHeroes.
+     */
+    data: HomepageHeroCreateManyInput | HomepageHeroCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HomepageHero createManyAndReturn
+   */
+  export type HomepageHeroCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageHero
+     */
+    select?: HomepageHeroSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageHero
+     */
+    omit?: HomepageHeroOmit<ExtArgs> | null
+    /**
+     * The data used to create many HomepageHeroes.
+     */
+    data: HomepageHeroCreateManyInput | HomepageHeroCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HomepageHero update
+   */
+  export type HomepageHeroUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageHero
+     */
+    select?: HomepageHeroSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageHero
+     */
+    omit?: HomepageHeroOmit<ExtArgs> | null
+    /**
+     * The data needed to update a HomepageHero.
+     */
+    data: XOR<HomepageHeroUpdateInput, HomepageHeroUncheckedUpdateInput>
+    /**
+     * Choose, which HomepageHero to update.
+     */
+    where: HomepageHeroWhereUniqueInput
+  }
+
+  /**
+   * HomepageHero updateMany
+   */
+  export type HomepageHeroUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update HomepageHeroes.
+     */
+    data: XOR<HomepageHeroUpdateManyMutationInput, HomepageHeroUncheckedUpdateManyInput>
+    /**
+     * Filter which HomepageHeroes to update
+     */
+    where?: HomepageHeroWhereInput
+    /**
+     * Limit how many HomepageHeroes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HomepageHero updateManyAndReturn
+   */
+  export type HomepageHeroUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageHero
+     */
+    select?: HomepageHeroSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageHero
+     */
+    omit?: HomepageHeroOmit<ExtArgs> | null
+    /**
+     * The data used to update HomepageHeroes.
+     */
+    data: XOR<HomepageHeroUpdateManyMutationInput, HomepageHeroUncheckedUpdateManyInput>
+    /**
+     * Filter which HomepageHeroes to update
+     */
+    where?: HomepageHeroWhereInput
+    /**
+     * Limit how many HomepageHeroes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HomepageHero upsert
+   */
+  export type HomepageHeroUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageHero
+     */
+    select?: HomepageHeroSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageHero
+     */
+    omit?: HomepageHeroOmit<ExtArgs> | null
+    /**
+     * The filter to search for the HomepageHero to update in case it exists.
+     */
+    where: HomepageHeroWhereUniqueInput
+    /**
+     * In case the HomepageHero found by the `where` argument doesn't exist, create a new HomepageHero with this data.
+     */
+    create: XOR<HomepageHeroCreateInput, HomepageHeroUncheckedCreateInput>
+    /**
+     * In case the HomepageHero was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<HomepageHeroUpdateInput, HomepageHeroUncheckedUpdateInput>
+  }
+
+  /**
+   * HomepageHero delete
+   */
+  export type HomepageHeroDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageHero
+     */
+    select?: HomepageHeroSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageHero
+     */
+    omit?: HomepageHeroOmit<ExtArgs> | null
+    /**
+     * Filter which HomepageHero to delete.
+     */
+    where: HomepageHeroWhereUniqueInput
+  }
+
+  /**
+   * HomepageHero deleteMany
+   */
+  export type HomepageHeroDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HomepageHeroes to delete
+     */
+    where?: HomepageHeroWhereInput
+    /**
+     * Limit how many HomepageHeroes to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * HomepageHero without action
+   */
+  export type HomepageHeroDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageHero
+     */
+    select?: HomepageHeroSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageHero
+     */
+    omit?: HomepageHeroOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model HomepageValueCard
+   */
+
+  export type AggregateHomepageValueCard = {
+    _count: HomepageValueCardCountAggregateOutputType | null
+    _avg: HomepageValueCardAvgAggregateOutputType | null
+    _sum: HomepageValueCardSumAggregateOutputType | null
+    _min: HomepageValueCardMinAggregateOutputType | null
+    _max: HomepageValueCardMaxAggregateOutputType | null
+  }
+
+  export type HomepageValueCardAvgAggregateOutputType = {
+    displayOrder: number | null
+  }
+
+  export type HomepageValueCardSumAggregateOutputType = {
+    displayOrder: number | null
+  }
+
+  export type HomepageValueCardMinAggregateOutputType = {
+    id: string | null
+    iconName: string | null
+    title: string | null
+    description: string | null
+    tone: $Enums.Tone | null
+    displayOrder: number | null
+    active: boolean | null
+  }
+
+  export type HomepageValueCardMaxAggregateOutputType = {
+    id: string | null
+    iconName: string | null
+    title: string | null
+    description: string | null
+    tone: $Enums.Tone | null
+    displayOrder: number | null
+    active: boolean | null
+  }
+
+  export type HomepageValueCardCountAggregateOutputType = {
+    id: number
+    iconName: number
+    title: number
+    description: number
+    tone: number
+    displayOrder: number
+    active: number
+    _all: number
+  }
+
+
+  export type HomepageValueCardAvgAggregateInputType = {
+    displayOrder?: true
+  }
+
+  export type HomepageValueCardSumAggregateInputType = {
+    displayOrder?: true
+  }
+
+  export type HomepageValueCardMinAggregateInputType = {
+    id?: true
+    iconName?: true
+    title?: true
+    description?: true
+    tone?: true
+    displayOrder?: true
+    active?: true
+  }
+
+  export type HomepageValueCardMaxAggregateInputType = {
+    id?: true
+    iconName?: true
+    title?: true
+    description?: true
+    tone?: true
+    displayOrder?: true
+    active?: true
+  }
+
+  export type HomepageValueCardCountAggregateInputType = {
+    id?: true
+    iconName?: true
+    title?: true
+    description?: true
+    tone?: true
+    displayOrder?: true
+    active?: true
+    _all?: true
+  }
+
+  export type HomepageValueCardAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HomepageValueCard to aggregate.
+     */
+    where?: HomepageValueCardWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageValueCards to fetch.
+     */
+    orderBy?: HomepageValueCardOrderByWithRelationInput | HomepageValueCardOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: HomepageValueCardWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageValueCards from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageValueCards.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned HomepageValueCards
+    **/
+    _count?: true | HomepageValueCardCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: HomepageValueCardAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: HomepageValueCardSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: HomepageValueCardMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: HomepageValueCardMaxAggregateInputType
+  }
+
+  export type GetHomepageValueCardAggregateType<T extends HomepageValueCardAggregateArgs> = {
+        [P in keyof T & keyof AggregateHomepageValueCard]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateHomepageValueCard[P]>
+      : GetScalarType<T[P], AggregateHomepageValueCard[P]>
+  }
+
+
+
+
+  export type HomepageValueCardGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HomepageValueCardWhereInput
+    orderBy?: HomepageValueCardOrderByWithAggregationInput | HomepageValueCardOrderByWithAggregationInput[]
+    by: HomepageValueCardScalarFieldEnum[] | HomepageValueCardScalarFieldEnum
+    having?: HomepageValueCardScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: HomepageValueCardCountAggregateInputType | true
+    _avg?: HomepageValueCardAvgAggregateInputType
+    _sum?: HomepageValueCardSumAggregateInputType
+    _min?: HomepageValueCardMinAggregateInputType
+    _max?: HomepageValueCardMaxAggregateInputType
+  }
+
+  export type HomepageValueCardGroupByOutputType = {
+    id: string
+    iconName: string
+    title: string
+    description: string
+    tone: $Enums.Tone
+    displayOrder: number
+    active: boolean
+    _count: HomepageValueCardCountAggregateOutputType | null
+    _avg: HomepageValueCardAvgAggregateOutputType | null
+    _sum: HomepageValueCardSumAggregateOutputType | null
+    _min: HomepageValueCardMinAggregateOutputType | null
+    _max: HomepageValueCardMaxAggregateOutputType | null
+  }
+
+  type GetHomepageValueCardGroupByPayload<T extends HomepageValueCardGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<HomepageValueCardGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof HomepageValueCardGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], HomepageValueCardGroupByOutputType[P]>
+            : GetScalarType<T[P], HomepageValueCardGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type HomepageValueCardSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    iconName?: boolean
+    title?: boolean
+    description?: boolean
+    tone?: boolean
+    displayOrder?: boolean
+    active?: boolean
+  }, ExtArgs["result"]["homepageValueCard"]>
+
+  export type HomepageValueCardSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    iconName?: boolean
+    title?: boolean
+    description?: boolean
+    tone?: boolean
+    displayOrder?: boolean
+    active?: boolean
+  }, ExtArgs["result"]["homepageValueCard"]>
+
+  export type HomepageValueCardSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    iconName?: boolean
+    title?: boolean
+    description?: boolean
+    tone?: boolean
+    displayOrder?: boolean
+    active?: boolean
+  }, ExtArgs["result"]["homepageValueCard"]>
+
+  export type HomepageValueCardSelectScalar = {
+    id?: boolean
+    iconName?: boolean
+    title?: boolean
+    description?: boolean
+    tone?: boolean
+    displayOrder?: boolean
+    active?: boolean
+  }
+
+  export type HomepageValueCardOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "iconName" | "title" | "description" | "tone" | "displayOrder" | "active", ExtArgs["result"]["homepageValueCard"]>
+
+  export type $HomepageValueCardPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "HomepageValueCard"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      iconName: string
+      title: string
+      description: string
+      tone: $Enums.Tone
+      displayOrder: number
+      active: boolean
+    }, ExtArgs["result"]["homepageValueCard"]>
+    composites: {}
+  }
+
+  type HomepageValueCardGetPayload<S extends boolean | null | undefined | HomepageValueCardDefaultArgs> = $Result.GetResult<Prisma.$HomepageValueCardPayload, S>
+
+  type HomepageValueCardCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HomepageValueCardFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HomepageValueCardCountAggregateInputType | true
+    }
+
+  export interface HomepageValueCardDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['HomepageValueCard'], meta: { name: 'HomepageValueCard' } }
+    /**
+     * Find zero or one HomepageValueCard that matches the filter.
+     * @param {HomepageValueCardFindUniqueArgs} args - Arguments to find a HomepageValueCard
+     * @example
+     * // Get one HomepageValueCard
+     * const homepageValueCard = await prisma.homepageValueCard.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends HomepageValueCardFindUniqueArgs>(args: SelectSubset<T, HomepageValueCardFindUniqueArgs<ExtArgs>>): Prisma__HomepageValueCardClient<$Result.GetResult<Prisma.$HomepageValueCardPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one HomepageValueCard that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {HomepageValueCardFindUniqueOrThrowArgs} args - Arguments to find a HomepageValueCard
+     * @example
+     * // Get one HomepageValueCard
+     * const homepageValueCard = await prisma.homepageValueCard.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends HomepageValueCardFindUniqueOrThrowArgs>(args: SelectSubset<T, HomepageValueCardFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HomepageValueCardClient<$Result.GetResult<Prisma.$HomepageValueCardPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HomepageValueCard that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageValueCardFindFirstArgs} args - Arguments to find a HomepageValueCard
+     * @example
+     * // Get one HomepageValueCard
+     * const homepageValueCard = await prisma.homepageValueCard.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends HomepageValueCardFindFirstArgs>(args?: SelectSubset<T, HomepageValueCardFindFirstArgs<ExtArgs>>): Prisma__HomepageValueCardClient<$Result.GetResult<Prisma.$HomepageValueCardPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HomepageValueCard that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageValueCardFindFirstOrThrowArgs} args - Arguments to find a HomepageValueCard
+     * @example
+     * // Get one HomepageValueCard
+     * const homepageValueCard = await prisma.homepageValueCard.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends HomepageValueCardFindFirstOrThrowArgs>(args?: SelectSubset<T, HomepageValueCardFindFirstOrThrowArgs<ExtArgs>>): Prisma__HomepageValueCardClient<$Result.GetResult<Prisma.$HomepageValueCardPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more HomepageValueCards that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageValueCardFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all HomepageValueCards
+     * const homepageValueCards = await prisma.homepageValueCard.findMany()
+     * 
+     * // Get first 10 HomepageValueCards
+     * const homepageValueCards = await prisma.homepageValueCard.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const homepageValueCardWithIdOnly = await prisma.homepageValueCard.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends HomepageValueCardFindManyArgs>(args?: SelectSubset<T, HomepageValueCardFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageValueCardPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a HomepageValueCard.
+     * @param {HomepageValueCardCreateArgs} args - Arguments to create a HomepageValueCard.
+     * @example
+     * // Create one HomepageValueCard
+     * const HomepageValueCard = await prisma.homepageValueCard.create({
+     *   data: {
+     *     // ... data to create a HomepageValueCard
+     *   }
+     * })
+     * 
+     */
+    create<T extends HomepageValueCardCreateArgs>(args: SelectSubset<T, HomepageValueCardCreateArgs<ExtArgs>>): Prisma__HomepageValueCardClient<$Result.GetResult<Prisma.$HomepageValueCardPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many HomepageValueCards.
+     * @param {HomepageValueCardCreateManyArgs} args - Arguments to create many HomepageValueCards.
+     * @example
+     * // Create many HomepageValueCards
+     * const homepageValueCard = await prisma.homepageValueCard.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends HomepageValueCardCreateManyArgs>(args?: SelectSubset<T, HomepageValueCardCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many HomepageValueCards and returns the data saved in the database.
+     * @param {HomepageValueCardCreateManyAndReturnArgs} args - Arguments to create many HomepageValueCards.
+     * @example
+     * // Create many HomepageValueCards
+     * const homepageValueCard = await prisma.homepageValueCard.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many HomepageValueCards and only return the `id`
+     * const homepageValueCardWithIdOnly = await prisma.homepageValueCard.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends HomepageValueCardCreateManyAndReturnArgs>(args?: SelectSubset<T, HomepageValueCardCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageValueCardPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a HomepageValueCard.
+     * @param {HomepageValueCardDeleteArgs} args - Arguments to delete one HomepageValueCard.
+     * @example
+     * // Delete one HomepageValueCard
+     * const HomepageValueCard = await prisma.homepageValueCard.delete({
+     *   where: {
+     *     // ... filter to delete one HomepageValueCard
+     *   }
+     * })
+     * 
+     */
+    delete<T extends HomepageValueCardDeleteArgs>(args: SelectSubset<T, HomepageValueCardDeleteArgs<ExtArgs>>): Prisma__HomepageValueCardClient<$Result.GetResult<Prisma.$HomepageValueCardPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one HomepageValueCard.
+     * @param {HomepageValueCardUpdateArgs} args - Arguments to update one HomepageValueCard.
+     * @example
+     * // Update one HomepageValueCard
+     * const homepageValueCard = await prisma.homepageValueCard.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends HomepageValueCardUpdateArgs>(args: SelectSubset<T, HomepageValueCardUpdateArgs<ExtArgs>>): Prisma__HomepageValueCardClient<$Result.GetResult<Prisma.$HomepageValueCardPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more HomepageValueCards.
+     * @param {HomepageValueCardDeleteManyArgs} args - Arguments to filter HomepageValueCards to delete.
+     * @example
+     * // Delete a few HomepageValueCards
+     * const { count } = await prisma.homepageValueCard.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends HomepageValueCardDeleteManyArgs>(args?: SelectSubset<T, HomepageValueCardDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HomepageValueCards.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageValueCardUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many HomepageValueCards
+     * const homepageValueCard = await prisma.homepageValueCard.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends HomepageValueCardUpdateManyArgs>(args: SelectSubset<T, HomepageValueCardUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HomepageValueCards and returns the data updated in the database.
+     * @param {HomepageValueCardUpdateManyAndReturnArgs} args - Arguments to update many HomepageValueCards.
+     * @example
+     * // Update many HomepageValueCards
+     * const homepageValueCard = await prisma.homepageValueCard.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more HomepageValueCards and only return the `id`
+     * const homepageValueCardWithIdOnly = await prisma.homepageValueCard.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends HomepageValueCardUpdateManyAndReturnArgs>(args: SelectSubset<T, HomepageValueCardUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageValueCardPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one HomepageValueCard.
+     * @param {HomepageValueCardUpsertArgs} args - Arguments to update or create a HomepageValueCard.
+     * @example
+     * // Update or create a HomepageValueCard
+     * const homepageValueCard = await prisma.homepageValueCard.upsert({
+     *   create: {
+     *     // ... data to create a HomepageValueCard
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the HomepageValueCard we want to update
+     *   }
+     * })
+     */
+    upsert<T extends HomepageValueCardUpsertArgs>(args: SelectSubset<T, HomepageValueCardUpsertArgs<ExtArgs>>): Prisma__HomepageValueCardClient<$Result.GetResult<Prisma.$HomepageValueCardPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of HomepageValueCards.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageValueCardCountArgs} args - Arguments to filter HomepageValueCards to count.
+     * @example
+     * // Count the number of HomepageValueCards
+     * const count = await prisma.homepageValueCard.count({
+     *   where: {
+     *     // ... the filter for the HomepageValueCards we want to count
+     *   }
+     * })
+    **/
+    count<T extends HomepageValueCardCountArgs>(
+      args?: Subset<T, HomepageValueCardCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], HomepageValueCardCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a HomepageValueCard.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageValueCardAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends HomepageValueCardAggregateArgs>(args: Subset<T, HomepageValueCardAggregateArgs>): Prisma.PrismaPromise<GetHomepageValueCardAggregateType<T>>
+
+    /**
+     * Group by HomepageValueCard.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageValueCardGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends HomepageValueCardGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: HomepageValueCardGroupByArgs['orderBy'] }
+        : { orderBy?: HomepageValueCardGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, HomepageValueCardGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHomepageValueCardGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the HomepageValueCard model
+   */
+  readonly fields: HomepageValueCardFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for HomepageValueCard.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__HomepageValueCardClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the HomepageValueCard model
+   */
+  interface HomepageValueCardFieldRefs {
+    readonly id: FieldRef<"HomepageValueCard", 'String'>
+    readonly iconName: FieldRef<"HomepageValueCard", 'String'>
+    readonly title: FieldRef<"HomepageValueCard", 'String'>
+    readonly description: FieldRef<"HomepageValueCard", 'String'>
+    readonly tone: FieldRef<"HomepageValueCard", 'Tone'>
+    readonly displayOrder: FieldRef<"HomepageValueCard", 'Int'>
+    readonly active: FieldRef<"HomepageValueCard", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * HomepageValueCard findUnique
+   */
+  export type HomepageValueCardFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageValueCard
+     */
+    select?: HomepageValueCardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageValueCard
+     */
+    omit?: HomepageValueCardOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageValueCard to fetch.
+     */
+    where: HomepageValueCardWhereUniqueInput
+  }
+
+  /**
+   * HomepageValueCard findUniqueOrThrow
+   */
+  export type HomepageValueCardFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageValueCard
+     */
+    select?: HomepageValueCardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageValueCard
+     */
+    omit?: HomepageValueCardOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageValueCard to fetch.
+     */
+    where: HomepageValueCardWhereUniqueInput
+  }
+
+  /**
+   * HomepageValueCard findFirst
+   */
+  export type HomepageValueCardFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageValueCard
+     */
+    select?: HomepageValueCardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageValueCard
+     */
+    omit?: HomepageValueCardOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageValueCard to fetch.
+     */
+    where?: HomepageValueCardWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageValueCards to fetch.
+     */
+    orderBy?: HomepageValueCardOrderByWithRelationInput | HomepageValueCardOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HomepageValueCards.
+     */
+    cursor?: HomepageValueCardWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageValueCards from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageValueCards.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HomepageValueCards.
+     */
+    distinct?: HomepageValueCardScalarFieldEnum | HomepageValueCardScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageValueCard findFirstOrThrow
+   */
+  export type HomepageValueCardFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageValueCard
+     */
+    select?: HomepageValueCardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageValueCard
+     */
+    omit?: HomepageValueCardOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageValueCard to fetch.
+     */
+    where?: HomepageValueCardWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageValueCards to fetch.
+     */
+    orderBy?: HomepageValueCardOrderByWithRelationInput | HomepageValueCardOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HomepageValueCards.
+     */
+    cursor?: HomepageValueCardWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageValueCards from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageValueCards.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HomepageValueCards.
+     */
+    distinct?: HomepageValueCardScalarFieldEnum | HomepageValueCardScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageValueCard findMany
+   */
+  export type HomepageValueCardFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageValueCard
+     */
+    select?: HomepageValueCardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageValueCard
+     */
+    omit?: HomepageValueCardOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageValueCards to fetch.
+     */
+    where?: HomepageValueCardWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageValueCards to fetch.
+     */
+    orderBy?: HomepageValueCardOrderByWithRelationInput | HomepageValueCardOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing HomepageValueCards.
+     */
+    cursor?: HomepageValueCardWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageValueCards from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageValueCards.
+     */
+    skip?: number
+    distinct?: HomepageValueCardScalarFieldEnum | HomepageValueCardScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageValueCard create
+   */
+  export type HomepageValueCardCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageValueCard
+     */
+    select?: HomepageValueCardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageValueCard
+     */
+    omit?: HomepageValueCardOmit<ExtArgs> | null
+    /**
+     * The data needed to create a HomepageValueCard.
+     */
+    data: XOR<HomepageValueCardCreateInput, HomepageValueCardUncheckedCreateInput>
+  }
+
+  /**
+   * HomepageValueCard createMany
+   */
+  export type HomepageValueCardCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many HomepageValueCards.
+     */
+    data: HomepageValueCardCreateManyInput | HomepageValueCardCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HomepageValueCard createManyAndReturn
+   */
+  export type HomepageValueCardCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageValueCard
+     */
+    select?: HomepageValueCardSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageValueCard
+     */
+    omit?: HomepageValueCardOmit<ExtArgs> | null
+    /**
+     * The data used to create many HomepageValueCards.
+     */
+    data: HomepageValueCardCreateManyInput | HomepageValueCardCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HomepageValueCard update
+   */
+  export type HomepageValueCardUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageValueCard
+     */
+    select?: HomepageValueCardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageValueCard
+     */
+    omit?: HomepageValueCardOmit<ExtArgs> | null
+    /**
+     * The data needed to update a HomepageValueCard.
+     */
+    data: XOR<HomepageValueCardUpdateInput, HomepageValueCardUncheckedUpdateInput>
+    /**
+     * Choose, which HomepageValueCard to update.
+     */
+    where: HomepageValueCardWhereUniqueInput
+  }
+
+  /**
+   * HomepageValueCard updateMany
+   */
+  export type HomepageValueCardUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update HomepageValueCards.
+     */
+    data: XOR<HomepageValueCardUpdateManyMutationInput, HomepageValueCardUncheckedUpdateManyInput>
+    /**
+     * Filter which HomepageValueCards to update
+     */
+    where?: HomepageValueCardWhereInput
+    /**
+     * Limit how many HomepageValueCards to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HomepageValueCard updateManyAndReturn
+   */
+  export type HomepageValueCardUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageValueCard
+     */
+    select?: HomepageValueCardSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageValueCard
+     */
+    omit?: HomepageValueCardOmit<ExtArgs> | null
+    /**
+     * The data used to update HomepageValueCards.
+     */
+    data: XOR<HomepageValueCardUpdateManyMutationInput, HomepageValueCardUncheckedUpdateManyInput>
+    /**
+     * Filter which HomepageValueCards to update
+     */
+    where?: HomepageValueCardWhereInput
+    /**
+     * Limit how many HomepageValueCards to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HomepageValueCard upsert
+   */
+  export type HomepageValueCardUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageValueCard
+     */
+    select?: HomepageValueCardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageValueCard
+     */
+    omit?: HomepageValueCardOmit<ExtArgs> | null
+    /**
+     * The filter to search for the HomepageValueCard to update in case it exists.
+     */
+    where: HomepageValueCardWhereUniqueInput
+    /**
+     * In case the HomepageValueCard found by the `where` argument doesn't exist, create a new HomepageValueCard with this data.
+     */
+    create: XOR<HomepageValueCardCreateInput, HomepageValueCardUncheckedCreateInput>
+    /**
+     * In case the HomepageValueCard was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<HomepageValueCardUpdateInput, HomepageValueCardUncheckedUpdateInput>
+  }
+
+  /**
+   * HomepageValueCard delete
+   */
+  export type HomepageValueCardDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageValueCard
+     */
+    select?: HomepageValueCardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageValueCard
+     */
+    omit?: HomepageValueCardOmit<ExtArgs> | null
+    /**
+     * Filter which HomepageValueCard to delete.
+     */
+    where: HomepageValueCardWhereUniqueInput
+  }
+
+  /**
+   * HomepageValueCard deleteMany
+   */
+  export type HomepageValueCardDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HomepageValueCards to delete
+     */
+    where?: HomepageValueCardWhereInput
+    /**
+     * Limit how many HomepageValueCards to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * HomepageValueCard without action
+   */
+  export type HomepageValueCardDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageValueCard
+     */
+    select?: HomepageValueCardSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageValueCard
+     */
+    omit?: HomepageValueCardOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model HomepageStatistic
+   */
+
+  export type AggregateHomepageStatistic = {
+    _count: HomepageStatisticCountAggregateOutputType | null
+    _avg: HomepageStatisticAvgAggregateOutputType | null
+    _sum: HomepageStatisticSumAggregateOutputType | null
+    _min: HomepageStatisticMinAggregateOutputType | null
+    _max: HomepageStatisticMaxAggregateOutputType | null
+  }
+
+  export type HomepageStatisticAvgAggregateOutputType = {
+    displayOrder: number | null
+  }
+
+  export type HomepageStatisticSumAggregateOutputType = {
+    displayOrder: number | null
+  }
+
+  export type HomepageStatisticMinAggregateOutputType = {
+    id: string | null
+    iconName: string | null
+    value: string | null
+    label: string | null
+    displayOrder: number | null
+    active: boolean | null
+  }
+
+  export type HomepageStatisticMaxAggregateOutputType = {
+    id: string | null
+    iconName: string | null
+    value: string | null
+    label: string | null
+    displayOrder: number | null
+    active: boolean | null
+  }
+
+  export type HomepageStatisticCountAggregateOutputType = {
+    id: number
+    iconName: number
+    value: number
+    label: number
+    displayOrder: number
+    active: number
+    _all: number
+  }
+
+
+  export type HomepageStatisticAvgAggregateInputType = {
+    displayOrder?: true
+  }
+
+  export type HomepageStatisticSumAggregateInputType = {
+    displayOrder?: true
+  }
+
+  export type HomepageStatisticMinAggregateInputType = {
+    id?: true
+    iconName?: true
+    value?: true
+    label?: true
+    displayOrder?: true
+    active?: true
+  }
+
+  export type HomepageStatisticMaxAggregateInputType = {
+    id?: true
+    iconName?: true
+    value?: true
+    label?: true
+    displayOrder?: true
+    active?: true
+  }
+
+  export type HomepageStatisticCountAggregateInputType = {
+    id?: true
+    iconName?: true
+    value?: true
+    label?: true
+    displayOrder?: true
+    active?: true
+    _all?: true
+  }
+
+  export type HomepageStatisticAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HomepageStatistic to aggregate.
+     */
+    where?: HomepageStatisticWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageStatistics to fetch.
+     */
+    orderBy?: HomepageStatisticOrderByWithRelationInput | HomepageStatisticOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: HomepageStatisticWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageStatistics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageStatistics.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned HomepageStatistics
+    **/
+    _count?: true | HomepageStatisticCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: HomepageStatisticAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: HomepageStatisticSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: HomepageStatisticMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: HomepageStatisticMaxAggregateInputType
+  }
+
+  export type GetHomepageStatisticAggregateType<T extends HomepageStatisticAggregateArgs> = {
+        [P in keyof T & keyof AggregateHomepageStatistic]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateHomepageStatistic[P]>
+      : GetScalarType<T[P], AggregateHomepageStatistic[P]>
+  }
+
+
+
+
+  export type HomepageStatisticGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HomepageStatisticWhereInput
+    orderBy?: HomepageStatisticOrderByWithAggregationInput | HomepageStatisticOrderByWithAggregationInput[]
+    by: HomepageStatisticScalarFieldEnum[] | HomepageStatisticScalarFieldEnum
+    having?: HomepageStatisticScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: HomepageStatisticCountAggregateInputType | true
+    _avg?: HomepageStatisticAvgAggregateInputType
+    _sum?: HomepageStatisticSumAggregateInputType
+    _min?: HomepageStatisticMinAggregateInputType
+    _max?: HomepageStatisticMaxAggregateInputType
+  }
+
+  export type HomepageStatisticGroupByOutputType = {
+    id: string
+    iconName: string
+    value: string
+    label: string
+    displayOrder: number
+    active: boolean
+    _count: HomepageStatisticCountAggregateOutputType | null
+    _avg: HomepageStatisticAvgAggregateOutputType | null
+    _sum: HomepageStatisticSumAggregateOutputType | null
+    _min: HomepageStatisticMinAggregateOutputType | null
+    _max: HomepageStatisticMaxAggregateOutputType | null
+  }
+
+  type GetHomepageStatisticGroupByPayload<T extends HomepageStatisticGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<HomepageStatisticGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof HomepageStatisticGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], HomepageStatisticGroupByOutputType[P]>
+            : GetScalarType<T[P], HomepageStatisticGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type HomepageStatisticSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    iconName?: boolean
+    value?: boolean
+    label?: boolean
+    displayOrder?: boolean
+    active?: boolean
+  }, ExtArgs["result"]["homepageStatistic"]>
+
+  export type HomepageStatisticSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    iconName?: boolean
+    value?: boolean
+    label?: boolean
+    displayOrder?: boolean
+    active?: boolean
+  }, ExtArgs["result"]["homepageStatistic"]>
+
+  export type HomepageStatisticSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    iconName?: boolean
+    value?: boolean
+    label?: boolean
+    displayOrder?: boolean
+    active?: boolean
+  }, ExtArgs["result"]["homepageStatistic"]>
+
+  export type HomepageStatisticSelectScalar = {
+    id?: boolean
+    iconName?: boolean
+    value?: boolean
+    label?: boolean
+    displayOrder?: boolean
+    active?: boolean
+  }
+
+  export type HomepageStatisticOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "iconName" | "value" | "label" | "displayOrder" | "active", ExtArgs["result"]["homepageStatistic"]>
+
+  export type $HomepageStatisticPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "HomepageStatistic"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      iconName: string
+      value: string
+      label: string
+      displayOrder: number
+      active: boolean
+    }, ExtArgs["result"]["homepageStatistic"]>
+    composites: {}
+  }
+
+  type HomepageStatisticGetPayload<S extends boolean | null | undefined | HomepageStatisticDefaultArgs> = $Result.GetResult<Prisma.$HomepageStatisticPayload, S>
+
+  type HomepageStatisticCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HomepageStatisticFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HomepageStatisticCountAggregateInputType | true
+    }
+
+  export interface HomepageStatisticDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['HomepageStatistic'], meta: { name: 'HomepageStatistic' } }
+    /**
+     * Find zero or one HomepageStatistic that matches the filter.
+     * @param {HomepageStatisticFindUniqueArgs} args - Arguments to find a HomepageStatistic
+     * @example
+     * // Get one HomepageStatistic
+     * const homepageStatistic = await prisma.homepageStatistic.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends HomepageStatisticFindUniqueArgs>(args: SelectSubset<T, HomepageStatisticFindUniqueArgs<ExtArgs>>): Prisma__HomepageStatisticClient<$Result.GetResult<Prisma.$HomepageStatisticPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one HomepageStatistic that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {HomepageStatisticFindUniqueOrThrowArgs} args - Arguments to find a HomepageStatistic
+     * @example
+     * // Get one HomepageStatistic
+     * const homepageStatistic = await prisma.homepageStatistic.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends HomepageStatisticFindUniqueOrThrowArgs>(args: SelectSubset<T, HomepageStatisticFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HomepageStatisticClient<$Result.GetResult<Prisma.$HomepageStatisticPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HomepageStatistic that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageStatisticFindFirstArgs} args - Arguments to find a HomepageStatistic
+     * @example
+     * // Get one HomepageStatistic
+     * const homepageStatistic = await prisma.homepageStatistic.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends HomepageStatisticFindFirstArgs>(args?: SelectSubset<T, HomepageStatisticFindFirstArgs<ExtArgs>>): Prisma__HomepageStatisticClient<$Result.GetResult<Prisma.$HomepageStatisticPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HomepageStatistic that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageStatisticFindFirstOrThrowArgs} args - Arguments to find a HomepageStatistic
+     * @example
+     * // Get one HomepageStatistic
+     * const homepageStatistic = await prisma.homepageStatistic.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends HomepageStatisticFindFirstOrThrowArgs>(args?: SelectSubset<T, HomepageStatisticFindFirstOrThrowArgs<ExtArgs>>): Prisma__HomepageStatisticClient<$Result.GetResult<Prisma.$HomepageStatisticPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more HomepageStatistics that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageStatisticFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all HomepageStatistics
+     * const homepageStatistics = await prisma.homepageStatistic.findMany()
+     * 
+     * // Get first 10 HomepageStatistics
+     * const homepageStatistics = await prisma.homepageStatistic.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const homepageStatisticWithIdOnly = await prisma.homepageStatistic.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends HomepageStatisticFindManyArgs>(args?: SelectSubset<T, HomepageStatisticFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageStatisticPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a HomepageStatistic.
+     * @param {HomepageStatisticCreateArgs} args - Arguments to create a HomepageStatistic.
+     * @example
+     * // Create one HomepageStatistic
+     * const HomepageStatistic = await prisma.homepageStatistic.create({
+     *   data: {
+     *     // ... data to create a HomepageStatistic
+     *   }
+     * })
+     * 
+     */
+    create<T extends HomepageStatisticCreateArgs>(args: SelectSubset<T, HomepageStatisticCreateArgs<ExtArgs>>): Prisma__HomepageStatisticClient<$Result.GetResult<Prisma.$HomepageStatisticPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many HomepageStatistics.
+     * @param {HomepageStatisticCreateManyArgs} args - Arguments to create many HomepageStatistics.
+     * @example
+     * // Create many HomepageStatistics
+     * const homepageStatistic = await prisma.homepageStatistic.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends HomepageStatisticCreateManyArgs>(args?: SelectSubset<T, HomepageStatisticCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many HomepageStatistics and returns the data saved in the database.
+     * @param {HomepageStatisticCreateManyAndReturnArgs} args - Arguments to create many HomepageStatistics.
+     * @example
+     * // Create many HomepageStatistics
+     * const homepageStatistic = await prisma.homepageStatistic.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many HomepageStatistics and only return the `id`
+     * const homepageStatisticWithIdOnly = await prisma.homepageStatistic.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends HomepageStatisticCreateManyAndReturnArgs>(args?: SelectSubset<T, HomepageStatisticCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageStatisticPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a HomepageStatistic.
+     * @param {HomepageStatisticDeleteArgs} args - Arguments to delete one HomepageStatistic.
+     * @example
+     * // Delete one HomepageStatistic
+     * const HomepageStatistic = await prisma.homepageStatistic.delete({
+     *   where: {
+     *     // ... filter to delete one HomepageStatistic
+     *   }
+     * })
+     * 
+     */
+    delete<T extends HomepageStatisticDeleteArgs>(args: SelectSubset<T, HomepageStatisticDeleteArgs<ExtArgs>>): Prisma__HomepageStatisticClient<$Result.GetResult<Prisma.$HomepageStatisticPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one HomepageStatistic.
+     * @param {HomepageStatisticUpdateArgs} args - Arguments to update one HomepageStatistic.
+     * @example
+     * // Update one HomepageStatistic
+     * const homepageStatistic = await prisma.homepageStatistic.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends HomepageStatisticUpdateArgs>(args: SelectSubset<T, HomepageStatisticUpdateArgs<ExtArgs>>): Prisma__HomepageStatisticClient<$Result.GetResult<Prisma.$HomepageStatisticPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more HomepageStatistics.
+     * @param {HomepageStatisticDeleteManyArgs} args - Arguments to filter HomepageStatistics to delete.
+     * @example
+     * // Delete a few HomepageStatistics
+     * const { count } = await prisma.homepageStatistic.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends HomepageStatisticDeleteManyArgs>(args?: SelectSubset<T, HomepageStatisticDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HomepageStatistics.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageStatisticUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many HomepageStatistics
+     * const homepageStatistic = await prisma.homepageStatistic.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends HomepageStatisticUpdateManyArgs>(args: SelectSubset<T, HomepageStatisticUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HomepageStatistics and returns the data updated in the database.
+     * @param {HomepageStatisticUpdateManyAndReturnArgs} args - Arguments to update many HomepageStatistics.
+     * @example
+     * // Update many HomepageStatistics
+     * const homepageStatistic = await prisma.homepageStatistic.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more HomepageStatistics and only return the `id`
+     * const homepageStatisticWithIdOnly = await prisma.homepageStatistic.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends HomepageStatisticUpdateManyAndReturnArgs>(args: SelectSubset<T, HomepageStatisticUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageStatisticPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one HomepageStatistic.
+     * @param {HomepageStatisticUpsertArgs} args - Arguments to update or create a HomepageStatistic.
+     * @example
+     * // Update or create a HomepageStatistic
+     * const homepageStatistic = await prisma.homepageStatistic.upsert({
+     *   create: {
+     *     // ... data to create a HomepageStatistic
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the HomepageStatistic we want to update
+     *   }
+     * })
+     */
+    upsert<T extends HomepageStatisticUpsertArgs>(args: SelectSubset<T, HomepageStatisticUpsertArgs<ExtArgs>>): Prisma__HomepageStatisticClient<$Result.GetResult<Prisma.$HomepageStatisticPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of HomepageStatistics.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageStatisticCountArgs} args - Arguments to filter HomepageStatistics to count.
+     * @example
+     * // Count the number of HomepageStatistics
+     * const count = await prisma.homepageStatistic.count({
+     *   where: {
+     *     // ... the filter for the HomepageStatistics we want to count
+     *   }
+     * })
+    **/
+    count<T extends HomepageStatisticCountArgs>(
+      args?: Subset<T, HomepageStatisticCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], HomepageStatisticCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a HomepageStatistic.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageStatisticAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends HomepageStatisticAggregateArgs>(args: Subset<T, HomepageStatisticAggregateArgs>): Prisma.PrismaPromise<GetHomepageStatisticAggregateType<T>>
+
+    /**
+     * Group by HomepageStatistic.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageStatisticGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends HomepageStatisticGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: HomepageStatisticGroupByArgs['orderBy'] }
+        : { orderBy?: HomepageStatisticGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, HomepageStatisticGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHomepageStatisticGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the HomepageStatistic model
+   */
+  readonly fields: HomepageStatisticFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for HomepageStatistic.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__HomepageStatisticClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the HomepageStatistic model
+   */
+  interface HomepageStatisticFieldRefs {
+    readonly id: FieldRef<"HomepageStatistic", 'String'>
+    readonly iconName: FieldRef<"HomepageStatistic", 'String'>
+    readonly value: FieldRef<"HomepageStatistic", 'String'>
+    readonly label: FieldRef<"HomepageStatistic", 'String'>
+    readonly displayOrder: FieldRef<"HomepageStatistic", 'Int'>
+    readonly active: FieldRef<"HomepageStatistic", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * HomepageStatistic findUnique
+   */
+  export type HomepageStatisticFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageStatistic
+     */
+    select?: HomepageStatisticSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageStatistic
+     */
+    omit?: HomepageStatisticOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageStatistic to fetch.
+     */
+    where: HomepageStatisticWhereUniqueInput
+  }
+
+  /**
+   * HomepageStatistic findUniqueOrThrow
+   */
+  export type HomepageStatisticFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageStatistic
+     */
+    select?: HomepageStatisticSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageStatistic
+     */
+    omit?: HomepageStatisticOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageStatistic to fetch.
+     */
+    where: HomepageStatisticWhereUniqueInput
+  }
+
+  /**
+   * HomepageStatistic findFirst
+   */
+  export type HomepageStatisticFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageStatistic
+     */
+    select?: HomepageStatisticSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageStatistic
+     */
+    omit?: HomepageStatisticOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageStatistic to fetch.
+     */
+    where?: HomepageStatisticWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageStatistics to fetch.
+     */
+    orderBy?: HomepageStatisticOrderByWithRelationInput | HomepageStatisticOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HomepageStatistics.
+     */
+    cursor?: HomepageStatisticWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageStatistics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageStatistics.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HomepageStatistics.
+     */
+    distinct?: HomepageStatisticScalarFieldEnum | HomepageStatisticScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageStatistic findFirstOrThrow
+   */
+  export type HomepageStatisticFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageStatistic
+     */
+    select?: HomepageStatisticSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageStatistic
+     */
+    omit?: HomepageStatisticOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageStatistic to fetch.
+     */
+    where?: HomepageStatisticWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageStatistics to fetch.
+     */
+    orderBy?: HomepageStatisticOrderByWithRelationInput | HomepageStatisticOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HomepageStatistics.
+     */
+    cursor?: HomepageStatisticWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageStatistics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageStatistics.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HomepageStatistics.
+     */
+    distinct?: HomepageStatisticScalarFieldEnum | HomepageStatisticScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageStatistic findMany
+   */
+  export type HomepageStatisticFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageStatistic
+     */
+    select?: HomepageStatisticSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageStatistic
+     */
+    omit?: HomepageStatisticOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageStatistics to fetch.
+     */
+    where?: HomepageStatisticWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageStatistics to fetch.
+     */
+    orderBy?: HomepageStatisticOrderByWithRelationInput | HomepageStatisticOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing HomepageStatistics.
+     */
+    cursor?: HomepageStatisticWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageStatistics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageStatistics.
+     */
+    skip?: number
+    distinct?: HomepageStatisticScalarFieldEnum | HomepageStatisticScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageStatistic create
+   */
+  export type HomepageStatisticCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageStatistic
+     */
+    select?: HomepageStatisticSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageStatistic
+     */
+    omit?: HomepageStatisticOmit<ExtArgs> | null
+    /**
+     * The data needed to create a HomepageStatistic.
+     */
+    data: XOR<HomepageStatisticCreateInput, HomepageStatisticUncheckedCreateInput>
+  }
+
+  /**
+   * HomepageStatistic createMany
+   */
+  export type HomepageStatisticCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many HomepageStatistics.
+     */
+    data: HomepageStatisticCreateManyInput | HomepageStatisticCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HomepageStatistic createManyAndReturn
+   */
+  export type HomepageStatisticCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageStatistic
+     */
+    select?: HomepageStatisticSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageStatistic
+     */
+    omit?: HomepageStatisticOmit<ExtArgs> | null
+    /**
+     * The data used to create many HomepageStatistics.
+     */
+    data: HomepageStatisticCreateManyInput | HomepageStatisticCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HomepageStatistic update
+   */
+  export type HomepageStatisticUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageStatistic
+     */
+    select?: HomepageStatisticSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageStatistic
+     */
+    omit?: HomepageStatisticOmit<ExtArgs> | null
+    /**
+     * The data needed to update a HomepageStatistic.
+     */
+    data: XOR<HomepageStatisticUpdateInput, HomepageStatisticUncheckedUpdateInput>
+    /**
+     * Choose, which HomepageStatistic to update.
+     */
+    where: HomepageStatisticWhereUniqueInput
+  }
+
+  /**
+   * HomepageStatistic updateMany
+   */
+  export type HomepageStatisticUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update HomepageStatistics.
+     */
+    data: XOR<HomepageStatisticUpdateManyMutationInput, HomepageStatisticUncheckedUpdateManyInput>
+    /**
+     * Filter which HomepageStatistics to update
+     */
+    where?: HomepageStatisticWhereInput
+    /**
+     * Limit how many HomepageStatistics to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HomepageStatistic updateManyAndReturn
+   */
+  export type HomepageStatisticUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageStatistic
+     */
+    select?: HomepageStatisticSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageStatistic
+     */
+    omit?: HomepageStatisticOmit<ExtArgs> | null
+    /**
+     * The data used to update HomepageStatistics.
+     */
+    data: XOR<HomepageStatisticUpdateManyMutationInput, HomepageStatisticUncheckedUpdateManyInput>
+    /**
+     * Filter which HomepageStatistics to update
+     */
+    where?: HomepageStatisticWhereInput
+    /**
+     * Limit how many HomepageStatistics to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HomepageStatistic upsert
+   */
+  export type HomepageStatisticUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageStatistic
+     */
+    select?: HomepageStatisticSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageStatistic
+     */
+    omit?: HomepageStatisticOmit<ExtArgs> | null
+    /**
+     * The filter to search for the HomepageStatistic to update in case it exists.
+     */
+    where: HomepageStatisticWhereUniqueInput
+    /**
+     * In case the HomepageStatistic found by the `where` argument doesn't exist, create a new HomepageStatistic with this data.
+     */
+    create: XOR<HomepageStatisticCreateInput, HomepageStatisticUncheckedCreateInput>
+    /**
+     * In case the HomepageStatistic was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<HomepageStatisticUpdateInput, HomepageStatisticUncheckedUpdateInput>
+  }
+
+  /**
+   * HomepageStatistic delete
+   */
+  export type HomepageStatisticDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageStatistic
+     */
+    select?: HomepageStatisticSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageStatistic
+     */
+    omit?: HomepageStatisticOmit<ExtArgs> | null
+    /**
+     * Filter which HomepageStatistic to delete.
+     */
+    where: HomepageStatisticWhereUniqueInput
+  }
+
+  /**
+   * HomepageStatistic deleteMany
+   */
+  export type HomepageStatisticDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HomepageStatistics to delete
+     */
+    where?: HomepageStatisticWhereInput
+    /**
+     * Limit how many HomepageStatistics to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * HomepageStatistic without action
+   */
+  export type HomepageStatisticDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageStatistic
+     */
+    select?: HomepageStatisticSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageStatistic
+     */
+    omit?: HomepageStatisticOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model HomepageFeaturedProject
+   */
+
+  export type AggregateHomepageFeaturedProject = {
+    _count: HomepageFeaturedProjectCountAggregateOutputType | null
+    _avg: HomepageFeaturedProjectAvgAggregateOutputType | null
+    _sum: HomepageFeaturedProjectSumAggregateOutputType | null
+    _min: HomepageFeaturedProjectMinAggregateOutputType | null
+    _max: HomepageFeaturedProjectMaxAggregateOutputType | null
+  }
+
+  export type HomepageFeaturedProjectAvgAggregateOutputType = {
+    displayOrder: number | null
+  }
+
+  export type HomepageFeaturedProjectSumAggregateOutputType = {
+    displayOrder: number | null
+  }
+
+  export type HomepageFeaturedProjectMinAggregateOutputType = {
+    id: string | null
+    projectId: string | null
+    displayOrder: number | null
+  }
+
+  export type HomepageFeaturedProjectMaxAggregateOutputType = {
+    id: string | null
+    projectId: string | null
+    displayOrder: number | null
+  }
+
+  export type HomepageFeaturedProjectCountAggregateOutputType = {
+    id: number
+    projectId: number
+    displayOrder: number
+    _all: number
+  }
+
+
+  export type HomepageFeaturedProjectAvgAggregateInputType = {
+    displayOrder?: true
+  }
+
+  export type HomepageFeaturedProjectSumAggregateInputType = {
+    displayOrder?: true
+  }
+
+  export type HomepageFeaturedProjectMinAggregateInputType = {
+    id?: true
+    projectId?: true
+    displayOrder?: true
+  }
+
+  export type HomepageFeaturedProjectMaxAggregateInputType = {
+    id?: true
+    projectId?: true
+    displayOrder?: true
+  }
+
+  export type HomepageFeaturedProjectCountAggregateInputType = {
+    id?: true
+    projectId?: true
+    displayOrder?: true
+    _all?: true
+  }
+
+  export type HomepageFeaturedProjectAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HomepageFeaturedProject to aggregate.
+     */
+    where?: HomepageFeaturedProjectWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageFeaturedProjects to fetch.
+     */
+    orderBy?: HomepageFeaturedProjectOrderByWithRelationInput | HomepageFeaturedProjectOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: HomepageFeaturedProjectWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageFeaturedProjects from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageFeaturedProjects.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned HomepageFeaturedProjects
+    **/
+    _count?: true | HomepageFeaturedProjectCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: HomepageFeaturedProjectAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: HomepageFeaturedProjectSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: HomepageFeaturedProjectMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: HomepageFeaturedProjectMaxAggregateInputType
+  }
+
+  export type GetHomepageFeaturedProjectAggregateType<T extends HomepageFeaturedProjectAggregateArgs> = {
+        [P in keyof T & keyof AggregateHomepageFeaturedProject]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateHomepageFeaturedProject[P]>
+      : GetScalarType<T[P], AggregateHomepageFeaturedProject[P]>
+  }
+
+
+
+
+  export type HomepageFeaturedProjectGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HomepageFeaturedProjectWhereInput
+    orderBy?: HomepageFeaturedProjectOrderByWithAggregationInput | HomepageFeaturedProjectOrderByWithAggregationInput[]
+    by: HomepageFeaturedProjectScalarFieldEnum[] | HomepageFeaturedProjectScalarFieldEnum
+    having?: HomepageFeaturedProjectScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: HomepageFeaturedProjectCountAggregateInputType | true
+    _avg?: HomepageFeaturedProjectAvgAggregateInputType
+    _sum?: HomepageFeaturedProjectSumAggregateInputType
+    _min?: HomepageFeaturedProjectMinAggregateInputType
+    _max?: HomepageFeaturedProjectMaxAggregateInputType
+  }
+
+  export type HomepageFeaturedProjectGroupByOutputType = {
+    id: string
+    projectId: string
+    displayOrder: number
+    _count: HomepageFeaturedProjectCountAggregateOutputType | null
+    _avg: HomepageFeaturedProjectAvgAggregateOutputType | null
+    _sum: HomepageFeaturedProjectSumAggregateOutputType | null
+    _min: HomepageFeaturedProjectMinAggregateOutputType | null
+    _max: HomepageFeaturedProjectMaxAggregateOutputType | null
+  }
+
+  type GetHomepageFeaturedProjectGroupByPayload<T extends HomepageFeaturedProjectGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<HomepageFeaturedProjectGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof HomepageFeaturedProjectGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], HomepageFeaturedProjectGroupByOutputType[P]>
+            : GetScalarType<T[P], HomepageFeaturedProjectGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type HomepageFeaturedProjectSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    projectId?: boolean
+    displayOrder?: boolean
+    project?: boolean | ProjectDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["homepageFeaturedProject"]>
+
+  export type HomepageFeaturedProjectSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    projectId?: boolean
+    displayOrder?: boolean
+    project?: boolean | ProjectDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["homepageFeaturedProject"]>
+
+  export type HomepageFeaturedProjectSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    projectId?: boolean
+    displayOrder?: boolean
+    project?: boolean | ProjectDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["homepageFeaturedProject"]>
+
+  export type HomepageFeaturedProjectSelectScalar = {
+    id?: boolean
+    projectId?: boolean
+    displayOrder?: boolean
+  }
+
+  export type HomepageFeaturedProjectOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "projectId" | "displayOrder", ExtArgs["result"]["homepageFeaturedProject"]>
+  export type HomepageFeaturedProjectInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    project?: boolean | ProjectDefaultArgs<ExtArgs>
+  }
+  export type HomepageFeaturedProjectIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    project?: boolean | ProjectDefaultArgs<ExtArgs>
+  }
+  export type HomepageFeaturedProjectIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    project?: boolean | ProjectDefaultArgs<ExtArgs>
+  }
+
+  export type $HomepageFeaturedProjectPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "HomepageFeaturedProject"
+    objects: {
+      project: Prisma.$ProjectPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      projectId: string
+      displayOrder: number
+    }, ExtArgs["result"]["homepageFeaturedProject"]>
+    composites: {}
+  }
+
+  type HomepageFeaturedProjectGetPayload<S extends boolean | null | undefined | HomepageFeaturedProjectDefaultArgs> = $Result.GetResult<Prisma.$HomepageFeaturedProjectPayload, S>
+
+  type HomepageFeaturedProjectCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HomepageFeaturedProjectFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HomepageFeaturedProjectCountAggregateInputType | true
+    }
+
+  export interface HomepageFeaturedProjectDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['HomepageFeaturedProject'], meta: { name: 'HomepageFeaturedProject' } }
+    /**
+     * Find zero or one HomepageFeaturedProject that matches the filter.
+     * @param {HomepageFeaturedProjectFindUniqueArgs} args - Arguments to find a HomepageFeaturedProject
+     * @example
+     * // Get one HomepageFeaturedProject
+     * const homepageFeaturedProject = await prisma.homepageFeaturedProject.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends HomepageFeaturedProjectFindUniqueArgs>(args: SelectSubset<T, HomepageFeaturedProjectFindUniqueArgs<ExtArgs>>): Prisma__HomepageFeaturedProjectClient<$Result.GetResult<Prisma.$HomepageFeaturedProjectPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one HomepageFeaturedProject that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {HomepageFeaturedProjectFindUniqueOrThrowArgs} args - Arguments to find a HomepageFeaturedProject
+     * @example
+     * // Get one HomepageFeaturedProject
+     * const homepageFeaturedProject = await prisma.homepageFeaturedProject.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends HomepageFeaturedProjectFindUniqueOrThrowArgs>(args: SelectSubset<T, HomepageFeaturedProjectFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HomepageFeaturedProjectClient<$Result.GetResult<Prisma.$HomepageFeaturedProjectPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HomepageFeaturedProject that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageFeaturedProjectFindFirstArgs} args - Arguments to find a HomepageFeaturedProject
+     * @example
+     * // Get one HomepageFeaturedProject
+     * const homepageFeaturedProject = await prisma.homepageFeaturedProject.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends HomepageFeaturedProjectFindFirstArgs>(args?: SelectSubset<T, HomepageFeaturedProjectFindFirstArgs<ExtArgs>>): Prisma__HomepageFeaturedProjectClient<$Result.GetResult<Prisma.$HomepageFeaturedProjectPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HomepageFeaturedProject that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageFeaturedProjectFindFirstOrThrowArgs} args - Arguments to find a HomepageFeaturedProject
+     * @example
+     * // Get one HomepageFeaturedProject
+     * const homepageFeaturedProject = await prisma.homepageFeaturedProject.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends HomepageFeaturedProjectFindFirstOrThrowArgs>(args?: SelectSubset<T, HomepageFeaturedProjectFindFirstOrThrowArgs<ExtArgs>>): Prisma__HomepageFeaturedProjectClient<$Result.GetResult<Prisma.$HomepageFeaturedProjectPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more HomepageFeaturedProjects that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageFeaturedProjectFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all HomepageFeaturedProjects
+     * const homepageFeaturedProjects = await prisma.homepageFeaturedProject.findMany()
+     * 
+     * // Get first 10 HomepageFeaturedProjects
+     * const homepageFeaturedProjects = await prisma.homepageFeaturedProject.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const homepageFeaturedProjectWithIdOnly = await prisma.homepageFeaturedProject.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends HomepageFeaturedProjectFindManyArgs>(args?: SelectSubset<T, HomepageFeaturedProjectFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageFeaturedProjectPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a HomepageFeaturedProject.
+     * @param {HomepageFeaturedProjectCreateArgs} args - Arguments to create a HomepageFeaturedProject.
+     * @example
+     * // Create one HomepageFeaturedProject
+     * const HomepageFeaturedProject = await prisma.homepageFeaturedProject.create({
+     *   data: {
+     *     // ... data to create a HomepageFeaturedProject
+     *   }
+     * })
+     * 
+     */
+    create<T extends HomepageFeaturedProjectCreateArgs>(args: SelectSubset<T, HomepageFeaturedProjectCreateArgs<ExtArgs>>): Prisma__HomepageFeaturedProjectClient<$Result.GetResult<Prisma.$HomepageFeaturedProjectPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many HomepageFeaturedProjects.
+     * @param {HomepageFeaturedProjectCreateManyArgs} args - Arguments to create many HomepageFeaturedProjects.
+     * @example
+     * // Create many HomepageFeaturedProjects
+     * const homepageFeaturedProject = await prisma.homepageFeaturedProject.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends HomepageFeaturedProjectCreateManyArgs>(args?: SelectSubset<T, HomepageFeaturedProjectCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many HomepageFeaturedProjects and returns the data saved in the database.
+     * @param {HomepageFeaturedProjectCreateManyAndReturnArgs} args - Arguments to create many HomepageFeaturedProjects.
+     * @example
+     * // Create many HomepageFeaturedProjects
+     * const homepageFeaturedProject = await prisma.homepageFeaturedProject.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many HomepageFeaturedProjects and only return the `id`
+     * const homepageFeaturedProjectWithIdOnly = await prisma.homepageFeaturedProject.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends HomepageFeaturedProjectCreateManyAndReturnArgs>(args?: SelectSubset<T, HomepageFeaturedProjectCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageFeaturedProjectPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a HomepageFeaturedProject.
+     * @param {HomepageFeaturedProjectDeleteArgs} args - Arguments to delete one HomepageFeaturedProject.
+     * @example
+     * // Delete one HomepageFeaturedProject
+     * const HomepageFeaturedProject = await prisma.homepageFeaturedProject.delete({
+     *   where: {
+     *     // ... filter to delete one HomepageFeaturedProject
+     *   }
+     * })
+     * 
+     */
+    delete<T extends HomepageFeaturedProjectDeleteArgs>(args: SelectSubset<T, HomepageFeaturedProjectDeleteArgs<ExtArgs>>): Prisma__HomepageFeaturedProjectClient<$Result.GetResult<Prisma.$HomepageFeaturedProjectPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one HomepageFeaturedProject.
+     * @param {HomepageFeaturedProjectUpdateArgs} args - Arguments to update one HomepageFeaturedProject.
+     * @example
+     * // Update one HomepageFeaturedProject
+     * const homepageFeaturedProject = await prisma.homepageFeaturedProject.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends HomepageFeaturedProjectUpdateArgs>(args: SelectSubset<T, HomepageFeaturedProjectUpdateArgs<ExtArgs>>): Prisma__HomepageFeaturedProjectClient<$Result.GetResult<Prisma.$HomepageFeaturedProjectPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more HomepageFeaturedProjects.
+     * @param {HomepageFeaturedProjectDeleteManyArgs} args - Arguments to filter HomepageFeaturedProjects to delete.
+     * @example
+     * // Delete a few HomepageFeaturedProjects
+     * const { count } = await prisma.homepageFeaturedProject.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends HomepageFeaturedProjectDeleteManyArgs>(args?: SelectSubset<T, HomepageFeaturedProjectDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HomepageFeaturedProjects.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageFeaturedProjectUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many HomepageFeaturedProjects
+     * const homepageFeaturedProject = await prisma.homepageFeaturedProject.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends HomepageFeaturedProjectUpdateManyArgs>(args: SelectSubset<T, HomepageFeaturedProjectUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HomepageFeaturedProjects and returns the data updated in the database.
+     * @param {HomepageFeaturedProjectUpdateManyAndReturnArgs} args - Arguments to update many HomepageFeaturedProjects.
+     * @example
+     * // Update many HomepageFeaturedProjects
+     * const homepageFeaturedProject = await prisma.homepageFeaturedProject.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more HomepageFeaturedProjects and only return the `id`
+     * const homepageFeaturedProjectWithIdOnly = await prisma.homepageFeaturedProject.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends HomepageFeaturedProjectUpdateManyAndReturnArgs>(args: SelectSubset<T, HomepageFeaturedProjectUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageFeaturedProjectPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one HomepageFeaturedProject.
+     * @param {HomepageFeaturedProjectUpsertArgs} args - Arguments to update or create a HomepageFeaturedProject.
+     * @example
+     * // Update or create a HomepageFeaturedProject
+     * const homepageFeaturedProject = await prisma.homepageFeaturedProject.upsert({
+     *   create: {
+     *     // ... data to create a HomepageFeaturedProject
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the HomepageFeaturedProject we want to update
+     *   }
+     * })
+     */
+    upsert<T extends HomepageFeaturedProjectUpsertArgs>(args: SelectSubset<T, HomepageFeaturedProjectUpsertArgs<ExtArgs>>): Prisma__HomepageFeaturedProjectClient<$Result.GetResult<Prisma.$HomepageFeaturedProjectPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of HomepageFeaturedProjects.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageFeaturedProjectCountArgs} args - Arguments to filter HomepageFeaturedProjects to count.
+     * @example
+     * // Count the number of HomepageFeaturedProjects
+     * const count = await prisma.homepageFeaturedProject.count({
+     *   where: {
+     *     // ... the filter for the HomepageFeaturedProjects we want to count
+     *   }
+     * })
+    **/
+    count<T extends HomepageFeaturedProjectCountArgs>(
+      args?: Subset<T, HomepageFeaturedProjectCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], HomepageFeaturedProjectCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a HomepageFeaturedProject.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageFeaturedProjectAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends HomepageFeaturedProjectAggregateArgs>(args: Subset<T, HomepageFeaturedProjectAggregateArgs>): Prisma.PrismaPromise<GetHomepageFeaturedProjectAggregateType<T>>
+
+    /**
+     * Group by HomepageFeaturedProject.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageFeaturedProjectGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends HomepageFeaturedProjectGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: HomepageFeaturedProjectGroupByArgs['orderBy'] }
+        : { orderBy?: HomepageFeaturedProjectGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, HomepageFeaturedProjectGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHomepageFeaturedProjectGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the HomepageFeaturedProject model
+   */
+  readonly fields: HomepageFeaturedProjectFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for HomepageFeaturedProject.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__HomepageFeaturedProjectClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    project<T extends ProjectDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ProjectDefaultArgs<ExtArgs>>): Prisma__ProjectClient<$Result.GetResult<Prisma.$ProjectPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the HomepageFeaturedProject model
+   */
+  interface HomepageFeaturedProjectFieldRefs {
+    readonly id: FieldRef<"HomepageFeaturedProject", 'String'>
+    readonly projectId: FieldRef<"HomepageFeaturedProject", 'String'>
+    readonly displayOrder: FieldRef<"HomepageFeaturedProject", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * HomepageFeaturedProject findUnique
+   */
+  export type HomepageFeaturedProjectFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedProject
+     */
+    select?: HomepageFeaturedProjectSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedProject
+     */
+    omit?: HomepageFeaturedProjectOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedProjectInclude<ExtArgs> | null
+    /**
+     * Filter, which HomepageFeaturedProject to fetch.
+     */
+    where: HomepageFeaturedProjectWhereUniqueInput
+  }
+
+  /**
+   * HomepageFeaturedProject findUniqueOrThrow
+   */
+  export type HomepageFeaturedProjectFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedProject
+     */
+    select?: HomepageFeaturedProjectSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedProject
+     */
+    omit?: HomepageFeaturedProjectOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedProjectInclude<ExtArgs> | null
+    /**
+     * Filter, which HomepageFeaturedProject to fetch.
+     */
+    where: HomepageFeaturedProjectWhereUniqueInput
+  }
+
+  /**
+   * HomepageFeaturedProject findFirst
+   */
+  export type HomepageFeaturedProjectFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedProject
+     */
+    select?: HomepageFeaturedProjectSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedProject
+     */
+    omit?: HomepageFeaturedProjectOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedProjectInclude<ExtArgs> | null
+    /**
+     * Filter, which HomepageFeaturedProject to fetch.
+     */
+    where?: HomepageFeaturedProjectWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageFeaturedProjects to fetch.
+     */
+    orderBy?: HomepageFeaturedProjectOrderByWithRelationInput | HomepageFeaturedProjectOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HomepageFeaturedProjects.
+     */
+    cursor?: HomepageFeaturedProjectWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageFeaturedProjects from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageFeaturedProjects.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HomepageFeaturedProjects.
+     */
+    distinct?: HomepageFeaturedProjectScalarFieldEnum | HomepageFeaturedProjectScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageFeaturedProject findFirstOrThrow
+   */
+  export type HomepageFeaturedProjectFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedProject
+     */
+    select?: HomepageFeaturedProjectSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedProject
+     */
+    omit?: HomepageFeaturedProjectOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedProjectInclude<ExtArgs> | null
+    /**
+     * Filter, which HomepageFeaturedProject to fetch.
+     */
+    where?: HomepageFeaturedProjectWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageFeaturedProjects to fetch.
+     */
+    orderBy?: HomepageFeaturedProjectOrderByWithRelationInput | HomepageFeaturedProjectOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HomepageFeaturedProjects.
+     */
+    cursor?: HomepageFeaturedProjectWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageFeaturedProjects from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageFeaturedProjects.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HomepageFeaturedProjects.
+     */
+    distinct?: HomepageFeaturedProjectScalarFieldEnum | HomepageFeaturedProjectScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageFeaturedProject findMany
+   */
+  export type HomepageFeaturedProjectFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedProject
+     */
+    select?: HomepageFeaturedProjectSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedProject
+     */
+    omit?: HomepageFeaturedProjectOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedProjectInclude<ExtArgs> | null
+    /**
+     * Filter, which HomepageFeaturedProjects to fetch.
+     */
+    where?: HomepageFeaturedProjectWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageFeaturedProjects to fetch.
+     */
+    orderBy?: HomepageFeaturedProjectOrderByWithRelationInput | HomepageFeaturedProjectOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing HomepageFeaturedProjects.
+     */
+    cursor?: HomepageFeaturedProjectWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageFeaturedProjects from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageFeaturedProjects.
+     */
+    skip?: number
+    distinct?: HomepageFeaturedProjectScalarFieldEnum | HomepageFeaturedProjectScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageFeaturedProject create
+   */
+  export type HomepageFeaturedProjectCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedProject
+     */
+    select?: HomepageFeaturedProjectSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedProject
+     */
+    omit?: HomepageFeaturedProjectOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedProjectInclude<ExtArgs> | null
+    /**
+     * The data needed to create a HomepageFeaturedProject.
+     */
+    data: XOR<HomepageFeaturedProjectCreateInput, HomepageFeaturedProjectUncheckedCreateInput>
+  }
+
+  /**
+   * HomepageFeaturedProject createMany
+   */
+  export type HomepageFeaturedProjectCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many HomepageFeaturedProjects.
+     */
+    data: HomepageFeaturedProjectCreateManyInput | HomepageFeaturedProjectCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HomepageFeaturedProject createManyAndReturn
+   */
+  export type HomepageFeaturedProjectCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedProject
+     */
+    select?: HomepageFeaturedProjectSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedProject
+     */
+    omit?: HomepageFeaturedProjectOmit<ExtArgs> | null
+    /**
+     * The data used to create many HomepageFeaturedProjects.
+     */
+    data: HomepageFeaturedProjectCreateManyInput | HomepageFeaturedProjectCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedProjectIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * HomepageFeaturedProject update
+   */
+  export type HomepageFeaturedProjectUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedProject
+     */
+    select?: HomepageFeaturedProjectSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedProject
+     */
+    omit?: HomepageFeaturedProjectOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedProjectInclude<ExtArgs> | null
+    /**
+     * The data needed to update a HomepageFeaturedProject.
+     */
+    data: XOR<HomepageFeaturedProjectUpdateInput, HomepageFeaturedProjectUncheckedUpdateInput>
+    /**
+     * Choose, which HomepageFeaturedProject to update.
+     */
+    where: HomepageFeaturedProjectWhereUniqueInput
+  }
+
+  /**
+   * HomepageFeaturedProject updateMany
+   */
+  export type HomepageFeaturedProjectUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update HomepageFeaturedProjects.
+     */
+    data: XOR<HomepageFeaturedProjectUpdateManyMutationInput, HomepageFeaturedProjectUncheckedUpdateManyInput>
+    /**
+     * Filter which HomepageFeaturedProjects to update
+     */
+    where?: HomepageFeaturedProjectWhereInput
+    /**
+     * Limit how many HomepageFeaturedProjects to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HomepageFeaturedProject updateManyAndReturn
+   */
+  export type HomepageFeaturedProjectUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedProject
+     */
+    select?: HomepageFeaturedProjectSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedProject
+     */
+    omit?: HomepageFeaturedProjectOmit<ExtArgs> | null
+    /**
+     * The data used to update HomepageFeaturedProjects.
+     */
+    data: XOR<HomepageFeaturedProjectUpdateManyMutationInput, HomepageFeaturedProjectUncheckedUpdateManyInput>
+    /**
+     * Filter which HomepageFeaturedProjects to update
+     */
+    where?: HomepageFeaturedProjectWhereInput
+    /**
+     * Limit how many HomepageFeaturedProjects to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedProjectIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * HomepageFeaturedProject upsert
+   */
+  export type HomepageFeaturedProjectUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedProject
+     */
+    select?: HomepageFeaturedProjectSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedProject
+     */
+    omit?: HomepageFeaturedProjectOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedProjectInclude<ExtArgs> | null
+    /**
+     * The filter to search for the HomepageFeaturedProject to update in case it exists.
+     */
+    where: HomepageFeaturedProjectWhereUniqueInput
+    /**
+     * In case the HomepageFeaturedProject found by the `where` argument doesn't exist, create a new HomepageFeaturedProject with this data.
+     */
+    create: XOR<HomepageFeaturedProjectCreateInput, HomepageFeaturedProjectUncheckedCreateInput>
+    /**
+     * In case the HomepageFeaturedProject was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<HomepageFeaturedProjectUpdateInput, HomepageFeaturedProjectUncheckedUpdateInput>
+  }
+
+  /**
+   * HomepageFeaturedProject delete
+   */
+  export type HomepageFeaturedProjectDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedProject
+     */
+    select?: HomepageFeaturedProjectSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedProject
+     */
+    omit?: HomepageFeaturedProjectOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedProjectInclude<ExtArgs> | null
+    /**
+     * Filter which HomepageFeaturedProject to delete.
+     */
+    where: HomepageFeaturedProjectWhereUniqueInput
+  }
+
+  /**
+   * HomepageFeaturedProject deleteMany
+   */
+  export type HomepageFeaturedProjectDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HomepageFeaturedProjects to delete
+     */
+    where?: HomepageFeaturedProjectWhereInput
+    /**
+     * Limit how many HomepageFeaturedProjects to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * HomepageFeaturedProject without action
+   */
+  export type HomepageFeaturedProjectDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedProject
+     */
+    select?: HomepageFeaturedProjectSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedProject
+     */
+    omit?: HomepageFeaturedProjectOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedProjectInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model HomepageFeaturedNews
+   */
+
+  export type AggregateHomepageFeaturedNews = {
+    _count: HomepageFeaturedNewsCountAggregateOutputType | null
+    _avg: HomepageFeaturedNewsAvgAggregateOutputType | null
+    _sum: HomepageFeaturedNewsSumAggregateOutputType | null
+    _min: HomepageFeaturedNewsMinAggregateOutputType | null
+    _max: HomepageFeaturedNewsMaxAggregateOutputType | null
+  }
+
+  export type HomepageFeaturedNewsAvgAggregateOutputType = {
+    displayOrder: number | null
+  }
+
+  export type HomepageFeaturedNewsSumAggregateOutputType = {
+    displayOrder: number | null
+  }
+
+  export type HomepageFeaturedNewsMinAggregateOutputType = {
+    id: string | null
+    articleId: string | null
+    displayOrder: number | null
+  }
+
+  export type HomepageFeaturedNewsMaxAggregateOutputType = {
+    id: string | null
+    articleId: string | null
+    displayOrder: number | null
+  }
+
+  export type HomepageFeaturedNewsCountAggregateOutputType = {
+    id: number
+    articleId: number
+    displayOrder: number
+    _all: number
+  }
+
+
+  export type HomepageFeaturedNewsAvgAggregateInputType = {
+    displayOrder?: true
+  }
+
+  export type HomepageFeaturedNewsSumAggregateInputType = {
+    displayOrder?: true
+  }
+
+  export type HomepageFeaturedNewsMinAggregateInputType = {
+    id?: true
+    articleId?: true
+    displayOrder?: true
+  }
+
+  export type HomepageFeaturedNewsMaxAggregateInputType = {
+    id?: true
+    articleId?: true
+    displayOrder?: true
+  }
+
+  export type HomepageFeaturedNewsCountAggregateInputType = {
+    id?: true
+    articleId?: true
+    displayOrder?: true
+    _all?: true
+  }
+
+  export type HomepageFeaturedNewsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HomepageFeaturedNews to aggregate.
+     */
+    where?: HomepageFeaturedNewsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageFeaturedNews to fetch.
+     */
+    orderBy?: HomepageFeaturedNewsOrderByWithRelationInput | HomepageFeaturedNewsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: HomepageFeaturedNewsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageFeaturedNews from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageFeaturedNews.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned HomepageFeaturedNews
+    **/
+    _count?: true | HomepageFeaturedNewsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: HomepageFeaturedNewsAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: HomepageFeaturedNewsSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: HomepageFeaturedNewsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: HomepageFeaturedNewsMaxAggregateInputType
+  }
+
+  export type GetHomepageFeaturedNewsAggregateType<T extends HomepageFeaturedNewsAggregateArgs> = {
+        [P in keyof T & keyof AggregateHomepageFeaturedNews]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateHomepageFeaturedNews[P]>
+      : GetScalarType<T[P], AggregateHomepageFeaturedNews[P]>
+  }
+
+
+
+
+  export type HomepageFeaturedNewsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HomepageFeaturedNewsWhereInput
+    orderBy?: HomepageFeaturedNewsOrderByWithAggregationInput | HomepageFeaturedNewsOrderByWithAggregationInput[]
+    by: HomepageFeaturedNewsScalarFieldEnum[] | HomepageFeaturedNewsScalarFieldEnum
+    having?: HomepageFeaturedNewsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: HomepageFeaturedNewsCountAggregateInputType | true
+    _avg?: HomepageFeaturedNewsAvgAggregateInputType
+    _sum?: HomepageFeaturedNewsSumAggregateInputType
+    _min?: HomepageFeaturedNewsMinAggregateInputType
+    _max?: HomepageFeaturedNewsMaxAggregateInputType
+  }
+
+  export type HomepageFeaturedNewsGroupByOutputType = {
+    id: string
+    articleId: string
+    displayOrder: number
+    _count: HomepageFeaturedNewsCountAggregateOutputType | null
+    _avg: HomepageFeaturedNewsAvgAggregateOutputType | null
+    _sum: HomepageFeaturedNewsSumAggregateOutputType | null
+    _min: HomepageFeaturedNewsMinAggregateOutputType | null
+    _max: HomepageFeaturedNewsMaxAggregateOutputType | null
+  }
+
+  type GetHomepageFeaturedNewsGroupByPayload<T extends HomepageFeaturedNewsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<HomepageFeaturedNewsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof HomepageFeaturedNewsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], HomepageFeaturedNewsGroupByOutputType[P]>
+            : GetScalarType<T[P], HomepageFeaturedNewsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type HomepageFeaturedNewsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    articleId?: boolean
+    displayOrder?: boolean
+    article?: boolean | NewsArticleDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["homepageFeaturedNews"]>
+
+  export type HomepageFeaturedNewsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    articleId?: boolean
+    displayOrder?: boolean
+    article?: boolean | NewsArticleDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["homepageFeaturedNews"]>
+
+  export type HomepageFeaturedNewsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    articleId?: boolean
+    displayOrder?: boolean
+    article?: boolean | NewsArticleDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["homepageFeaturedNews"]>
+
+  export type HomepageFeaturedNewsSelectScalar = {
+    id?: boolean
+    articleId?: boolean
+    displayOrder?: boolean
+  }
+
+  export type HomepageFeaturedNewsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "articleId" | "displayOrder", ExtArgs["result"]["homepageFeaturedNews"]>
+  export type HomepageFeaturedNewsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    article?: boolean | NewsArticleDefaultArgs<ExtArgs>
+  }
+  export type HomepageFeaturedNewsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    article?: boolean | NewsArticleDefaultArgs<ExtArgs>
+  }
+  export type HomepageFeaturedNewsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    article?: boolean | NewsArticleDefaultArgs<ExtArgs>
+  }
+
+  export type $HomepageFeaturedNewsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "HomepageFeaturedNews"
+    objects: {
+      article: Prisma.$NewsArticlePayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      articleId: string
+      displayOrder: number
+    }, ExtArgs["result"]["homepageFeaturedNews"]>
+    composites: {}
+  }
+
+  type HomepageFeaturedNewsGetPayload<S extends boolean | null | undefined | HomepageFeaturedNewsDefaultArgs> = $Result.GetResult<Prisma.$HomepageFeaturedNewsPayload, S>
+
+  type HomepageFeaturedNewsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HomepageFeaturedNewsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HomepageFeaturedNewsCountAggregateInputType | true
+    }
+
+  export interface HomepageFeaturedNewsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['HomepageFeaturedNews'], meta: { name: 'HomepageFeaturedNews' } }
+    /**
+     * Find zero or one HomepageFeaturedNews that matches the filter.
+     * @param {HomepageFeaturedNewsFindUniqueArgs} args - Arguments to find a HomepageFeaturedNews
+     * @example
+     * // Get one HomepageFeaturedNews
+     * const homepageFeaturedNews = await prisma.homepageFeaturedNews.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends HomepageFeaturedNewsFindUniqueArgs>(args: SelectSubset<T, HomepageFeaturedNewsFindUniqueArgs<ExtArgs>>): Prisma__HomepageFeaturedNewsClient<$Result.GetResult<Prisma.$HomepageFeaturedNewsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one HomepageFeaturedNews that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {HomepageFeaturedNewsFindUniqueOrThrowArgs} args - Arguments to find a HomepageFeaturedNews
+     * @example
+     * // Get one HomepageFeaturedNews
+     * const homepageFeaturedNews = await prisma.homepageFeaturedNews.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends HomepageFeaturedNewsFindUniqueOrThrowArgs>(args: SelectSubset<T, HomepageFeaturedNewsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HomepageFeaturedNewsClient<$Result.GetResult<Prisma.$HomepageFeaturedNewsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HomepageFeaturedNews that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageFeaturedNewsFindFirstArgs} args - Arguments to find a HomepageFeaturedNews
+     * @example
+     * // Get one HomepageFeaturedNews
+     * const homepageFeaturedNews = await prisma.homepageFeaturedNews.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends HomepageFeaturedNewsFindFirstArgs>(args?: SelectSubset<T, HomepageFeaturedNewsFindFirstArgs<ExtArgs>>): Prisma__HomepageFeaturedNewsClient<$Result.GetResult<Prisma.$HomepageFeaturedNewsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HomepageFeaturedNews that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageFeaturedNewsFindFirstOrThrowArgs} args - Arguments to find a HomepageFeaturedNews
+     * @example
+     * // Get one HomepageFeaturedNews
+     * const homepageFeaturedNews = await prisma.homepageFeaturedNews.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends HomepageFeaturedNewsFindFirstOrThrowArgs>(args?: SelectSubset<T, HomepageFeaturedNewsFindFirstOrThrowArgs<ExtArgs>>): Prisma__HomepageFeaturedNewsClient<$Result.GetResult<Prisma.$HomepageFeaturedNewsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more HomepageFeaturedNews that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageFeaturedNewsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all HomepageFeaturedNews
+     * const homepageFeaturedNews = await prisma.homepageFeaturedNews.findMany()
+     * 
+     * // Get first 10 HomepageFeaturedNews
+     * const homepageFeaturedNews = await prisma.homepageFeaturedNews.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const homepageFeaturedNewsWithIdOnly = await prisma.homepageFeaturedNews.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends HomepageFeaturedNewsFindManyArgs>(args?: SelectSubset<T, HomepageFeaturedNewsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageFeaturedNewsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a HomepageFeaturedNews.
+     * @param {HomepageFeaturedNewsCreateArgs} args - Arguments to create a HomepageFeaturedNews.
+     * @example
+     * // Create one HomepageFeaturedNews
+     * const HomepageFeaturedNews = await prisma.homepageFeaturedNews.create({
+     *   data: {
+     *     // ... data to create a HomepageFeaturedNews
+     *   }
+     * })
+     * 
+     */
+    create<T extends HomepageFeaturedNewsCreateArgs>(args: SelectSubset<T, HomepageFeaturedNewsCreateArgs<ExtArgs>>): Prisma__HomepageFeaturedNewsClient<$Result.GetResult<Prisma.$HomepageFeaturedNewsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many HomepageFeaturedNews.
+     * @param {HomepageFeaturedNewsCreateManyArgs} args - Arguments to create many HomepageFeaturedNews.
+     * @example
+     * // Create many HomepageFeaturedNews
+     * const homepageFeaturedNews = await prisma.homepageFeaturedNews.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends HomepageFeaturedNewsCreateManyArgs>(args?: SelectSubset<T, HomepageFeaturedNewsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many HomepageFeaturedNews and returns the data saved in the database.
+     * @param {HomepageFeaturedNewsCreateManyAndReturnArgs} args - Arguments to create many HomepageFeaturedNews.
+     * @example
+     * // Create many HomepageFeaturedNews
+     * const homepageFeaturedNews = await prisma.homepageFeaturedNews.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many HomepageFeaturedNews and only return the `id`
+     * const homepageFeaturedNewsWithIdOnly = await prisma.homepageFeaturedNews.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends HomepageFeaturedNewsCreateManyAndReturnArgs>(args?: SelectSubset<T, HomepageFeaturedNewsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageFeaturedNewsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a HomepageFeaturedNews.
+     * @param {HomepageFeaturedNewsDeleteArgs} args - Arguments to delete one HomepageFeaturedNews.
+     * @example
+     * // Delete one HomepageFeaturedNews
+     * const HomepageFeaturedNews = await prisma.homepageFeaturedNews.delete({
+     *   where: {
+     *     // ... filter to delete one HomepageFeaturedNews
+     *   }
+     * })
+     * 
+     */
+    delete<T extends HomepageFeaturedNewsDeleteArgs>(args: SelectSubset<T, HomepageFeaturedNewsDeleteArgs<ExtArgs>>): Prisma__HomepageFeaturedNewsClient<$Result.GetResult<Prisma.$HomepageFeaturedNewsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one HomepageFeaturedNews.
+     * @param {HomepageFeaturedNewsUpdateArgs} args - Arguments to update one HomepageFeaturedNews.
+     * @example
+     * // Update one HomepageFeaturedNews
+     * const homepageFeaturedNews = await prisma.homepageFeaturedNews.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends HomepageFeaturedNewsUpdateArgs>(args: SelectSubset<T, HomepageFeaturedNewsUpdateArgs<ExtArgs>>): Prisma__HomepageFeaturedNewsClient<$Result.GetResult<Prisma.$HomepageFeaturedNewsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more HomepageFeaturedNews.
+     * @param {HomepageFeaturedNewsDeleteManyArgs} args - Arguments to filter HomepageFeaturedNews to delete.
+     * @example
+     * // Delete a few HomepageFeaturedNews
+     * const { count } = await prisma.homepageFeaturedNews.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends HomepageFeaturedNewsDeleteManyArgs>(args?: SelectSubset<T, HomepageFeaturedNewsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HomepageFeaturedNews.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageFeaturedNewsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many HomepageFeaturedNews
+     * const homepageFeaturedNews = await prisma.homepageFeaturedNews.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends HomepageFeaturedNewsUpdateManyArgs>(args: SelectSubset<T, HomepageFeaturedNewsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HomepageFeaturedNews and returns the data updated in the database.
+     * @param {HomepageFeaturedNewsUpdateManyAndReturnArgs} args - Arguments to update many HomepageFeaturedNews.
+     * @example
+     * // Update many HomepageFeaturedNews
+     * const homepageFeaturedNews = await prisma.homepageFeaturedNews.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more HomepageFeaturedNews and only return the `id`
+     * const homepageFeaturedNewsWithIdOnly = await prisma.homepageFeaturedNews.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends HomepageFeaturedNewsUpdateManyAndReturnArgs>(args: SelectSubset<T, HomepageFeaturedNewsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageFeaturedNewsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one HomepageFeaturedNews.
+     * @param {HomepageFeaturedNewsUpsertArgs} args - Arguments to update or create a HomepageFeaturedNews.
+     * @example
+     * // Update or create a HomepageFeaturedNews
+     * const homepageFeaturedNews = await prisma.homepageFeaturedNews.upsert({
+     *   create: {
+     *     // ... data to create a HomepageFeaturedNews
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the HomepageFeaturedNews we want to update
+     *   }
+     * })
+     */
+    upsert<T extends HomepageFeaturedNewsUpsertArgs>(args: SelectSubset<T, HomepageFeaturedNewsUpsertArgs<ExtArgs>>): Prisma__HomepageFeaturedNewsClient<$Result.GetResult<Prisma.$HomepageFeaturedNewsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of HomepageFeaturedNews.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageFeaturedNewsCountArgs} args - Arguments to filter HomepageFeaturedNews to count.
+     * @example
+     * // Count the number of HomepageFeaturedNews
+     * const count = await prisma.homepageFeaturedNews.count({
+     *   where: {
+     *     // ... the filter for the HomepageFeaturedNews we want to count
+     *   }
+     * })
+    **/
+    count<T extends HomepageFeaturedNewsCountArgs>(
+      args?: Subset<T, HomepageFeaturedNewsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], HomepageFeaturedNewsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a HomepageFeaturedNews.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageFeaturedNewsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends HomepageFeaturedNewsAggregateArgs>(args: Subset<T, HomepageFeaturedNewsAggregateArgs>): Prisma.PrismaPromise<GetHomepageFeaturedNewsAggregateType<T>>
+
+    /**
+     * Group by HomepageFeaturedNews.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageFeaturedNewsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends HomepageFeaturedNewsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: HomepageFeaturedNewsGroupByArgs['orderBy'] }
+        : { orderBy?: HomepageFeaturedNewsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, HomepageFeaturedNewsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHomepageFeaturedNewsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the HomepageFeaturedNews model
+   */
+  readonly fields: HomepageFeaturedNewsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for HomepageFeaturedNews.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__HomepageFeaturedNewsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    article<T extends NewsArticleDefaultArgs<ExtArgs> = {}>(args?: Subset<T, NewsArticleDefaultArgs<ExtArgs>>): Prisma__NewsArticleClient<$Result.GetResult<Prisma.$NewsArticlePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the HomepageFeaturedNews model
+   */
+  interface HomepageFeaturedNewsFieldRefs {
+    readonly id: FieldRef<"HomepageFeaturedNews", 'String'>
+    readonly articleId: FieldRef<"HomepageFeaturedNews", 'String'>
+    readonly displayOrder: FieldRef<"HomepageFeaturedNews", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * HomepageFeaturedNews findUnique
+   */
+  export type HomepageFeaturedNewsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedNews
+     */
+    select?: HomepageFeaturedNewsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedNews
+     */
+    omit?: HomepageFeaturedNewsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedNewsInclude<ExtArgs> | null
+    /**
+     * Filter, which HomepageFeaturedNews to fetch.
+     */
+    where: HomepageFeaturedNewsWhereUniqueInput
+  }
+
+  /**
+   * HomepageFeaturedNews findUniqueOrThrow
+   */
+  export type HomepageFeaturedNewsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedNews
+     */
+    select?: HomepageFeaturedNewsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedNews
+     */
+    omit?: HomepageFeaturedNewsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedNewsInclude<ExtArgs> | null
+    /**
+     * Filter, which HomepageFeaturedNews to fetch.
+     */
+    where: HomepageFeaturedNewsWhereUniqueInput
+  }
+
+  /**
+   * HomepageFeaturedNews findFirst
+   */
+  export type HomepageFeaturedNewsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedNews
+     */
+    select?: HomepageFeaturedNewsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedNews
+     */
+    omit?: HomepageFeaturedNewsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedNewsInclude<ExtArgs> | null
+    /**
+     * Filter, which HomepageFeaturedNews to fetch.
+     */
+    where?: HomepageFeaturedNewsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageFeaturedNews to fetch.
+     */
+    orderBy?: HomepageFeaturedNewsOrderByWithRelationInput | HomepageFeaturedNewsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HomepageFeaturedNews.
+     */
+    cursor?: HomepageFeaturedNewsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageFeaturedNews from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageFeaturedNews.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HomepageFeaturedNews.
+     */
+    distinct?: HomepageFeaturedNewsScalarFieldEnum | HomepageFeaturedNewsScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageFeaturedNews findFirstOrThrow
+   */
+  export type HomepageFeaturedNewsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedNews
+     */
+    select?: HomepageFeaturedNewsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedNews
+     */
+    omit?: HomepageFeaturedNewsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedNewsInclude<ExtArgs> | null
+    /**
+     * Filter, which HomepageFeaturedNews to fetch.
+     */
+    where?: HomepageFeaturedNewsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageFeaturedNews to fetch.
+     */
+    orderBy?: HomepageFeaturedNewsOrderByWithRelationInput | HomepageFeaturedNewsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HomepageFeaturedNews.
+     */
+    cursor?: HomepageFeaturedNewsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageFeaturedNews from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageFeaturedNews.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HomepageFeaturedNews.
+     */
+    distinct?: HomepageFeaturedNewsScalarFieldEnum | HomepageFeaturedNewsScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageFeaturedNews findMany
+   */
+  export type HomepageFeaturedNewsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedNews
+     */
+    select?: HomepageFeaturedNewsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedNews
+     */
+    omit?: HomepageFeaturedNewsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedNewsInclude<ExtArgs> | null
+    /**
+     * Filter, which HomepageFeaturedNews to fetch.
+     */
+    where?: HomepageFeaturedNewsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepageFeaturedNews to fetch.
+     */
+    orderBy?: HomepageFeaturedNewsOrderByWithRelationInput | HomepageFeaturedNewsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing HomepageFeaturedNews.
+     */
+    cursor?: HomepageFeaturedNewsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepageFeaturedNews from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepageFeaturedNews.
+     */
+    skip?: number
+    distinct?: HomepageFeaturedNewsScalarFieldEnum | HomepageFeaturedNewsScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageFeaturedNews create
+   */
+  export type HomepageFeaturedNewsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedNews
+     */
+    select?: HomepageFeaturedNewsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedNews
+     */
+    omit?: HomepageFeaturedNewsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedNewsInclude<ExtArgs> | null
+    /**
+     * The data needed to create a HomepageFeaturedNews.
+     */
+    data: XOR<HomepageFeaturedNewsCreateInput, HomepageFeaturedNewsUncheckedCreateInput>
+  }
+
+  /**
+   * HomepageFeaturedNews createMany
+   */
+  export type HomepageFeaturedNewsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many HomepageFeaturedNews.
+     */
+    data: HomepageFeaturedNewsCreateManyInput | HomepageFeaturedNewsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HomepageFeaturedNews createManyAndReturn
+   */
+  export type HomepageFeaturedNewsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedNews
+     */
+    select?: HomepageFeaturedNewsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedNews
+     */
+    omit?: HomepageFeaturedNewsOmit<ExtArgs> | null
+    /**
+     * The data used to create many HomepageFeaturedNews.
+     */
+    data: HomepageFeaturedNewsCreateManyInput | HomepageFeaturedNewsCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedNewsIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * HomepageFeaturedNews update
+   */
+  export type HomepageFeaturedNewsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedNews
+     */
+    select?: HomepageFeaturedNewsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedNews
+     */
+    omit?: HomepageFeaturedNewsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedNewsInclude<ExtArgs> | null
+    /**
+     * The data needed to update a HomepageFeaturedNews.
+     */
+    data: XOR<HomepageFeaturedNewsUpdateInput, HomepageFeaturedNewsUncheckedUpdateInput>
+    /**
+     * Choose, which HomepageFeaturedNews to update.
+     */
+    where: HomepageFeaturedNewsWhereUniqueInput
+  }
+
+  /**
+   * HomepageFeaturedNews updateMany
+   */
+  export type HomepageFeaturedNewsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update HomepageFeaturedNews.
+     */
+    data: XOR<HomepageFeaturedNewsUpdateManyMutationInput, HomepageFeaturedNewsUncheckedUpdateManyInput>
+    /**
+     * Filter which HomepageFeaturedNews to update
+     */
+    where?: HomepageFeaturedNewsWhereInput
+    /**
+     * Limit how many HomepageFeaturedNews to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HomepageFeaturedNews updateManyAndReturn
+   */
+  export type HomepageFeaturedNewsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedNews
+     */
+    select?: HomepageFeaturedNewsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedNews
+     */
+    omit?: HomepageFeaturedNewsOmit<ExtArgs> | null
+    /**
+     * The data used to update HomepageFeaturedNews.
+     */
+    data: XOR<HomepageFeaturedNewsUpdateManyMutationInput, HomepageFeaturedNewsUncheckedUpdateManyInput>
+    /**
+     * Filter which HomepageFeaturedNews to update
+     */
+    where?: HomepageFeaturedNewsWhereInput
+    /**
+     * Limit how many HomepageFeaturedNews to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedNewsIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * HomepageFeaturedNews upsert
+   */
+  export type HomepageFeaturedNewsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedNews
+     */
+    select?: HomepageFeaturedNewsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedNews
+     */
+    omit?: HomepageFeaturedNewsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedNewsInclude<ExtArgs> | null
+    /**
+     * The filter to search for the HomepageFeaturedNews to update in case it exists.
+     */
+    where: HomepageFeaturedNewsWhereUniqueInput
+    /**
+     * In case the HomepageFeaturedNews found by the `where` argument doesn't exist, create a new HomepageFeaturedNews with this data.
+     */
+    create: XOR<HomepageFeaturedNewsCreateInput, HomepageFeaturedNewsUncheckedCreateInput>
+    /**
+     * In case the HomepageFeaturedNews was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<HomepageFeaturedNewsUpdateInput, HomepageFeaturedNewsUncheckedUpdateInput>
+  }
+
+  /**
+   * HomepageFeaturedNews delete
+   */
+  export type HomepageFeaturedNewsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedNews
+     */
+    select?: HomepageFeaturedNewsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedNews
+     */
+    omit?: HomepageFeaturedNewsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedNewsInclude<ExtArgs> | null
+    /**
+     * Filter which HomepageFeaturedNews to delete.
+     */
+    where: HomepageFeaturedNewsWhereUniqueInput
+  }
+
+  /**
+   * HomepageFeaturedNews deleteMany
+   */
+  export type HomepageFeaturedNewsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HomepageFeaturedNews to delete
+     */
+    where?: HomepageFeaturedNewsWhereInput
+    /**
+     * Limit how many HomepageFeaturedNews to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * HomepageFeaturedNews without action
+   */
+  export type HomepageFeaturedNewsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageFeaturedNews
+     */
+    select?: HomepageFeaturedNewsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageFeaturedNews
+     */
+    omit?: HomepageFeaturedNewsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HomepageFeaturedNewsInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model HomepageProgram
+   */
+
+  export type AggregateHomepageProgram = {
+    _count: HomepageProgramCountAggregateOutputType | null
+    _avg: HomepageProgramAvgAggregateOutputType | null
+    _sum: HomepageProgramSumAggregateOutputType | null
+    _min: HomepageProgramMinAggregateOutputType | null
+    _max: HomepageProgramMaxAggregateOutputType | null
+  }
+
+  export type HomepageProgramAvgAggregateOutputType = {
+    displayOrder: number | null
+  }
+
+  export type HomepageProgramSumAggregateOutputType = {
+    displayOrder: number | null
+  }
+
+  export type HomepageProgramMinAggregateOutputType = {
+    id: string | null
+    title: string | null
+    description: string | null
+    iconName: string | null
+    tone: $Enums.Tone | null
+    linkUrl: string | null
+    displayOrder: number | null
+    active: boolean | null
+  }
+
+  export type HomepageProgramMaxAggregateOutputType = {
+    id: string | null
+    title: string | null
+    description: string | null
+    iconName: string | null
+    tone: $Enums.Tone | null
+    linkUrl: string | null
+    displayOrder: number | null
+    active: boolean | null
+  }
+
+  export type HomepageProgramCountAggregateOutputType = {
+    id: number
+    title: number
+    description: number
+    iconName: number
+    tone: number
+    linkUrl: number
+    displayOrder: number
+    active: number
+    _all: number
+  }
+
+
+  export type HomepageProgramAvgAggregateInputType = {
+    displayOrder?: true
+  }
+
+  export type HomepageProgramSumAggregateInputType = {
+    displayOrder?: true
+  }
+
+  export type HomepageProgramMinAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    iconName?: true
+    tone?: true
+    linkUrl?: true
+    displayOrder?: true
+    active?: true
+  }
+
+  export type HomepageProgramMaxAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    iconName?: true
+    tone?: true
+    linkUrl?: true
+    displayOrder?: true
+    active?: true
+  }
+
+  export type HomepageProgramCountAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    iconName?: true
+    tone?: true
+    linkUrl?: true
+    displayOrder?: true
+    active?: true
+    _all?: true
+  }
+
+  export type HomepageProgramAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HomepageProgram to aggregate.
+     */
+    where?: HomepageProgramWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepagePrograms to fetch.
+     */
+    orderBy?: HomepageProgramOrderByWithRelationInput | HomepageProgramOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: HomepageProgramWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepagePrograms from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepagePrograms.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned HomepagePrograms
+    **/
+    _count?: true | HomepageProgramCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: HomepageProgramAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: HomepageProgramSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: HomepageProgramMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: HomepageProgramMaxAggregateInputType
+  }
+
+  export type GetHomepageProgramAggregateType<T extends HomepageProgramAggregateArgs> = {
+        [P in keyof T & keyof AggregateHomepageProgram]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateHomepageProgram[P]>
+      : GetScalarType<T[P], AggregateHomepageProgram[P]>
+  }
+
+
+
+
+  export type HomepageProgramGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HomepageProgramWhereInput
+    orderBy?: HomepageProgramOrderByWithAggregationInput | HomepageProgramOrderByWithAggregationInput[]
+    by: HomepageProgramScalarFieldEnum[] | HomepageProgramScalarFieldEnum
+    having?: HomepageProgramScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: HomepageProgramCountAggregateInputType | true
+    _avg?: HomepageProgramAvgAggregateInputType
+    _sum?: HomepageProgramSumAggregateInputType
+    _min?: HomepageProgramMinAggregateInputType
+    _max?: HomepageProgramMaxAggregateInputType
+  }
+
+  export type HomepageProgramGroupByOutputType = {
+    id: string
+    title: string
+    description: string
+    iconName: string
+    tone: $Enums.Tone
+    linkUrl: string
+    displayOrder: number
+    active: boolean
+    _count: HomepageProgramCountAggregateOutputType | null
+    _avg: HomepageProgramAvgAggregateOutputType | null
+    _sum: HomepageProgramSumAggregateOutputType | null
+    _min: HomepageProgramMinAggregateOutputType | null
+    _max: HomepageProgramMaxAggregateOutputType | null
+  }
+
+  type GetHomepageProgramGroupByPayload<T extends HomepageProgramGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<HomepageProgramGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof HomepageProgramGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], HomepageProgramGroupByOutputType[P]>
+            : GetScalarType<T[P], HomepageProgramGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type HomepageProgramSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    iconName?: boolean
+    tone?: boolean
+    linkUrl?: boolean
+    displayOrder?: boolean
+    active?: boolean
+  }, ExtArgs["result"]["homepageProgram"]>
+
+  export type HomepageProgramSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    iconName?: boolean
+    tone?: boolean
+    linkUrl?: boolean
+    displayOrder?: boolean
+    active?: boolean
+  }, ExtArgs["result"]["homepageProgram"]>
+
+  export type HomepageProgramSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    iconName?: boolean
+    tone?: boolean
+    linkUrl?: boolean
+    displayOrder?: boolean
+    active?: boolean
+  }, ExtArgs["result"]["homepageProgram"]>
+
+  export type HomepageProgramSelectScalar = {
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    iconName?: boolean
+    tone?: boolean
+    linkUrl?: boolean
+    displayOrder?: boolean
+    active?: boolean
+  }
+
+  export type HomepageProgramOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "iconName" | "tone" | "linkUrl" | "displayOrder" | "active", ExtArgs["result"]["homepageProgram"]>
+
+  export type $HomepageProgramPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "HomepageProgram"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      title: string
+      description: string
+      iconName: string
+      tone: $Enums.Tone
+      linkUrl: string
+      displayOrder: number
+      active: boolean
+    }, ExtArgs["result"]["homepageProgram"]>
+    composites: {}
+  }
+
+  type HomepageProgramGetPayload<S extends boolean | null | undefined | HomepageProgramDefaultArgs> = $Result.GetResult<Prisma.$HomepageProgramPayload, S>
+
+  type HomepageProgramCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HomepageProgramFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HomepageProgramCountAggregateInputType | true
+    }
+
+  export interface HomepageProgramDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['HomepageProgram'], meta: { name: 'HomepageProgram' } }
+    /**
+     * Find zero or one HomepageProgram that matches the filter.
+     * @param {HomepageProgramFindUniqueArgs} args - Arguments to find a HomepageProgram
+     * @example
+     * // Get one HomepageProgram
+     * const homepageProgram = await prisma.homepageProgram.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends HomepageProgramFindUniqueArgs>(args: SelectSubset<T, HomepageProgramFindUniqueArgs<ExtArgs>>): Prisma__HomepageProgramClient<$Result.GetResult<Prisma.$HomepageProgramPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one HomepageProgram that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {HomepageProgramFindUniqueOrThrowArgs} args - Arguments to find a HomepageProgram
+     * @example
+     * // Get one HomepageProgram
+     * const homepageProgram = await prisma.homepageProgram.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends HomepageProgramFindUniqueOrThrowArgs>(args: SelectSubset<T, HomepageProgramFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HomepageProgramClient<$Result.GetResult<Prisma.$HomepageProgramPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HomepageProgram that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageProgramFindFirstArgs} args - Arguments to find a HomepageProgram
+     * @example
+     * // Get one HomepageProgram
+     * const homepageProgram = await prisma.homepageProgram.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends HomepageProgramFindFirstArgs>(args?: SelectSubset<T, HomepageProgramFindFirstArgs<ExtArgs>>): Prisma__HomepageProgramClient<$Result.GetResult<Prisma.$HomepageProgramPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HomepageProgram that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageProgramFindFirstOrThrowArgs} args - Arguments to find a HomepageProgram
+     * @example
+     * // Get one HomepageProgram
+     * const homepageProgram = await prisma.homepageProgram.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends HomepageProgramFindFirstOrThrowArgs>(args?: SelectSubset<T, HomepageProgramFindFirstOrThrowArgs<ExtArgs>>): Prisma__HomepageProgramClient<$Result.GetResult<Prisma.$HomepageProgramPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more HomepagePrograms that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageProgramFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all HomepagePrograms
+     * const homepagePrograms = await prisma.homepageProgram.findMany()
+     * 
+     * // Get first 10 HomepagePrograms
+     * const homepagePrograms = await prisma.homepageProgram.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const homepageProgramWithIdOnly = await prisma.homepageProgram.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends HomepageProgramFindManyArgs>(args?: SelectSubset<T, HomepageProgramFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageProgramPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a HomepageProgram.
+     * @param {HomepageProgramCreateArgs} args - Arguments to create a HomepageProgram.
+     * @example
+     * // Create one HomepageProgram
+     * const HomepageProgram = await prisma.homepageProgram.create({
+     *   data: {
+     *     // ... data to create a HomepageProgram
+     *   }
+     * })
+     * 
+     */
+    create<T extends HomepageProgramCreateArgs>(args: SelectSubset<T, HomepageProgramCreateArgs<ExtArgs>>): Prisma__HomepageProgramClient<$Result.GetResult<Prisma.$HomepageProgramPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many HomepagePrograms.
+     * @param {HomepageProgramCreateManyArgs} args - Arguments to create many HomepagePrograms.
+     * @example
+     * // Create many HomepagePrograms
+     * const homepageProgram = await prisma.homepageProgram.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends HomepageProgramCreateManyArgs>(args?: SelectSubset<T, HomepageProgramCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many HomepagePrograms and returns the data saved in the database.
+     * @param {HomepageProgramCreateManyAndReturnArgs} args - Arguments to create many HomepagePrograms.
+     * @example
+     * // Create many HomepagePrograms
+     * const homepageProgram = await prisma.homepageProgram.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many HomepagePrograms and only return the `id`
+     * const homepageProgramWithIdOnly = await prisma.homepageProgram.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends HomepageProgramCreateManyAndReturnArgs>(args?: SelectSubset<T, HomepageProgramCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageProgramPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a HomepageProgram.
+     * @param {HomepageProgramDeleteArgs} args - Arguments to delete one HomepageProgram.
+     * @example
+     * // Delete one HomepageProgram
+     * const HomepageProgram = await prisma.homepageProgram.delete({
+     *   where: {
+     *     // ... filter to delete one HomepageProgram
+     *   }
+     * })
+     * 
+     */
+    delete<T extends HomepageProgramDeleteArgs>(args: SelectSubset<T, HomepageProgramDeleteArgs<ExtArgs>>): Prisma__HomepageProgramClient<$Result.GetResult<Prisma.$HomepageProgramPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one HomepageProgram.
+     * @param {HomepageProgramUpdateArgs} args - Arguments to update one HomepageProgram.
+     * @example
+     * // Update one HomepageProgram
+     * const homepageProgram = await prisma.homepageProgram.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends HomepageProgramUpdateArgs>(args: SelectSubset<T, HomepageProgramUpdateArgs<ExtArgs>>): Prisma__HomepageProgramClient<$Result.GetResult<Prisma.$HomepageProgramPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more HomepagePrograms.
+     * @param {HomepageProgramDeleteManyArgs} args - Arguments to filter HomepagePrograms to delete.
+     * @example
+     * // Delete a few HomepagePrograms
+     * const { count } = await prisma.homepageProgram.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends HomepageProgramDeleteManyArgs>(args?: SelectSubset<T, HomepageProgramDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HomepagePrograms.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageProgramUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many HomepagePrograms
+     * const homepageProgram = await prisma.homepageProgram.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends HomepageProgramUpdateManyArgs>(args: SelectSubset<T, HomepageProgramUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HomepagePrograms and returns the data updated in the database.
+     * @param {HomepageProgramUpdateManyAndReturnArgs} args - Arguments to update many HomepagePrograms.
+     * @example
+     * // Update many HomepagePrograms
+     * const homepageProgram = await prisma.homepageProgram.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more HomepagePrograms and only return the `id`
+     * const homepageProgramWithIdOnly = await prisma.homepageProgram.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends HomepageProgramUpdateManyAndReturnArgs>(args: SelectSubset<T, HomepageProgramUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HomepageProgramPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one HomepageProgram.
+     * @param {HomepageProgramUpsertArgs} args - Arguments to update or create a HomepageProgram.
+     * @example
+     * // Update or create a HomepageProgram
+     * const homepageProgram = await prisma.homepageProgram.upsert({
+     *   create: {
+     *     // ... data to create a HomepageProgram
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the HomepageProgram we want to update
+     *   }
+     * })
+     */
+    upsert<T extends HomepageProgramUpsertArgs>(args: SelectSubset<T, HomepageProgramUpsertArgs<ExtArgs>>): Prisma__HomepageProgramClient<$Result.GetResult<Prisma.$HomepageProgramPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of HomepagePrograms.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageProgramCountArgs} args - Arguments to filter HomepagePrograms to count.
+     * @example
+     * // Count the number of HomepagePrograms
+     * const count = await prisma.homepageProgram.count({
+     *   where: {
+     *     // ... the filter for the HomepagePrograms we want to count
+     *   }
+     * })
+    **/
+    count<T extends HomepageProgramCountArgs>(
+      args?: Subset<T, HomepageProgramCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], HomepageProgramCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a HomepageProgram.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageProgramAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends HomepageProgramAggregateArgs>(args: Subset<T, HomepageProgramAggregateArgs>): Prisma.PrismaPromise<GetHomepageProgramAggregateType<T>>
+
+    /**
+     * Group by HomepageProgram.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HomepageProgramGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends HomepageProgramGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: HomepageProgramGroupByArgs['orderBy'] }
+        : { orderBy?: HomepageProgramGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, HomepageProgramGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHomepageProgramGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the HomepageProgram model
+   */
+  readonly fields: HomepageProgramFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for HomepageProgram.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__HomepageProgramClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the HomepageProgram model
+   */
+  interface HomepageProgramFieldRefs {
+    readonly id: FieldRef<"HomepageProgram", 'String'>
+    readonly title: FieldRef<"HomepageProgram", 'String'>
+    readonly description: FieldRef<"HomepageProgram", 'String'>
+    readonly iconName: FieldRef<"HomepageProgram", 'String'>
+    readonly tone: FieldRef<"HomepageProgram", 'Tone'>
+    readonly linkUrl: FieldRef<"HomepageProgram", 'String'>
+    readonly displayOrder: FieldRef<"HomepageProgram", 'Int'>
+    readonly active: FieldRef<"HomepageProgram", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * HomepageProgram findUnique
+   */
+  export type HomepageProgramFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageProgram
+     */
+    select?: HomepageProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageProgram
+     */
+    omit?: HomepageProgramOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageProgram to fetch.
+     */
+    where: HomepageProgramWhereUniqueInput
+  }
+
+  /**
+   * HomepageProgram findUniqueOrThrow
+   */
+  export type HomepageProgramFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageProgram
+     */
+    select?: HomepageProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageProgram
+     */
+    omit?: HomepageProgramOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageProgram to fetch.
+     */
+    where: HomepageProgramWhereUniqueInput
+  }
+
+  /**
+   * HomepageProgram findFirst
+   */
+  export type HomepageProgramFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageProgram
+     */
+    select?: HomepageProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageProgram
+     */
+    omit?: HomepageProgramOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageProgram to fetch.
+     */
+    where?: HomepageProgramWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepagePrograms to fetch.
+     */
+    orderBy?: HomepageProgramOrderByWithRelationInput | HomepageProgramOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HomepagePrograms.
+     */
+    cursor?: HomepageProgramWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepagePrograms from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepagePrograms.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HomepagePrograms.
+     */
+    distinct?: HomepageProgramScalarFieldEnum | HomepageProgramScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageProgram findFirstOrThrow
+   */
+  export type HomepageProgramFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageProgram
+     */
+    select?: HomepageProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageProgram
+     */
+    omit?: HomepageProgramOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepageProgram to fetch.
+     */
+    where?: HomepageProgramWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepagePrograms to fetch.
+     */
+    orderBy?: HomepageProgramOrderByWithRelationInput | HomepageProgramOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HomepagePrograms.
+     */
+    cursor?: HomepageProgramWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepagePrograms from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepagePrograms.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HomepagePrograms.
+     */
+    distinct?: HomepageProgramScalarFieldEnum | HomepageProgramScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageProgram findMany
+   */
+  export type HomepageProgramFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageProgram
+     */
+    select?: HomepageProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageProgram
+     */
+    omit?: HomepageProgramOmit<ExtArgs> | null
+    /**
+     * Filter, which HomepagePrograms to fetch.
+     */
+    where?: HomepageProgramWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HomepagePrograms to fetch.
+     */
+    orderBy?: HomepageProgramOrderByWithRelationInput | HomepageProgramOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing HomepagePrograms.
+     */
+    cursor?: HomepageProgramWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HomepagePrograms from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HomepagePrograms.
+     */
+    skip?: number
+    distinct?: HomepageProgramScalarFieldEnum | HomepageProgramScalarFieldEnum[]
+  }
+
+  /**
+   * HomepageProgram create
+   */
+  export type HomepageProgramCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageProgram
+     */
+    select?: HomepageProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageProgram
+     */
+    omit?: HomepageProgramOmit<ExtArgs> | null
+    /**
+     * The data needed to create a HomepageProgram.
+     */
+    data: XOR<HomepageProgramCreateInput, HomepageProgramUncheckedCreateInput>
+  }
+
+  /**
+   * HomepageProgram createMany
+   */
+  export type HomepageProgramCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many HomepagePrograms.
+     */
+    data: HomepageProgramCreateManyInput | HomepageProgramCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HomepageProgram createManyAndReturn
+   */
+  export type HomepageProgramCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageProgram
+     */
+    select?: HomepageProgramSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageProgram
+     */
+    omit?: HomepageProgramOmit<ExtArgs> | null
+    /**
+     * The data used to create many HomepagePrograms.
+     */
+    data: HomepageProgramCreateManyInput | HomepageProgramCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HomepageProgram update
+   */
+  export type HomepageProgramUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageProgram
+     */
+    select?: HomepageProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageProgram
+     */
+    omit?: HomepageProgramOmit<ExtArgs> | null
+    /**
+     * The data needed to update a HomepageProgram.
+     */
+    data: XOR<HomepageProgramUpdateInput, HomepageProgramUncheckedUpdateInput>
+    /**
+     * Choose, which HomepageProgram to update.
+     */
+    where: HomepageProgramWhereUniqueInput
+  }
+
+  /**
+   * HomepageProgram updateMany
+   */
+  export type HomepageProgramUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update HomepagePrograms.
+     */
+    data: XOR<HomepageProgramUpdateManyMutationInput, HomepageProgramUncheckedUpdateManyInput>
+    /**
+     * Filter which HomepagePrograms to update
+     */
+    where?: HomepageProgramWhereInput
+    /**
+     * Limit how many HomepagePrograms to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HomepageProgram updateManyAndReturn
+   */
+  export type HomepageProgramUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageProgram
+     */
+    select?: HomepageProgramSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageProgram
+     */
+    omit?: HomepageProgramOmit<ExtArgs> | null
+    /**
+     * The data used to update HomepagePrograms.
+     */
+    data: XOR<HomepageProgramUpdateManyMutationInput, HomepageProgramUncheckedUpdateManyInput>
+    /**
+     * Filter which HomepagePrograms to update
+     */
+    where?: HomepageProgramWhereInput
+    /**
+     * Limit how many HomepagePrograms to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HomepageProgram upsert
+   */
+  export type HomepageProgramUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageProgram
+     */
+    select?: HomepageProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageProgram
+     */
+    omit?: HomepageProgramOmit<ExtArgs> | null
+    /**
+     * The filter to search for the HomepageProgram to update in case it exists.
+     */
+    where: HomepageProgramWhereUniqueInput
+    /**
+     * In case the HomepageProgram found by the `where` argument doesn't exist, create a new HomepageProgram with this data.
+     */
+    create: XOR<HomepageProgramCreateInput, HomepageProgramUncheckedCreateInput>
+    /**
+     * In case the HomepageProgram was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<HomepageProgramUpdateInput, HomepageProgramUncheckedUpdateInput>
+  }
+
+  /**
+   * HomepageProgram delete
+   */
+  export type HomepageProgramDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageProgram
+     */
+    select?: HomepageProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageProgram
+     */
+    omit?: HomepageProgramOmit<ExtArgs> | null
+    /**
+     * Filter which HomepageProgram to delete.
+     */
+    where: HomepageProgramWhereUniqueInput
+  }
+
+  /**
+   * HomepageProgram deleteMany
+   */
+  export type HomepageProgramDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HomepagePrograms to delete
+     */
+    where?: HomepageProgramWhereInput
+    /**
+     * Limit how many HomepagePrograms to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * HomepageProgram without action
+   */
+  export type HomepageProgramDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HomepageProgram
+     */
+    select?: HomepageProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HomepageProgram
+     */
+    omit?: HomepageProgramOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Model SiteSetting
    */
 
@@ -19335,6 +26336,79 @@ export namespace Prisma {
   export type ContactSubmissionScalarFieldEnum = (typeof ContactSubmissionScalarFieldEnum)[keyof typeof ContactSubmissionScalarFieldEnum]
 
 
+  export const HomepageHeroScalarFieldEnum: {
+    id: 'id',
+    title: 'title',
+    subtitle: 'subtitle',
+    description: 'description',
+    heroImageUrl: 'heroImageUrl',
+    primaryBtnText: 'primaryBtnText',
+    primaryBtnLink: 'primaryBtnLink',
+    secondaryBtnText: 'secondaryBtnText',
+    secondaryBtnLink: 'secondaryBtnLink',
+    updatedAt: 'updatedAt'
+  };
+
+  export type HomepageHeroScalarFieldEnum = (typeof HomepageHeroScalarFieldEnum)[keyof typeof HomepageHeroScalarFieldEnum]
+
+
+  export const HomepageValueCardScalarFieldEnum: {
+    id: 'id',
+    iconName: 'iconName',
+    title: 'title',
+    description: 'description',
+    tone: 'tone',
+    displayOrder: 'displayOrder',
+    active: 'active'
+  };
+
+  export type HomepageValueCardScalarFieldEnum = (typeof HomepageValueCardScalarFieldEnum)[keyof typeof HomepageValueCardScalarFieldEnum]
+
+
+  export const HomepageStatisticScalarFieldEnum: {
+    id: 'id',
+    iconName: 'iconName',
+    value: 'value',
+    label: 'label',
+    displayOrder: 'displayOrder',
+    active: 'active'
+  };
+
+  export type HomepageStatisticScalarFieldEnum = (typeof HomepageStatisticScalarFieldEnum)[keyof typeof HomepageStatisticScalarFieldEnum]
+
+
+  export const HomepageFeaturedProjectScalarFieldEnum: {
+    id: 'id',
+    projectId: 'projectId',
+    displayOrder: 'displayOrder'
+  };
+
+  export type HomepageFeaturedProjectScalarFieldEnum = (typeof HomepageFeaturedProjectScalarFieldEnum)[keyof typeof HomepageFeaturedProjectScalarFieldEnum]
+
+
+  export const HomepageFeaturedNewsScalarFieldEnum: {
+    id: 'id',
+    articleId: 'articleId',
+    displayOrder: 'displayOrder'
+  };
+
+  export type HomepageFeaturedNewsScalarFieldEnum = (typeof HomepageFeaturedNewsScalarFieldEnum)[keyof typeof HomepageFeaturedNewsScalarFieldEnum]
+
+
+  export const HomepageProgramScalarFieldEnum: {
+    id: 'id',
+    title: 'title',
+    description: 'description',
+    iconName: 'iconName',
+    tone: 'tone',
+    linkUrl: 'linkUrl',
+    displayOrder: 'displayOrder',
+    active: 'active'
+  };
+
+  export type HomepageProgramScalarFieldEnum = (typeof HomepageProgramScalarFieldEnum)[keyof typeof HomepageProgramScalarFieldEnum]
+
+
   export const SiteSettingScalarFieldEnum: {
     key: 'key',
     value: 'value',
@@ -19916,6 +26990,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"NewsArticle"> | Date | string
     deletedAt?: DateTimeNullableFilter<"NewsArticle"> | Date | string | null
     category?: XOR<NewsCategoryScalarRelationFilter, NewsCategoryWhereInput>
+    homepageFeatured?: HomepageFeaturedNewsListRelationFilter
     tags?: ArticleTagListRelationFilter
   }
 
@@ -19938,6 +27013,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
     deletedAt?: SortOrderInput | SortOrder
     category?: NewsCategoryOrderByWithRelationInput
+    homepageFeatured?: HomepageFeaturedNewsOrderByRelationAggregateInput
     tags?: ArticleTagOrderByRelationAggregateInput
   }
 
@@ -19963,6 +27039,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"NewsArticle"> | Date | string
     deletedAt?: DateTimeNullableFilter<"NewsArticle"> | Date | string | null
     category?: XOR<NewsCategoryScalarRelationFilter, NewsCategoryWhereInput>
+    homepageFeatured?: HomepageFeaturedNewsListRelationFilter
     tags?: ArticleTagListRelationFilter
   }, "id" | "slug">
 
@@ -20076,6 +27153,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Project"> | Date | string
     deletedAt?: DateTimeNullableFilter<"Project"> | Date | string | null
     projectType?: XOR<ProjectTypeScalarRelationFilter, ProjectTypeWhereInput>
+    featuredHomepage?: HomepageFeaturedProjectListRelationFilter
   }
 
   export type ProjectOrderByWithRelationInput = {
@@ -20099,6 +27177,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
     deletedAt?: SortOrderInput | SortOrder
     projectType?: ProjectTypeOrderByWithRelationInput
+    featuredHomepage?: HomepageFeaturedProjectOrderByRelationAggregateInput
   }
 
   export type ProjectWhereUniqueInput = Prisma.AtLeast<{
@@ -20125,6 +27204,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Project"> | Date | string
     deletedAt?: DateTimeNullableFilter<"Project"> | Date | string | null
     projectType?: XOR<ProjectTypeScalarRelationFilter, ProjectTypeWhereInput>
+    featuredHomepage?: HomepageFeaturedProjectListRelationFilter
   }, "id">
 
   export type ProjectOrderByWithAggregationInput = {
@@ -20575,6 +27655,369 @@ export namespace Prisma {
     createdAt?: DateTimeWithAggregatesFilter<"ContactSubmission"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"ContactSubmission"> | Date | string
     deletedAt?: DateTimeNullableWithAggregatesFilter<"ContactSubmission"> | Date | string | null
+  }
+
+  export type HomepageHeroWhereInput = {
+    AND?: HomepageHeroWhereInput | HomepageHeroWhereInput[]
+    OR?: HomepageHeroWhereInput[]
+    NOT?: HomepageHeroWhereInput | HomepageHeroWhereInput[]
+    id?: StringFilter<"HomepageHero"> | string
+    title?: StringFilter<"HomepageHero"> | string
+    subtitle?: StringFilter<"HomepageHero"> | string
+    description?: StringFilter<"HomepageHero"> | string
+    heroImageUrl?: StringFilter<"HomepageHero"> | string
+    primaryBtnText?: StringFilter<"HomepageHero"> | string
+    primaryBtnLink?: StringFilter<"HomepageHero"> | string
+    secondaryBtnText?: StringFilter<"HomepageHero"> | string
+    secondaryBtnLink?: StringFilter<"HomepageHero"> | string
+    updatedAt?: DateTimeFilter<"HomepageHero"> | Date | string
+  }
+
+  export type HomepageHeroOrderByWithRelationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    subtitle?: SortOrder
+    description?: SortOrder
+    heroImageUrl?: SortOrder
+    primaryBtnText?: SortOrder
+    primaryBtnLink?: SortOrder
+    secondaryBtnText?: SortOrder
+    secondaryBtnLink?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type HomepageHeroWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: HomepageHeroWhereInput | HomepageHeroWhereInput[]
+    OR?: HomepageHeroWhereInput[]
+    NOT?: HomepageHeroWhereInput | HomepageHeroWhereInput[]
+    title?: StringFilter<"HomepageHero"> | string
+    subtitle?: StringFilter<"HomepageHero"> | string
+    description?: StringFilter<"HomepageHero"> | string
+    heroImageUrl?: StringFilter<"HomepageHero"> | string
+    primaryBtnText?: StringFilter<"HomepageHero"> | string
+    primaryBtnLink?: StringFilter<"HomepageHero"> | string
+    secondaryBtnText?: StringFilter<"HomepageHero"> | string
+    secondaryBtnLink?: StringFilter<"HomepageHero"> | string
+    updatedAt?: DateTimeFilter<"HomepageHero"> | Date | string
+  }, "id">
+
+  export type HomepageHeroOrderByWithAggregationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    subtitle?: SortOrder
+    description?: SortOrder
+    heroImageUrl?: SortOrder
+    primaryBtnText?: SortOrder
+    primaryBtnLink?: SortOrder
+    secondaryBtnText?: SortOrder
+    secondaryBtnLink?: SortOrder
+    updatedAt?: SortOrder
+    _count?: HomepageHeroCountOrderByAggregateInput
+    _max?: HomepageHeroMaxOrderByAggregateInput
+    _min?: HomepageHeroMinOrderByAggregateInput
+  }
+
+  export type HomepageHeroScalarWhereWithAggregatesInput = {
+    AND?: HomepageHeroScalarWhereWithAggregatesInput | HomepageHeroScalarWhereWithAggregatesInput[]
+    OR?: HomepageHeroScalarWhereWithAggregatesInput[]
+    NOT?: HomepageHeroScalarWhereWithAggregatesInput | HomepageHeroScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"HomepageHero"> | string
+    title?: StringWithAggregatesFilter<"HomepageHero"> | string
+    subtitle?: StringWithAggregatesFilter<"HomepageHero"> | string
+    description?: StringWithAggregatesFilter<"HomepageHero"> | string
+    heroImageUrl?: StringWithAggregatesFilter<"HomepageHero"> | string
+    primaryBtnText?: StringWithAggregatesFilter<"HomepageHero"> | string
+    primaryBtnLink?: StringWithAggregatesFilter<"HomepageHero"> | string
+    secondaryBtnText?: StringWithAggregatesFilter<"HomepageHero"> | string
+    secondaryBtnLink?: StringWithAggregatesFilter<"HomepageHero"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"HomepageHero"> | Date | string
+  }
+
+  export type HomepageValueCardWhereInput = {
+    AND?: HomepageValueCardWhereInput | HomepageValueCardWhereInput[]
+    OR?: HomepageValueCardWhereInput[]
+    NOT?: HomepageValueCardWhereInput | HomepageValueCardWhereInput[]
+    id?: StringFilter<"HomepageValueCard"> | string
+    iconName?: StringFilter<"HomepageValueCard"> | string
+    title?: StringFilter<"HomepageValueCard"> | string
+    description?: StringFilter<"HomepageValueCard"> | string
+    tone?: EnumToneFilter<"HomepageValueCard"> | $Enums.Tone
+    displayOrder?: IntFilter<"HomepageValueCard"> | number
+    active?: BoolFilter<"HomepageValueCard"> | boolean
+  }
+
+  export type HomepageValueCardOrderByWithRelationInput = {
+    id?: SortOrder
+    iconName?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    tone?: SortOrder
+    displayOrder?: SortOrder
+    active?: SortOrder
+  }
+
+  export type HomepageValueCardWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: HomepageValueCardWhereInput | HomepageValueCardWhereInput[]
+    OR?: HomepageValueCardWhereInput[]
+    NOT?: HomepageValueCardWhereInput | HomepageValueCardWhereInput[]
+    iconName?: StringFilter<"HomepageValueCard"> | string
+    title?: StringFilter<"HomepageValueCard"> | string
+    description?: StringFilter<"HomepageValueCard"> | string
+    tone?: EnumToneFilter<"HomepageValueCard"> | $Enums.Tone
+    displayOrder?: IntFilter<"HomepageValueCard"> | number
+    active?: BoolFilter<"HomepageValueCard"> | boolean
+  }, "id">
+
+  export type HomepageValueCardOrderByWithAggregationInput = {
+    id?: SortOrder
+    iconName?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    tone?: SortOrder
+    displayOrder?: SortOrder
+    active?: SortOrder
+    _count?: HomepageValueCardCountOrderByAggregateInput
+    _avg?: HomepageValueCardAvgOrderByAggregateInput
+    _max?: HomepageValueCardMaxOrderByAggregateInput
+    _min?: HomepageValueCardMinOrderByAggregateInput
+    _sum?: HomepageValueCardSumOrderByAggregateInput
+  }
+
+  export type HomepageValueCardScalarWhereWithAggregatesInput = {
+    AND?: HomepageValueCardScalarWhereWithAggregatesInput | HomepageValueCardScalarWhereWithAggregatesInput[]
+    OR?: HomepageValueCardScalarWhereWithAggregatesInput[]
+    NOT?: HomepageValueCardScalarWhereWithAggregatesInput | HomepageValueCardScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"HomepageValueCard"> | string
+    iconName?: StringWithAggregatesFilter<"HomepageValueCard"> | string
+    title?: StringWithAggregatesFilter<"HomepageValueCard"> | string
+    description?: StringWithAggregatesFilter<"HomepageValueCard"> | string
+    tone?: EnumToneWithAggregatesFilter<"HomepageValueCard"> | $Enums.Tone
+    displayOrder?: IntWithAggregatesFilter<"HomepageValueCard"> | number
+    active?: BoolWithAggregatesFilter<"HomepageValueCard"> | boolean
+  }
+
+  export type HomepageStatisticWhereInput = {
+    AND?: HomepageStatisticWhereInput | HomepageStatisticWhereInput[]
+    OR?: HomepageStatisticWhereInput[]
+    NOT?: HomepageStatisticWhereInput | HomepageStatisticWhereInput[]
+    id?: StringFilter<"HomepageStatistic"> | string
+    iconName?: StringFilter<"HomepageStatistic"> | string
+    value?: StringFilter<"HomepageStatistic"> | string
+    label?: StringFilter<"HomepageStatistic"> | string
+    displayOrder?: IntFilter<"HomepageStatistic"> | number
+    active?: BoolFilter<"HomepageStatistic"> | boolean
+  }
+
+  export type HomepageStatisticOrderByWithRelationInput = {
+    id?: SortOrder
+    iconName?: SortOrder
+    value?: SortOrder
+    label?: SortOrder
+    displayOrder?: SortOrder
+    active?: SortOrder
+  }
+
+  export type HomepageStatisticWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: HomepageStatisticWhereInput | HomepageStatisticWhereInput[]
+    OR?: HomepageStatisticWhereInput[]
+    NOT?: HomepageStatisticWhereInput | HomepageStatisticWhereInput[]
+    iconName?: StringFilter<"HomepageStatistic"> | string
+    value?: StringFilter<"HomepageStatistic"> | string
+    label?: StringFilter<"HomepageStatistic"> | string
+    displayOrder?: IntFilter<"HomepageStatistic"> | number
+    active?: BoolFilter<"HomepageStatistic"> | boolean
+  }, "id">
+
+  export type HomepageStatisticOrderByWithAggregationInput = {
+    id?: SortOrder
+    iconName?: SortOrder
+    value?: SortOrder
+    label?: SortOrder
+    displayOrder?: SortOrder
+    active?: SortOrder
+    _count?: HomepageStatisticCountOrderByAggregateInput
+    _avg?: HomepageStatisticAvgOrderByAggregateInput
+    _max?: HomepageStatisticMaxOrderByAggregateInput
+    _min?: HomepageStatisticMinOrderByAggregateInput
+    _sum?: HomepageStatisticSumOrderByAggregateInput
+  }
+
+  export type HomepageStatisticScalarWhereWithAggregatesInput = {
+    AND?: HomepageStatisticScalarWhereWithAggregatesInput | HomepageStatisticScalarWhereWithAggregatesInput[]
+    OR?: HomepageStatisticScalarWhereWithAggregatesInput[]
+    NOT?: HomepageStatisticScalarWhereWithAggregatesInput | HomepageStatisticScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"HomepageStatistic"> | string
+    iconName?: StringWithAggregatesFilter<"HomepageStatistic"> | string
+    value?: StringWithAggregatesFilter<"HomepageStatistic"> | string
+    label?: StringWithAggregatesFilter<"HomepageStatistic"> | string
+    displayOrder?: IntWithAggregatesFilter<"HomepageStatistic"> | number
+    active?: BoolWithAggregatesFilter<"HomepageStatistic"> | boolean
+  }
+
+  export type HomepageFeaturedProjectWhereInput = {
+    AND?: HomepageFeaturedProjectWhereInput | HomepageFeaturedProjectWhereInput[]
+    OR?: HomepageFeaturedProjectWhereInput[]
+    NOT?: HomepageFeaturedProjectWhereInput | HomepageFeaturedProjectWhereInput[]
+    id?: StringFilter<"HomepageFeaturedProject"> | string
+    projectId?: StringFilter<"HomepageFeaturedProject"> | string
+    displayOrder?: IntFilter<"HomepageFeaturedProject"> | number
+    project?: XOR<ProjectScalarRelationFilter, ProjectWhereInput>
+  }
+
+  export type HomepageFeaturedProjectOrderByWithRelationInput = {
+    id?: SortOrder
+    projectId?: SortOrder
+    displayOrder?: SortOrder
+    project?: ProjectOrderByWithRelationInput
+  }
+
+  export type HomepageFeaturedProjectWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    projectId?: string
+    AND?: HomepageFeaturedProjectWhereInput | HomepageFeaturedProjectWhereInput[]
+    OR?: HomepageFeaturedProjectWhereInput[]
+    NOT?: HomepageFeaturedProjectWhereInput | HomepageFeaturedProjectWhereInput[]
+    displayOrder?: IntFilter<"HomepageFeaturedProject"> | number
+    project?: XOR<ProjectScalarRelationFilter, ProjectWhereInput>
+  }, "id" | "projectId">
+
+  export type HomepageFeaturedProjectOrderByWithAggregationInput = {
+    id?: SortOrder
+    projectId?: SortOrder
+    displayOrder?: SortOrder
+    _count?: HomepageFeaturedProjectCountOrderByAggregateInput
+    _avg?: HomepageFeaturedProjectAvgOrderByAggregateInput
+    _max?: HomepageFeaturedProjectMaxOrderByAggregateInput
+    _min?: HomepageFeaturedProjectMinOrderByAggregateInput
+    _sum?: HomepageFeaturedProjectSumOrderByAggregateInput
+  }
+
+  export type HomepageFeaturedProjectScalarWhereWithAggregatesInput = {
+    AND?: HomepageFeaturedProjectScalarWhereWithAggregatesInput | HomepageFeaturedProjectScalarWhereWithAggregatesInput[]
+    OR?: HomepageFeaturedProjectScalarWhereWithAggregatesInput[]
+    NOT?: HomepageFeaturedProjectScalarWhereWithAggregatesInput | HomepageFeaturedProjectScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"HomepageFeaturedProject"> | string
+    projectId?: StringWithAggregatesFilter<"HomepageFeaturedProject"> | string
+    displayOrder?: IntWithAggregatesFilter<"HomepageFeaturedProject"> | number
+  }
+
+  export type HomepageFeaturedNewsWhereInput = {
+    AND?: HomepageFeaturedNewsWhereInput | HomepageFeaturedNewsWhereInput[]
+    OR?: HomepageFeaturedNewsWhereInput[]
+    NOT?: HomepageFeaturedNewsWhereInput | HomepageFeaturedNewsWhereInput[]
+    id?: StringFilter<"HomepageFeaturedNews"> | string
+    articleId?: StringFilter<"HomepageFeaturedNews"> | string
+    displayOrder?: IntFilter<"HomepageFeaturedNews"> | number
+    article?: XOR<NewsArticleScalarRelationFilter, NewsArticleWhereInput>
+  }
+
+  export type HomepageFeaturedNewsOrderByWithRelationInput = {
+    id?: SortOrder
+    articleId?: SortOrder
+    displayOrder?: SortOrder
+    article?: NewsArticleOrderByWithRelationInput
+  }
+
+  export type HomepageFeaturedNewsWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    articleId?: string
+    AND?: HomepageFeaturedNewsWhereInput | HomepageFeaturedNewsWhereInput[]
+    OR?: HomepageFeaturedNewsWhereInput[]
+    NOT?: HomepageFeaturedNewsWhereInput | HomepageFeaturedNewsWhereInput[]
+    displayOrder?: IntFilter<"HomepageFeaturedNews"> | number
+    article?: XOR<NewsArticleScalarRelationFilter, NewsArticleWhereInput>
+  }, "id" | "articleId">
+
+  export type HomepageFeaturedNewsOrderByWithAggregationInput = {
+    id?: SortOrder
+    articleId?: SortOrder
+    displayOrder?: SortOrder
+    _count?: HomepageFeaturedNewsCountOrderByAggregateInput
+    _avg?: HomepageFeaturedNewsAvgOrderByAggregateInput
+    _max?: HomepageFeaturedNewsMaxOrderByAggregateInput
+    _min?: HomepageFeaturedNewsMinOrderByAggregateInput
+    _sum?: HomepageFeaturedNewsSumOrderByAggregateInput
+  }
+
+  export type HomepageFeaturedNewsScalarWhereWithAggregatesInput = {
+    AND?: HomepageFeaturedNewsScalarWhereWithAggregatesInput | HomepageFeaturedNewsScalarWhereWithAggregatesInput[]
+    OR?: HomepageFeaturedNewsScalarWhereWithAggregatesInput[]
+    NOT?: HomepageFeaturedNewsScalarWhereWithAggregatesInput | HomepageFeaturedNewsScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"HomepageFeaturedNews"> | string
+    articleId?: StringWithAggregatesFilter<"HomepageFeaturedNews"> | string
+    displayOrder?: IntWithAggregatesFilter<"HomepageFeaturedNews"> | number
+  }
+
+  export type HomepageProgramWhereInput = {
+    AND?: HomepageProgramWhereInput | HomepageProgramWhereInput[]
+    OR?: HomepageProgramWhereInput[]
+    NOT?: HomepageProgramWhereInput | HomepageProgramWhereInput[]
+    id?: StringFilter<"HomepageProgram"> | string
+    title?: StringFilter<"HomepageProgram"> | string
+    description?: StringFilter<"HomepageProgram"> | string
+    iconName?: StringFilter<"HomepageProgram"> | string
+    tone?: EnumToneFilter<"HomepageProgram"> | $Enums.Tone
+    linkUrl?: StringFilter<"HomepageProgram"> | string
+    displayOrder?: IntFilter<"HomepageProgram"> | number
+    active?: BoolFilter<"HomepageProgram"> | boolean
+  }
+
+  export type HomepageProgramOrderByWithRelationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    iconName?: SortOrder
+    tone?: SortOrder
+    linkUrl?: SortOrder
+    displayOrder?: SortOrder
+    active?: SortOrder
+  }
+
+  export type HomepageProgramWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: HomepageProgramWhereInput | HomepageProgramWhereInput[]
+    OR?: HomepageProgramWhereInput[]
+    NOT?: HomepageProgramWhereInput | HomepageProgramWhereInput[]
+    title?: StringFilter<"HomepageProgram"> | string
+    description?: StringFilter<"HomepageProgram"> | string
+    iconName?: StringFilter<"HomepageProgram"> | string
+    tone?: EnumToneFilter<"HomepageProgram"> | $Enums.Tone
+    linkUrl?: StringFilter<"HomepageProgram"> | string
+    displayOrder?: IntFilter<"HomepageProgram"> | number
+    active?: BoolFilter<"HomepageProgram"> | boolean
+  }, "id">
+
+  export type HomepageProgramOrderByWithAggregationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    iconName?: SortOrder
+    tone?: SortOrder
+    linkUrl?: SortOrder
+    displayOrder?: SortOrder
+    active?: SortOrder
+    _count?: HomepageProgramCountOrderByAggregateInput
+    _avg?: HomepageProgramAvgOrderByAggregateInput
+    _max?: HomepageProgramMaxOrderByAggregateInput
+    _min?: HomepageProgramMinOrderByAggregateInput
+    _sum?: HomepageProgramSumOrderByAggregateInput
+  }
+
+  export type HomepageProgramScalarWhereWithAggregatesInput = {
+    AND?: HomepageProgramScalarWhereWithAggregatesInput | HomepageProgramScalarWhereWithAggregatesInput[]
+    OR?: HomepageProgramScalarWhereWithAggregatesInput[]
+    NOT?: HomepageProgramScalarWhereWithAggregatesInput | HomepageProgramScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"HomepageProgram"> | string
+    title?: StringWithAggregatesFilter<"HomepageProgram"> | string
+    description?: StringWithAggregatesFilter<"HomepageProgram"> | string
+    iconName?: StringWithAggregatesFilter<"HomepageProgram"> | string
+    tone?: EnumToneWithAggregatesFilter<"HomepageProgram"> | $Enums.Tone
+    linkUrl?: StringWithAggregatesFilter<"HomepageProgram"> | string
+    displayOrder?: IntWithAggregatesFilter<"HomepageProgram"> | number
+    active?: BoolWithAggregatesFilter<"HomepageProgram"> | boolean
   }
 
   export type SiteSettingWhereInput = {
@@ -21051,6 +28494,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     deletedAt?: Date | string | null
     category: NewsCategoryCreateNestedOneWithoutArticlesInput
+    homepageFeatured?: HomepageFeaturedNewsCreateNestedManyWithoutArticleInput
     tags?: ArticleTagCreateNestedManyWithoutArticleInput
   }
 
@@ -21072,6 +28516,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
+    homepageFeatured?: HomepageFeaturedNewsUncheckedCreateNestedManyWithoutArticleInput
     tags?: ArticleTagUncheckedCreateNestedManyWithoutArticleInput
   }
 
@@ -21093,6 +28538,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     category?: NewsCategoryUpdateOneRequiredWithoutArticlesNestedInput
+    homepageFeatured?: HomepageFeaturedNewsUpdateManyWithoutArticleNestedInput
     tags?: ArticleTagUpdateManyWithoutArticleNestedInput
   }
 
@@ -21114,6 +28560,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homepageFeatured?: HomepageFeaturedNewsUncheckedUpdateManyWithoutArticleNestedInput
     tags?: ArticleTagUncheckedUpdateManyWithoutArticleNestedInput
   }
 
@@ -21235,6 +28682,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     deletedAt?: Date | string | null
     projectType: ProjectTypeCreateNestedOneWithoutProjectsInput
+    featuredHomepage?: HomepageFeaturedProjectCreateNestedManyWithoutProjectInput
   }
 
   export type ProjectUncheckedCreateInput = {
@@ -21257,6 +28705,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
+    featuredHomepage?: HomepageFeaturedProjectUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type ProjectUpdateInput = {
@@ -21279,6 +28728,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     projectType?: ProjectTypeUpdateOneRequiredWithoutProjectsNestedInput
+    featuredHomepage?: HomepageFeaturedProjectUpdateManyWithoutProjectNestedInput
   }
 
   export type ProjectUncheckedUpdateInput = {
@@ -21301,6 +28751,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    featuredHomepage?: HomepageFeaturedProjectUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type ProjectCreateManyInput = {
@@ -21847,6 +29298,389 @@ export namespace Prisma {
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
+  export type HomepageHeroCreateInput = {
+    id?: string
+    title?: string
+    subtitle?: string
+    description?: string
+    heroImageUrl?: string
+    primaryBtnText?: string
+    primaryBtnLink?: string
+    secondaryBtnText?: string
+    secondaryBtnLink?: string
+    updatedAt?: Date | string
+  }
+
+  export type HomepageHeroUncheckedCreateInput = {
+    id?: string
+    title?: string
+    subtitle?: string
+    description?: string
+    heroImageUrl?: string
+    primaryBtnText?: string
+    primaryBtnLink?: string
+    secondaryBtnText?: string
+    secondaryBtnLink?: string
+    updatedAt?: Date | string
+  }
+
+  export type HomepageHeroUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    subtitle?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    heroImageUrl?: StringFieldUpdateOperationsInput | string
+    primaryBtnText?: StringFieldUpdateOperationsInput | string
+    primaryBtnLink?: StringFieldUpdateOperationsInput | string
+    secondaryBtnText?: StringFieldUpdateOperationsInput | string
+    secondaryBtnLink?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HomepageHeroUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    subtitle?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    heroImageUrl?: StringFieldUpdateOperationsInput | string
+    primaryBtnText?: StringFieldUpdateOperationsInput | string
+    primaryBtnLink?: StringFieldUpdateOperationsInput | string
+    secondaryBtnText?: StringFieldUpdateOperationsInput | string
+    secondaryBtnLink?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HomepageHeroCreateManyInput = {
+    id?: string
+    title?: string
+    subtitle?: string
+    description?: string
+    heroImageUrl?: string
+    primaryBtnText?: string
+    primaryBtnLink?: string
+    secondaryBtnText?: string
+    secondaryBtnLink?: string
+    updatedAt?: Date | string
+  }
+
+  export type HomepageHeroUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    subtitle?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    heroImageUrl?: StringFieldUpdateOperationsInput | string
+    primaryBtnText?: StringFieldUpdateOperationsInput | string
+    primaryBtnLink?: StringFieldUpdateOperationsInput | string
+    secondaryBtnText?: StringFieldUpdateOperationsInput | string
+    secondaryBtnLink?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HomepageHeroUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    subtitle?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    heroImageUrl?: StringFieldUpdateOperationsInput | string
+    primaryBtnText?: StringFieldUpdateOperationsInput | string
+    primaryBtnLink?: StringFieldUpdateOperationsInput | string
+    secondaryBtnText?: StringFieldUpdateOperationsInput | string
+    secondaryBtnLink?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HomepageValueCardCreateInput = {
+    id?: string
+    iconName?: string
+    title: string
+    description: string
+    tone?: $Enums.Tone
+    displayOrder?: number
+    active?: boolean
+  }
+
+  export type HomepageValueCardUncheckedCreateInput = {
+    id?: string
+    iconName?: string
+    title: string
+    description: string
+    tone?: $Enums.Tone
+    displayOrder?: number
+    active?: boolean
+  }
+
+  export type HomepageValueCardUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    iconName?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    tone?: EnumToneFieldUpdateOperationsInput | $Enums.Tone
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    active?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HomepageValueCardUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    iconName?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    tone?: EnumToneFieldUpdateOperationsInput | $Enums.Tone
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    active?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HomepageValueCardCreateManyInput = {
+    id?: string
+    iconName?: string
+    title: string
+    description: string
+    tone?: $Enums.Tone
+    displayOrder?: number
+    active?: boolean
+  }
+
+  export type HomepageValueCardUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    iconName?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    tone?: EnumToneFieldUpdateOperationsInput | $Enums.Tone
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    active?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HomepageValueCardUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    iconName?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    tone?: EnumToneFieldUpdateOperationsInput | $Enums.Tone
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    active?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HomepageStatisticCreateInput = {
+    id?: string
+    iconName?: string
+    value: string
+    label: string
+    displayOrder?: number
+    active?: boolean
+  }
+
+  export type HomepageStatisticUncheckedCreateInput = {
+    id?: string
+    iconName?: string
+    value: string
+    label: string
+    displayOrder?: number
+    active?: boolean
+  }
+
+  export type HomepageStatisticUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    iconName?: StringFieldUpdateOperationsInput | string
+    value?: StringFieldUpdateOperationsInput | string
+    label?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    active?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HomepageStatisticUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    iconName?: StringFieldUpdateOperationsInput | string
+    value?: StringFieldUpdateOperationsInput | string
+    label?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    active?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HomepageStatisticCreateManyInput = {
+    id?: string
+    iconName?: string
+    value: string
+    label: string
+    displayOrder?: number
+    active?: boolean
+  }
+
+  export type HomepageStatisticUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    iconName?: StringFieldUpdateOperationsInput | string
+    value?: StringFieldUpdateOperationsInput | string
+    label?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    active?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HomepageStatisticUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    iconName?: StringFieldUpdateOperationsInput | string
+    value?: StringFieldUpdateOperationsInput | string
+    label?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    active?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HomepageFeaturedProjectCreateInput = {
+    id?: string
+    displayOrder?: number
+    project: ProjectCreateNestedOneWithoutFeaturedHomepageInput
+  }
+
+  export type HomepageFeaturedProjectUncheckedCreateInput = {
+    id?: string
+    projectId: string
+    displayOrder?: number
+  }
+
+  export type HomepageFeaturedProjectUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    project?: ProjectUpdateOneRequiredWithoutFeaturedHomepageNestedInput
+  }
+
+  export type HomepageFeaturedProjectUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    projectId?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type HomepageFeaturedProjectCreateManyInput = {
+    id?: string
+    projectId: string
+    displayOrder?: number
+  }
+
+  export type HomepageFeaturedProjectUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type HomepageFeaturedProjectUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    projectId?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type HomepageFeaturedNewsCreateInput = {
+    id?: string
+    displayOrder?: number
+    article: NewsArticleCreateNestedOneWithoutHomepageFeaturedInput
+  }
+
+  export type HomepageFeaturedNewsUncheckedCreateInput = {
+    id?: string
+    articleId: string
+    displayOrder?: number
+  }
+
+  export type HomepageFeaturedNewsUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    article?: NewsArticleUpdateOneRequiredWithoutHomepageFeaturedNestedInput
+  }
+
+  export type HomepageFeaturedNewsUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    articleId?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type HomepageFeaturedNewsCreateManyInput = {
+    id?: string
+    articleId: string
+    displayOrder?: number
+  }
+
+  export type HomepageFeaturedNewsUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type HomepageFeaturedNewsUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    articleId?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type HomepageProgramCreateInput = {
+    id?: string
+    title: string
+    description: string
+    iconName?: string
+    tone?: $Enums.Tone
+    linkUrl?: string
+    displayOrder?: number
+    active?: boolean
+  }
+
+  export type HomepageProgramUncheckedCreateInput = {
+    id?: string
+    title: string
+    description: string
+    iconName?: string
+    tone?: $Enums.Tone
+    linkUrl?: string
+    displayOrder?: number
+    active?: boolean
+  }
+
+  export type HomepageProgramUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    iconName?: StringFieldUpdateOperationsInput | string
+    tone?: EnumToneFieldUpdateOperationsInput | $Enums.Tone
+    linkUrl?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    active?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HomepageProgramUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    iconName?: StringFieldUpdateOperationsInput | string
+    tone?: EnumToneFieldUpdateOperationsInput | $Enums.Tone
+    linkUrl?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    active?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HomepageProgramCreateManyInput = {
+    id?: string
+    title: string
+    description: string
+    iconName?: string
+    tone?: $Enums.Tone
+    linkUrl?: string
+    displayOrder?: number
+    active?: boolean
+  }
+
+  export type HomepageProgramUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    iconName?: StringFieldUpdateOperationsInput | string
+    tone?: EnumToneFieldUpdateOperationsInput | $Enums.Tone
+    linkUrl?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    active?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type HomepageProgramUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    iconName?: StringFieldUpdateOperationsInput | string
+    tone?: EnumToneFieldUpdateOperationsInput | $Enums.Tone
+    linkUrl?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+    active?: BoolFieldUpdateOperationsInput | boolean
+  }
+
   export type SiteSettingCreateInput = {
     key: string
     value: string
@@ -22383,6 +30217,16 @@ export namespace Prisma {
     isNot?: NewsCategoryWhereInput
   }
 
+  export type HomepageFeaturedNewsListRelationFilter = {
+    every?: HomepageFeaturedNewsWhereInput
+    some?: HomepageFeaturedNewsWhereInput
+    none?: HomepageFeaturedNewsWhereInput
+  }
+
+  export type HomepageFeaturedNewsOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
   export type NewsArticleCountOrderByAggregateInput = {
     id?: SortOrder
     slug?: SortOrder
@@ -22488,6 +30332,16 @@ export namespace Prisma {
   export type ProjectTypeScalarRelationFilter = {
     is?: ProjectTypeWhereInput
     isNot?: ProjectTypeWhereInput
+  }
+
+  export type HomepageFeaturedProjectListRelationFilter = {
+    every?: HomepageFeaturedProjectWhereInput
+    some?: HomepageFeaturedProjectWhereInput
+    none?: HomepageFeaturedProjectWhereInput
+  }
+
+  export type HomepageFeaturedProjectOrderByRelationAggregateInput = {
+    _count?: SortOrder
   }
 
   export type ProjectCountOrderByAggregateInput = {
@@ -22896,6 +30750,216 @@ export namespace Prisma {
     deletedAt?: SortOrder
   }
 
+  export type HomepageHeroCountOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    subtitle?: SortOrder
+    description?: SortOrder
+    heroImageUrl?: SortOrder
+    primaryBtnText?: SortOrder
+    primaryBtnLink?: SortOrder
+    secondaryBtnText?: SortOrder
+    secondaryBtnLink?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type HomepageHeroMaxOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    subtitle?: SortOrder
+    description?: SortOrder
+    heroImageUrl?: SortOrder
+    primaryBtnText?: SortOrder
+    primaryBtnLink?: SortOrder
+    secondaryBtnText?: SortOrder
+    secondaryBtnLink?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type HomepageHeroMinOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    subtitle?: SortOrder
+    description?: SortOrder
+    heroImageUrl?: SortOrder
+    primaryBtnText?: SortOrder
+    primaryBtnLink?: SortOrder
+    secondaryBtnText?: SortOrder
+    secondaryBtnLink?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type HomepageValueCardCountOrderByAggregateInput = {
+    id?: SortOrder
+    iconName?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    tone?: SortOrder
+    displayOrder?: SortOrder
+    active?: SortOrder
+  }
+
+  export type HomepageValueCardAvgOrderByAggregateInput = {
+    displayOrder?: SortOrder
+  }
+
+  export type HomepageValueCardMaxOrderByAggregateInput = {
+    id?: SortOrder
+    iconName?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    tone?: SortOrder
+    displayOrder?: SortOrder
+    active?: SortOrder
+  }
+
+  export type HomepageValueCardMinOrderByAggregateInput = {
+    id?: SortOrder
+    iconName?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    tone?: SortOrder
+    displayOrder?: SortOrder
+    active?: SortOrder
+  }
+
+  export type HomepageValueCardSumOrderByAggregateInput = {
+    displayOrder?: SortOrder
+  }
+
+  export type HomepageStatisticCountOrderByAggregateInput = {
+    id?: SortOrder
+    iconName?: SortOrder
+    value?: SortOrder
+    label?: SortOrder
+    displayOrder?: SortOrder
+    active?: SortOrder
+  }
+
+  export type HomepageStatisticAvgOrderByAggregateInput = {
+    displayOrder?: SortOrder
+  }
+
+  export type HomepageStatisticMaxOrderByAggregateInput = {
+    id?: SortOrder
+    iconName?: SortOrder
+    value?: SortOrder
+    label?: SortOrder
+    displayOrder?: SortOrder
+    active?: SortOrder
+  }
+
+  export type HomepageStatisticMinOrderByAggregateInput = {
+    id?: SortOrder
+    iconName?: SortOrder
+    value?: SortOrder
+    label?: SortOrder
+    displayOrder?: SortOrder
+    active?: SortOrder
+  }
+
+  export type HomepageStatisticSumOrderByAggregateInput = {
+    displayOrder?: SortOrder
+  }
+
+  export type ProjectScalarRelationFilter = {
+    is?: ProjectWhereInput
+    isNot?: ProjectWhereInput
+  }
+
+  export type HomepageFeaturedProjectCountOrderByAggregateInput = {
+    id?: SortOrder
+    projectId?: SortOrder
+    displayOrder?: SortOrder
+  }
+
+  export type HomepageFeaturedProjectAvgOrderByAggregateInput = {
+    displayOrder?: SortOrder
+  }
+
+  export type HomepageFeaturedProjectMaxOrderByAggregateInput = {
+    id?: SortOrder
+    projectId?: SortOrder
+    displayOrder?: SortOrder
+  }
+
+  export type HomepageFeaturedProjectMinOrderByAggregateInput = {
+    id?: SortOrder
+    projectId?: SortOrder
+    displayOrder?: SortOrder
+  }
+
+  export type HomepageFeaturedProjectSumOrderByAggregateInput = {
+    displayOrder?: SortOrder
+  }
+
+  export type HomepageFeaturedNewsCountOrderByAggregateInput = {
+    id?: SortOrder
+    articleId?: SortOrder
+    displayOrder?: SortOrder
+  }
+
+  export type HomepageFeaturedNewsAvgOrderByAggregateInput = {
+    displayOrder?: SortOrder
+  }
+
+  export type HomepageFeaturedNewsMaxOrderByAggregateInput = {
+    id?: SortOrder
+    articleId?: SortOrder
+    displayOrder?: SortOrder
+  }
+
+  export type HomepageFeaturedNewsMinOrderByAggregateInput = {
+    id?: SortOrder
+    articleId?: SortOrder
+    displayOrder?: SortOrder
+  }
+
+  export type HomepageFeaturedNewsSumOrderByAggregateInput = {
+    displayOrder?: SortOrder
+  }
+
+  export type HomepageProgramCountOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    iconName?: SortOrder
+    tone?: SortOrder
+    linkUrl?: SortOrder
+    displayOrder?: SortOrder
+    active?: SortOrder
+  }
+
+  export type HomepageProgramAvgOrderByAggregateInput = {
+    displayOrder?: SortOrder
+  }
+
+  export type HomepageProgramMaxOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    iconName?: SortOrder
+    tone?: SortOrder
+    linkUrl?: SortOrder
+    displayOrder?: SortOrder
+    active?: SortOrder
+  }
+
+  export type HomepageProgramMinOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    iconName?: SortOrder
+    tone?: SortOrder
+    linkUrl?: SortOrder
+    displayOrder?: SortOrder
+    active?: SortOrder
+  }
+
+  export type HomepageProgramSumOrderByAggregateInput = {
+    displayOrder?: SortOrder
+  }
+
   export type SiteSettingCountOrderByAggregateInput = {
     key?: SortOrder
     value?: SortOrder
@@ -23301,11 +31365,25 @@ export namespace Prisma {
     connect?: NewsCategoryWhereUniqueInput
   }
 
+  export type HomepageFeaturedNewsCreateNestedManyWithoutArticleInput = {
+    create?: XOR<HomepageFeaturedNewsCreateWithoutArticleInput, HomepageFeaturedNewsUncheckedCreateWithoutArticleInput> | HomepageFeaturedNewsCreateWithoutArticleInput[] | HomepageFeaturedNewsUncheckedCreateWithoutArticleInput[]
+    connectOrCreate?: HomepageFeaturedNewsCreateOrConnectWithoutArticleInput | HomepageFeaturedNewsCreateOrConnectWithoutArticleInput[]
+    createMany?: HomepageFeaturedNewsCreateManyArticleInputEnvelope
+    connect?: HomepageFeaturedNewsWhereUniqueInput | HomepageFeaturedNewsWhereUniqueInput[]
+  }
+
   export type ArticleTagCreateNestedManyWithoutArticleInput = {
     create?: XOR<ArticleTagCreateWithoutArticleInput, ArticleTagUncheckedCreateWithoutArticleInput> | ArticleTagCreateWithoutArticleInput[] | ArticleTagUncheckedCreateWithoutArticleInput[]
     connectOrCreate?: ArticleTagCreateOrConnectWithoutArticleInput | ArticleTagCreateOrConnectWithoutArticleInput[]
     createMany?: ArticleTagCreateManyArticleInputEnvelope
     connect?: ArticleTagWhereUniqueInput | ArticleTagWhereUniqueInput[]
+  }
+
+  export type HomepageFeaturedNewsUncheckedCreateNestedManyWithoutArticleInput = {
+    create?: XOR<HomepageFeaturedNewsCreateWithoutArticleInput, HomepageFeaturedNewsUncheckedCreateWithoutArticleInput> | HomepageFeaturedNewsCreateWithoutArticleInput[] | HomepageFeaturedNewsUncheckedCreateWithoutArticleInput[]
+    connectOrCreate?: HomepageFeaturedNewsCreateOrConnectWithoutArticleInput | HomepageFeaturedNewsCreateOrConnectWithoutArticleInput[]
+    createMany?: HomepageFeaturedNewsCreateManyArticleInputEnvelope
+    connect?: HomepageFeaturedNewsWhereUniqueInput | HomepageFeaturedNewsWhereUniqueInput[]
   }
 
   export type ArticleTagUncheckedCreateNestedManyWithoutArticleInput = {
@@ -23327,6 +31405,20 @@ export namespace Prisma {
     update?: XOR<XOR<NewsCategoryUpdateToOneWithWhereWithoutArticlesInput, NewsCategoryUpdateWithoutArticlesInput>, NewsCategoryUncheckedUpdateWithoutArticlesInput>
   }
 
+  export type HomepageFeaturedNewsUpdateManyWithoutArticleNestedInput = {
+    create?: XOR<HomepageFeaturedNewsCreateWithoutArticleInput, HomepageFeaturedNewsUncheckedCreateWithoutArticleInput> | HomepageFeaturedNewsCreateWithoutArticleInput[] | HomepageFeaturedNewsUncheckedCreateWithoutArticleInput[]
+    connectOrCreate?: HomepageFeaturedNewsCreateOrConnectWithoutArticleInput | HomepageFeaturedNewsCreateOrConnectWithoutArticleInput[]
+    upsert?: HomepageFeaturedNewsUpsertWithWhereUniqueWithoutArticleInput | HomepageFeaturedNewsUpsertWithWhereUniqueWithoutArticleInput[]
+    createMany?: HomepageFeaturedNewsCreateManyArticleInputEnvelope
+    set?: HomepageFeaturedNewsWhereUniqueInput | HomepageFeaturedNewsWhereUniqueInput[]
+    disconnect?: HomepageFeaturedNewsWhereUniqueInput | HomepageFeaturedNewsWhereUniqueInput[]
+    delete?: HomepageFeaturedNewsWhereUniqueInput | HomepageFeaturedNewsWhereUniqueInput[]
+    connect?: HomepageFeaturedNewsWhereUniqueInput | HomepageFeaturedNewsWhereUniqueInput[]
+    update?: HomepageFeaturedNewsUpdateWithWhereUniqueWithoutArticleInput | HomepageFeaturedNewsUpdateWithWhereUniqueWithoutArticleInput[]
+    updateMany?: HomepageFeaturedNewsUpdateManyWithWhereWithoutArticleInput | HomepageFeaturedNewsUpdateManyWithWhereWithoutArticleInput[]
+    deleteMany?: HomepageFeaturedNewsScalarWhereInput | HomepageFeaturedNewsScalarWhereInput[]
+  }
+
   export type ArticleTagUpdateManyWithoutArticleNestedInput = {
     create?: XOR<ArticleTagCreateWithoutArticleInput, ArticleTagUncheckedCreateWithoutArticleInput> | ArticleTagCreateWithoutArticleInput[] | ArticleTagUncheckedCreateWithoutArticleInput[]
     connectOrCreate?: ArticleTagCreateOrConnectWithoutArticleInput | ArticleTagCreateOrConnectWithoutArticleInput[]
@@ -23339,6 +31431,20 @@ export namespace Prisma {
     update?: ArticleTagUpdateWithWhereUniqueWithoutArticleInput | ArticleTagUpdateWithWhereUniqueWithoutArticleInput[]
     updateMany?: ArticleTagUpdateManyWithWhereWithoutArticleInput | ArticleTagUpdateManyWithWhereWithoutArticleInput[]
     deleteMany?: ArticleTagScalarWhereInput | ArticleTagScalarWhereInput[]
+  }
+
+  export type HomepageFeaturedNewsUncheckedUpdateManyWithoutArticleNestedInput = {
+    create?: XOR<HomepageFeaturedNewsCreateWithoutArticleInput, HomepageFeaturedNewsUncheckedCreateWithoutArticleInput> | HomepageFeaturedNewsCreateWithoutArticleInput[] | HomepageFeaturedNewsUncheckedCreateWithoutArticleInput[]
+    connectOrCreate?: HomepageFeaturedNewsCreateOrConnectWithoutArticleInput | HomepageFeaturedNewsCreateOrConnectWithoutArticleInput[]
+    upsert?: HomepageFeaturedNewsUpsertWithWhereUniqueWithoutArticleInput | HomepageFeaturedNewsUpsertWithWhereUniqueWithoutArticleInput[]
+    createMany?: HomepageFeaturedNewsCreateManyArticleInputEnvelope
+    set?: HomepageFeaturedNewsWhereUniqueInput | HomepageFeaturedNewsWhereUniqueInput[]
+    disconnect?: HomepageFeaturedNewsWhereUniqueInput | HomepageFeaturedNewsWhereUniqueInput[]
+    delete?: HomepageFeaturedNewsWhereUniqueInput | HomepageFeaturedNewsWhereUniqueInput[]
+    connect?: HomepageFeaturedNewsWhereUniqueInput | HomepageFeaturedNewsWhereUniqueInput[]
+    update?: HomepageFeaturedNewsUpdateWithWhereUniqueWithoutArticleInput | HomepageFeaturedNewsUpdateWithWhereUniqueWithoutArticleInput[]
+    updateMany?: HomepageFeaturedNewsUpdateManyWithWhereWithoutArticleInput | HomepageFeaturedNewsUpdateManyWithWhereWithoutArticleInput[]
+    deleteMany?: HomepageFeaturedNewsScalarWhereInput | HomepageFeaturedNewsScalarWhereInput[]
   }
 
   export type ArticleTagUncheckedUpdateManyWithoutArticleNestedInput = {
@@ -23403,6 +31509,20 @@ export namespace Prisma {
     connect?: ProjectTypeWhereUniqueInput
   }
 
+  export type HomepageFeaturedProjectCreateNestedManyWithoutProjectInput = {
+    create?: XOR<HomepageFeaturedProjectCreateWithoutProjectInput, HomepageFeaturedProjectUncheckedCreateWithoutProjectInput> | HomepageFeaturedProjectCreateWithoutProjectInput[] | HomepageFeaturedProjectUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: HomepageFeaturedProjectCreateOrConnectWithoutProjectInput | HomepageFeaturedProjectCreateOrConnectWithoutProjectInput[]
+    createMany?: HomepageFeaturedProjectCreateManyProjectInputEnvelope
+    connect?: HomepageFeaturedProjectWhereUniqueInput | HomepageFeaturedProjectWhereUniqueInput[]
+  }
+
+  export type HomepageFeaturedProjectUncheckedCreateNestedManyWithoutProjectInput = {
+    create?: XOR<HomepageFeaturedProjectCreateWithoutProjectInput, HomepageFeaturedProjectUncheckedCreateWithoutProjectInput> | HomepageFeaturedProjectCreateWithoutProjectInput[] | HomepageFeaturedProjectUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: HomepageFeaturedProjectCreateOrConnectWithoutProjectInput | HomepageFeaturedProjectCreateOrConnectWithoutProjectInput[]
+    createMany?: HomepageFeaturedProjectCreateManyProjectInputEnvelope
+    connect?: HomepageFeaturedProjectWhereUniqueInput | HomepageFeaturedProjectWhereUniqueInput[]
+  }
+
   export type EnumProjectStatusFieldUpdateOperationsInput = {
     set?: $Enums.ProjectStatus
   }
@@ -23413,6 +31533,34 @@ export namespace Prisma {
     upsert?: ProjectTypeUpsertWithoutProjectsInput
     connect?: ProjectTypeWhereUniqueInput
     update?: XOR<XOR<ProjectTypeUpdateToOneWithWhereWithoutProjectsInput, ProjectTypeUpdateWithoutProjectsInput>, ProjectTypeUncheckedUpdateWithoutProjectsInput>
+  }
+
+  export type HomepageFeaturedProjectUpdateManyWithoutProjectNestedInput = {
+    create?: XOR<HomepageFeaturedProjectCreateWithoutProjectInput, HomepageFeaturedProjectUncheckedCreateWithoutProjectInput> | HomepageFeaturedProjectCreateWithoutProjectInput[] | HomepageFeaturedProjectUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: HomepageFeaturedProjectCreateOrConnectWithoutProjectInput | HomepageFeaturedProjectCreateOrConnectWithoutProjectInput[]
+    upsert?: HomepageFeaturedProjectUpsertWithWhereUniqueWithoutProjectInput | HomepageFeaturedProjectUpsertWithWhereUniqueWithoutProjectInput[]
+    createMany?: HomepageFeaturedProjectCreateManyProjectInputEnvelope
+    set?: HomepageFeaturedProjectWhereUniqueInput | HomepageFeaturedProjectWhereUniqueInput[]
+    disconnect?: HomepageFeaturedProjectWhereUniqueInput | HomepageFeaturedProjectWhereUniqueInput[]
+    delete?: HomepageFeaturedProjectWhereUniqueInput | HomepageFeaturedProjectWhereUniqueInput[]
+    connect?: HomepageFeaturedProjectWhereUniqueInput | HomepageFeaturedProjectWhereUniqueInput[]
+    update?: HomepageFeaturedProjectUpdateWithWhereUniqueWithoutProjectInput | HomepageFeaturedProjectUpdateWithWhereUniqueWithoutProjectInput[]
+    updateMany?: HomepageFeaturedProjectUpdateManyWithWhereWithoutProjectInput | HomepageFeaturedProjectUpdateManyWithWhereWithoutProjectInput[]
+    deleteMany?: HomepageFeaturedProjectScalarWhereInput | HomepageFeaturedProjectScalarWhereInput[]
+  }
+
+  export type HomepageFeaturedProjectUncheckedUpdateManyWithoutProjectNestedInput = {
+    create?: XOR<HomepageFeaturedProjectCreateWithoutProjectInput, HomepageFeaturedProjectUncheckedCreateWithoutProjectInput> | HomepageFeaturedProjectCreateWithoutProjectInput[] | HomepageFeaturedProjectUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: HomepageFeaturedProjectCreateOrConnectWithoutProjectInput | HomepageFeaturedProjectCreateOrConnectWithoutProjectInput[]
+    upsert?: HomepageFeaturedProjectUpsertWithWhereUniqueWithoutProjectInput | HomepageFeaturedProjectUpsertWithWhereUniqueWithoutProjectInput[]
+    createMany?: HomepageFeaturedProjectCreateManyProjectInputEnvelope
+    set?: HomepageFeaturedProjectWhereUniqueInput | HomepageFeaturedProjectWhereUniqueInput[]
+    disconnect?: HomepageFeaturedProjectWhereUniqueInput | HomepageFeaturedProjectWhereUniqueInput[]
+    delete?: HomepageFeaturedProjectWhereUniqueInput | HomepageFeaturedProjectWhereUniqueInput[]
+    connect?: HomepageFeaturedProjectWhereUniqueInput | HomepageFeaturedProjectWhereUniqueInput[]
+    update?: HomepageFeaturedProjectUpdateWithWhereUniqueWithoutProjectInput | HomepageFeaturedProjectUpdateWithWhereUniqueWithoutProjectInput[]
+    updateMany?: HomepageFeaturedProjectUpdateManyWithWhereWithoutProjectInput | HomepageFeaturedProjectUpdateManyWithWhereWithoutProjectInput[]
+    deleteMany?: HomepageFeaturedProjectScalarWhereInput | HomepageFeaturedProjectScalarWhereInput[]
   }
 
   export type GalleryItemCreateNestedManyWithoutCategoryInput = {
@@ -23477,6 +31625,34 @@ export namespace Prisma {
 
   export type EnumToneFieldUpdateOperationsInput = {
     set?: $Enums.Tone
+  }
+
+  export type ProjectCreateNestedOneWithoutFeaturedHomepageInput = {
+    create?: XOR<ProjectCreateWithoutFeaturedHomepageInput, ProjectUncheckedCreateWithoutFeaturedHomepageInput>
+    connectOrCreate?: ProjectCreateOrConnectWithoutFeaturedHomepageInput
+    connect?: ProjectWhereUniqueInput
+  }
+
+  export type ProjectUpdateOneRequiredWithoutFeaturedHomepageNestedInput = {
+    create?: XOR<ProjectCreateWithoutFeaturedHomepageInput, ProjectUncheckedCreateWithoutFeaturedHomepageInput>
+    connectOrCreate?: ProjectCreateOrConnectWithoutFeaturedHomepageInput
+    upsert?: ProjectUpsertWithoutFeaturedHomepageInput
+    connect?: ProjectWhereUniqueInput
+    update?: XOR<XOR<ProjectUpdateToOneWithWhereWithoutFeaturedHomepageInput, ProjectUpdateWithoutFeaturedHomepageInput>, ProjectUncheckedUpdateWithoutFeaturedHomepageInput>
+  }
+
+  export type NewsArticleCreateNestedOneWithoutHomepageFeaturedInput = {
+    create?: XOR<NewsArticleCreateWithoutHomepageFeaturedInput, NewsArticleUncheckedCreateWithoutHomepageFeaturedInput>
+    connectOrCreate?: NewsArticleCreateOrConnectWithoutHomepageFeaturedInput
+    connect?: NewsArticleWhereUniqueInput
+  }
+
+  export type NewsArticleUpdateOneRequiredWithoutHomepageFeaturedNestedInput = {
+    create?: XOR<NewsArticleCreateWithoutHomepageFeaturedInput, NewsArticleUncheckedCreateWithoutHomepageFeaturedInput>
+    connectOrCreate?: NewsArticleCreateOrConnectWithoutHomepageFeaturedInput
+    upsert?: NewsArticleUpsertWithoutHomepageFeaturedInput
+    connect?: NewsArticleWhereUniqueInput
+    update?: XOR<XOR<NewsArticleUpdateToOneWithWhereWithoutHomepageFeaturedInput, NewsArticleUpdateWithoutHomepageFeaturedInput>, NewsArticleUncheckedUpdateWithoutHomepageFeaturedInput>
   }
 
   export type UserCreateNestedOneWithoutAuditLogsInput = {
@@ -24161,6 +32337,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
+    homepageFeatured?: HomepageFeaturedNewsCreateNestedManyWithoutArticleInput
     tags?: ArticleTagCreateNestedManyWithoutArticleInput
   }
 
@@ -24181,6 +32358,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
+    homepageFeatured?: HomepageFeaturedNewsUncheckedCreateNestedManyWithoutArticleInput
     tags?: ArticleTagUncheckedCreateNestedManyWithoutArticleInput
   }
 
@@ -24293,6 +32471,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     deletedAt?: Date | string | null
     category: NewsCategoryCreateNestedOneWithoutArticlesInput
+    homepageFeatured?: HomepageFeaturedNewsCreateNestedManyWithoutArticleInput
   }
 
   export type NewsArticleUncheckedCreateWithoutTagsInput = {
@@ -24313,6 +32492,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
+    homepageFeatured?: HomepageFeaturedNewsUncheckedCreateNestedManyWithoutArticleInput
   }
 
   export type NewsArticleCreateOrConnectWithoutTagsInput = {
@@ -24364,6 +32544,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     category?: NewsCategoryUpdateOneRequiredWithoutArticlesNestedInput
+    homepageFeatured?: HomepageFeaturedNewsUpdateManyWithoutArticleNestedInput
   }
 
   export type NewsArticleUncheckedUpdateWithoutTagsInput = {
@@ -24384,6 +32565,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homepageFeatured?: HomepageFeaturedNewsUncheckedUpdateManyWithoutArticleNestedInput
   }
 
   export type NewsTagUpsertWithoutArticlesInput = {
@@ -24420,6 +32602,26 @@ export namespace Prisma {
   export type NewsCategoryCreateOrConnectWithoutArticlesInput = {
     where: NewsCategoryWhereUniqueInput
     create: XOR<NewsCategoryCreateWithoutArticlesInput, NewsCategoryUncheckedCreateWithoutArticlesInput>
+  }
+
+  export type HomepageFeaturedNewsCreateWithoutArticleInput = {
+    id?: string
+    displayOrder?: number
+  }
+
+  export type HomepageFeaturedNewsUncheckedCreateWithoutArticleInput = {
+    id?: string
+    displayOrder?: number
+  }
+
+  export type HomepageFeaturedNewsCreateOrConnectWithoutArticleInput = {
+    where: HomepageFeaturedNewsWhereUniqueInput
+    create: XOR<HomepageFeaturedNewsCreateWithoutArticleInput, HomepageFeaturedNewsUncheckedCreateWithoutArticleInput>
+  }
+
+  export type HomepageFeaturedNewsCreateManyArticleInputEnvelope = {
+    data: HomepageFeaturedNewsCreateManyArticleInput | HomepageFeaturedNewsCreateManyArticleInput[]
+    skipDuplicates?: boolean
   }
 
   export type ArticleTagCreateWithoutArticleInput = {
@@ -24461,6 +32663,31 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
   }
 
+  export type HomepageFeaturedNewsUpsertWithWhereUniqueWithoutArticleInput = {
+    where: HomepageFeaturedNewsWhereUniqueInput
+    update: XOR<HomepageFeaturedNewsUpdateWithoutArticleInput, HomepageFeaturedNewsUncheckedUpdateWithoutArticleInput>
+    create: XOR<HomepageFeaturedNewsCreateWithoutArticleInput, HomepageFeaturedNewsUncheckedCreateWithoutArticleInput>
+  }
+
+  export type HomepageFeaturedNewsUpdateWithWhereUniqueWithoutArticleInput = {
+    where: HomepageFeaturedNewsWhereUniqueInput
+    data: XOR<HomepageFeaturedNewsUpdateWithoutArticleInput, HomepageFeaturedNewsUncheckedUpdateWithoutArticleInput>
+  }
+
+  export type HomepageFeaturedNewsUpdateManyWithWhereWithoutArticleInput = {
+    where: HomepageFeaturedNewsScalarWhereInput
+    data: XOR<HomepageFeaturedNewsUpdateManyMutationInput, HomepageFeaturedNewsUncheckedUpdateManyWithoutArticleInput>
+  }
+
+  export type HomepageFeaturedNewsScalarWhereInput = {
+    AND?: HomepageFeaturedNewsScalarWhereInput | HomepageFeaturedNewsScalarWhereInput[]
+    OR?: HomepageFeaturedNewsScalarWhereInput[]
+    NOT?: HomepageFeaturedNewsScalarWhereInput | HomepageFeaturedNewsScalarWhereInput[]
+    id?: StringFilter<"HomepageFeaturedNews"> | string
+    articleId?: StringFilter<"HomepageFeaturedNews"> | string
+    displayOrder?: IntFilter<"HomepageFeaturedNews"> | number
+  }
+
   export type ArticleTagUpsertWithWhereUniqueWithoutArticleInput = {
     where: ArticleTagWhereUniqueInput
     update: XOR<ArticleTagUpdateWithoutArticleInput, ArticleTagUncheckedUpdateWithoutArticleInput>
@@ -24496,6 +32723,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
+    featuredHomepage?: HomepageFeaturedProjectCreateNestedManyWithoutProjectInput
   }
 
   export type ProjectUncheckedCreateWithoutProjectTypeInput = {
@@ -24517,6 +32745,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
+    featuredHomepage?: HomepageFeaturedProjectUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type ProjectCreateOrConnectWithoutProjectTypeInput = {
@@ -24585,6 +32814,26 @@ export namespace Prisma {
     create: XOR<ProjectTypeCreateWithoutProjectsInput, ProjectTypeUncheckedCreateWithoutProjectsInput>
   }
 
+  export type HomepageFeaturedProjectCreateWithoutProjectInput = {
+    id?: string
+    displayOrder?: number
+  }
+
+  export type HomepageFeaturedProjectUncheckedCreateWithoutProjectInput = {
+    id?: string
+    displayOrder?: number
+  }
+
+  export type HomepageFeaturedProjectCreateOrConnectWithoutProjectInput = {
+    where: HomepageFeaturedProjectWhereUniqueInput
+    create: XOR<HomepageFeaturedProjectCreateWithoutProjectInput, HomepageFeaturedProjectUncheckedCreateWithoutProjectInput>
+  }
+
+  export type HomepageFeaturedProjectCreateManyProjectInputEnvelope = {
+    data: HomepageFeaturedProjectCreateManyProjectInput | HomepageFeaturedProjectCreateManyProjectInput[]
+    skipDuplicates?: boolean
+  }
+
   export type ProjectTypeUpsertWithoutProjectsInput = {
     update: XOR<ProjectTypeUpdateWithoutProjectsInput, ProjectTypeUncheckedUpdateWithoutProjectsInput>
     create: XOR<ProjectTypeCreateWithoutProjectsInput, ProjectTypeUncheckedCreateWithoutProjectsInput>
@@ -24604,6 +32853,31 @@ export namespace Prisma {
   export type ProjectTypeUncheckedUpdateWithoutProjectsInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type HomepageFeaturedProjectUpsertWithWhereUniqueWithoutProjectInput = {
+    where: HomepageFeaturedProjectWhereUniqueInput
+    update: XOR<HomepageFeaturedProjectUpdateWithoutProjectInput, HomepageFeaturedProjectUncheckedUpdateWithoutProjectInput>
+    create: XOR<HomepageFeaturedProjectCreateWithoutProjectInput, HomepageFeaturedProjectUncheckedCreateWithoutProjectInput>
+  }
+
+  export type HomepageFeaturedProjectUpdateWithWhereUniqueWithoutProjectInput = {
+    where: HomepageFeaturedProjectWhereUniqueInput
+    data: XOR<HomepageFeaturedProjectUpdateWithoutProjectInput, HomepageFeaturedProjectUncheckedUpdateWithoutProjectInput>
+  }
+
+  export type HomepageFeaturedProjectUpdateManyWithWhereWithoutProjectInput = {
+    where: HomepageFeaturedProjectScalarWhereInput
+    data: XOR<HomepageFeaturedProjectUpdateManyMutationInput, HomepageFeaturedProjectUncheckedUpdateManyWithoutProjectInput>
+  }
+
+  export type HomepageFeaturedProjectScalarWhereInput = {
+    AND?: HomepageFeaturedProjectScalarWhereInput | HomepageFeaturedProjectScalarWhereInput[]
+    OR?: HomepageFeaturedProjectScalarWhereInput[]
+    NOT?: HomepageFeaturedProjectScalarWhereInput | HomepageFeaturedProjectScalarWhereInput[]
+    id?: StringFilter<"HomepageFeaturedProject"> | string
+    projectId?: StringFilter<"HomepageFeaturedProject"> | string
+    displayOrder?: IntFilter<"HomepageFeaturedProject"> | number
   }
 
   export type GalleryItemCreateWithoutCategoryInput = {
@@ -24733,6 +33007,210 @@ export namespace Prisma {
   export type GalleryCategoryUncheckedUpdateWithoutItemsInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ProjectCreateWithoutFeaturedHomepageInput = {
+    id?: string
+    title: string
+    lga: string
+    community: string
+    status?: $Enums.ProjectStatus
+    year: number
+    progress?: number
+    beneficiaries: number
+    description: string
+    featuredImageUrl: string
+    thumbnailUrl: string
+    featured?: boolean
+    completionDate?: Date | string | null
+    createdById: string
+    updatedById: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    deletedAt?: Date | string | null
+    projectType: ProjectTypeCreateNestedOneWithoutProjectsInput
+  }
+
+  export type ProjectUncheckedCreateWithoutFeaturedHomepageInput = {
+    id?: string
+    title: string
+    lga: string
+    community: string
+    typeId: string
+    status?: $Enums.ProjectStatus
+    year: number
+    progress?: number
+    beneficiaries: number
+    description: string
+    featuredImageUrl: string
+    thumbnailUrl: string
+    featured?: boolean
+    completionDate?: Date | string | null
+    createdById: string
+    updatedById: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    deletedAt?: Date | string | null
+  }
+
+  export type ProjectCreateOrConnectWithoutFeaturedHomepageInput = {
+    where: ProjectWhereUniqueInput
+    create: XOR<ProjectCreateWithoutFeaturedHomepageInput, ProjectUncheckedCreateWithoutFeaturedHomepageInput>
+  }
+
+  export type ProjectUpsertWithoutFeaturedHomepageInput = {
+    update: XOR<ProjectUpdateWithoutFeaturedHomepageInput, ProjectUncheckedUpdateWithoutFeaturedHomepageInput>
+    create: XOR<ProjectCreateWithoutFeaturedHomepageInput, ProjectUncheckedCreateWithoutFeaturedHomepageInput>
+    where?: ProjectWhereInput
+  }
+
+  export type ProjectUpdateToOneWithWhereWithoutFeaturedHomepageInput = {
+    where?: ProjectWhereInput
+    data: XOR<ProjectUpdateWithoutFeaturedHomepageInput, ProjectUncheckedUpdateWithoutFeaturedHomepageInput>
+  }
+
+  export type ProjectUpdateWithoutFeaturedHomepageInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    lga?: StringFieldUpdateOperationsInput | string
+    community?: StringFieldUpdateOperationsInput | string
+    status?: EnumProjectStatusFieldUpdateOperationsInput | $Enums.ProjectStatus
+    year?: IntFieldUpdateOperationsInput | number
+    progress?: IntFieldUpdateOperationsInput | number
+    beneficiaries?: IntFieldUpdateOperationsInput | number
+    description?: StringFieldUpdateOperationsInput | string
+    featuredImageUrl?: StringFieldUpdateOperationsInput | string
+    thumbnailUrl?: StringFieldUpdateOperationsInput | string
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    completionDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdById?: StringFieldUpdateOperationsInput | string
+    updatedById?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    projectType?: ProjectTypeUpdateOneRequiredWithoutProjectsNestedInput
+  }
+
+  export type ProjectUncheckedUpdateWithoutFeaturedHomepageInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    lga?: StringFieldUpdateOperationsInput | string
+    community?: StringFieldUpdateOperationsInput | string
+    typeId?: StringFieldUpdateOperationsInput | string
+    status?: EnumProjectStatusFieldUpdateOperationsInput | $Enums.ProjectStatus
+    year?: IntFieldUpdateOperationsInput | number
+    progress?: IntFieldUpdateOperationsInput | number
+    beneficiaries?: IntFieldUpdateOperationsInput | number
+    description?: StringFieldUpdateOperationsInput | string
+    featuredImageUrl?: StringFieldUpdateOperationsInput | string
+    thumbnailUrl?: StringFieldUpdateOperationsInput | string
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    completionDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdById?: StringFieldUpdateOperationsInput | string
+    updatedById?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type NewsArticleCreateWithoutHomepageFeaturedInput = {
+    id?: string
+    slug: string
+    title: string
+    excerpt: string
+    body: string
+    featuredImageUrl: string
+    thumbnailUrl: string
+    status?: $Enums.ArticleStatus
+    featured?: boolean
+    scheduledAt?: Date | string | null
+    publishedAt?: Date | string | null
+    createdById: string
+    updatedById: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    deletedAt?: Date | string | null
+    category: NewsCategoryCreateNestedOneWithoutArticlesInput
+    tags?: ArticleTagCreateNestedManyWithoutArticleInput
+  }
+
+  export type NewsArticleUncheckedCreateWithoutHomepageFeaturedInput = {
+    id?: string
+    slug: string
+    title: string
+    categoryId: string
+    excerpt: string
+    body: string
+    featuredImageUrl: string
+    thumbnailUrl: string
+    status?: $Enums.ArticleStatus
+    featured?: boolean
+    scheduledAt?: Date | string | null
+    publishedAt?: Date | string | null
+    createdById: string
+    updatedById: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    deletedAt?: Date | string | null
+    tags?: ArticleTagUncheckedCreateNestedManyWithoutArticleInput
+  }
+
+  export type NewsArticleCreateOrConnectWithoutHomepageFeaturedInput = {
+    where: NewsArticleWhereUniqueInput
+    create: XOR<NewsArticleCreateWithoutHomepageFeaturedInput, NewsArticleUncheckedCreateWithoutHomepageFeaturedInput>
+  }
+
+  export type NewsArticleUpsertWithoutHomepageFeaturedInput = {
+    update: XOR<NewsArticleUpdateWithoutHomepageFeaturedInput, NewsArticleUncheckedUpdateWithoutHomepageFeaturedInput>
+    create: XOR<NewsArticleCreateWithoutHomepageFeaturedInput, NewsArticleUncheckedCreateWithoutHomepageFeaturedInput>
+    where?: NewsArticleWhereInput
+  }
+
+  export type NewsArticleUpdateToOneWithWhereWithoutHomepageFeaturedInput = {
+    where?: NewsArticleWhereInput
+    data: XOR<NewsArticleUpdateWithoutHomepageFeaturedInput, NewsArticleUncheckedUpdateWithoutHomepageFeaturedInput>
+  }
+
+  export type NewsArticleUpdateWithoutHomepageFeaturedInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    excerpt?: StringFieldUpdateOperationsInput | string
+    body?: StringFieldUpdateOperationsInput | string
+    featuredImageUrl?: StringFieldUpdateOperationsInput | string
+    thumbnailUrl?: StringFieldUpdateOperationsInput | string
+    status?: EnumArticleStatusFieldUpdateOperationsInput | $Enums.ArticleStatus
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    scheduledAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdById?: StringFieldUpdateOperationsInput | string
+    updatedById?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    category?: NewsCategoryUpdateOneRequiredWithoutArticlesNestedInput
+    tags?: ArticleTagUpdateManyWithoutArticleNestedInput
+  }
+
+  export type NewsArticleUncheckedUpdateWithoutHomepageFeaturedInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    categoryId?: StringFieldUpdateOperationsInput | string
+    excerpt?: StringFieldUpdateOperationsInput | string
+    body?: StringFieldUpdateOperationsInput | string
+    featuredImageUrl?: StringFieldUpdateOperationsInput | string
+    thumbnailUrl?: StringFieldUpdateOperationsInput | string
+    status?: EnumArticleStatusFieldUpdateOperationsInput | $Enums.ArticleStatus
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    scheduledAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdById?: StringFieldUpdateOperationsInput | string
+    updatedById?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tags?: ArticleTagUncheckedUpdateManyWithoutArticleNestedInput
   }
 
   export type UserCreateWithoutAuditLogsInput = {
@@ -24977,6 +33455,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homepageFeatured?: HomepageFeaturedNewsUpdateManyWithoutArticleNestedInput
     tags?: ArticleTagUpdateManyWithoutArticleNestedInput
   }
 
@@ -24997,6 +33476,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    homepageFeatured?: HomepageFeaturedNewsUncheckedUpdateManyWithoutArticleNestedInput
     tags?: ArticleTagUncheckedUpdateManyWithoutArticleNestedInput
   }
 
@@ -25035,8 +33515,28 @@ export namespace Prisma {
     articleId?: StringFieldUpdateOperationsInput | string
   }
 
+  export type HomepageFeaturedNewsCreateManyArticleInput = {
+    id?: string
+    displayOrder?: number
+  }
+
   export type ArticleTagCreateManyArticleInput = {
     tagId: string
+  }
+
+  export type HomepageFeaturedNewsUpdateWithoutArticleInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type HomepageFeaturedNewsUncheckedUpdateWithoutArticleInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type HomepageFeaturedNewsUncheckedUpdateManyWithoutArticleInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
   }
 
   export type ArticleTagUpdateWithoutArticleInput = {
@@ -25091,6 +33591,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    featuredHomepage?: HomepageFeaturedProjectUpdateManyWithoutProjectNestedInput
   }
 
   export type ProjectUncheckedUpdateWithoutProjectTypeInput = {
@@ -25112,6 +33613,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    featuredHomepage?: HomepageFeaturedProjectUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type ProjectUncheckedUpdateManyWithoutProjectTypeInput = {
@@ -25133,6 +33635,26 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type HomepageFeaturedProjectCreateManyProjectInput = {
+    id?: string
+    displayOrder?: number
+  }
+
+  export type HomepageFeaturedProjectUpdateWithoutProjectInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type HomepageFeaturedProjectUncheckedUpdateWithoutProjectInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type HomepageFeaturedProjectUncheckedUpdateManyWithoutProjectInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
   }
 
   export type GalleryItemCreateManyCategoryInput = {

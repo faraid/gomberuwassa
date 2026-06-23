@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
@@ -14,6 +14,7 @@ import {
   ScrollText,
   LogOut,
   ChevronRight,
+  Home,
 } from 'lucide-react';
 
 interface NavItem {
@@ -25,6 +26,7 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
+  { label: 'Homepage', href: '/admin/homepage', icon: Home },
   { label: 'News', href: '/admin/news', icon: Newspaper },
   { label: 'Projects', href: '/admin/projects', icon: FolderKanban },
   { label: 'Gallery', href: '/admin/gallery', icon: Images },
@@ -77,14 +79,13 @@ export default function AdminSidebar({ role, fullName, email }: AdminSidebarProp
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors group ${
-                    active
+                  className={'flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors group ' + (active
                       ? 'bg-blue-50 text-blue-700'
                       : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                  }`}
+                  )}
                 >
                   <Icon
-                    className={`w-4 h-4 shrink-0 ${active ? 'text-blue-600' : 'text-gray-400 group-hover:text-gray-600'}`}
+                    className={'w-4 h-4 shrink-0 ' + (active ? 'text-blue-600' : 'text-gray-400 group-hover:text-gray-600')}
                   />
                   <span className="flex-1">{item.label}</span>
                   {active && <ChevronRight className="w-3 h-3 text-blue-400" />}

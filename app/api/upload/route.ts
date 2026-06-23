@@ -5,7 +5,7 @@ import path from 'path';
 
 // ─── Allowed upload targets ─────────────────────────────────────────────────
 
-const ALLOWED_TARGETS = ['projects', 'news', 'programs', 'gallery'] as const;
+const ALLOWED_TARGETS = ['projects', 'news', 'programs', 'gallery', 'homepage'] as const;
 type UploadTarget = (typeof ALLOWED_TARGETS)[number];
 
 // ─── POST ────────────────────────────────────────────────────────────────────

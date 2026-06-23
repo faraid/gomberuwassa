@@ -1,4 +1,5 @@
-import Image from "next/image";
+﻿import Image from "next/image";
+import Link from "next/link";
 import StatCounter from "./components/StatCounter";
 import {
   Award,
@@ -12,163 +13,78 @@ import {
   Users,
   Wrench,
 } from "lucide-react";
+import {
+  getHomepageHero,
+  getActiveValueCards,
+  getActiveStatistics,
+  getFeaturedProjectIds,
+  getFeaturedNewsIds,
+  getActivePrograms,
+  getSiteSettings,
+} from "@/lib/services/homepage.service";
+import { listPublishedProjects } from "@/lib/services/projects.service";
+import { listPublishedArticles } from "@/lib/services/news.service";
 
-const nav = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "Programs", href: "/programs" },
-  { label: "News & Updates", href: "/news" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" },
-];
+const iconMap: Record<string, React.ElementType> = {
+  Droplet, Users, Handshake, TrendingUp, Award, MapPin,
+  Wrench, Toilet, Sprout, Phone, Mail: Users, Globe: Users,
+  Shield: Award, Sun: Award, Heart: Users, BookOpen: Users,
+  Target: Award, Activity: TrendingUp,
+};
 
-const values = [
-  {
-    icon: Droplet,
-    title: "Clean Water",
-    body: "Expanding access to safe and reliable water supply.",
-    tone: "blue",
-  },
-  {
-    icon: Users,
-    title: "Healthy Communities",
-    body: "Promoting hygiene and sanitation for better health.",
-    tone: "green",
-  },
-  {
-    icon: Handshake,
-    title: "Sustainable Solutions",
-    body: "Implementing durable and community-driven solutions.",
-    tone: "blue",
-  },
-  {
-    icon: TrendingUp,
-    title: "Accountability",
-    body: "Transparent management and responsible service.",
-    tone: "green",
-  },
-  {
-    icon: Users,
-    title: "Community Focused",
-    body: "Working together with communities for lasting impact.",
-    tone: "blue",
-  },
-];
+function getIcon(name: string): React.ElementType {
+  return iconMap[name] || Droplet;
+}
 
-const projects = [
-  {
-    image: "/project-solar.png",
-    badge: "IN PROGRESS",
-    location: "Dukku, Gombe LGA",
-    title: "Solar Borehole Scheme",
-    body: "Construction of solar-powered borehole to provide clean water to the community.",
-    progress: 75,
-  },
-  {
-    image: "/project-rural.png",
-    badge: "IN PROGRESS",
-    location: "Funakaye LGA",
-    title: "Rural Water Supply Scheme",
-    body: "Provision of sustainable piped water supply to rural communities.",
-    progress: 60,
-  },
-  {
-    image: "/project-tank.png",
-    badge: "COMPLETED",
-    location: "Billiri LGA",
-    title: "Borehole & Overhead Tank",
-    body: "Successfully delivered clean water facility to the community.",
-    progress: 100,
-  },
-];
+export default async function Home() {
+  const [hero, values, stats, featuredProjectIds, featuredNewsIds, programs, settings] = await Promise.all([
+    getHomepageHero(),
+    getActiveValueCards(),
+    getActiveStatistics(),
+    getFeaturedProjectIds(),
+    getFeaturedNewsIds(),
+    getActivePrograms(),
+    getSiteSettings(),
+  ]);
 
-const news = [
-  {
-    image: "/news-meeting.png",
-    title: "RUWASA Holds Stakeholders Meeting on Sustainable Water Services",
-    date: "May 15, 2024",
-    body: "The meeting focused on strengthening partnership and improving service delivery across the state...",
-  },
-  {
-    image: "/news-water-day.png",
-    title: "World Water Day 2024: RUWASA Promotes Water Conservation in Gombe",
-    date: "March 22, 2024",
-    body: "Community sensitization and awareness campaign held across several LGAs to promote water conservation...",
-  },
-  {
-    image: "/news-commissioning.png",
-    title: "Commissioning of Water Facility in Kwami Community",
-    date: "Feb 10, 2024",
-    body: "A new water facility commissioned to improve access to clean and safe water in the community...",
-  },
-];
+  const allProjects = await listPublishedProjects();
+  const featuredProjects = featuredProjectIds.length > 0
+    ? allProjects.filter(p => featuredProjectIds.includes(p.id))
+    : allProjects.slice(0, 3);
+  
+  const allNews = await listPublishedArticles();
+  const featuredNews = featuredNewsIds.length > 0
+    ? allNews.filter(n => featuredNewsIds.includes(n.id))
+    : allNews.slice(0, 3);
 
-const programs = [
-  {
-    icon: Wrench,
-    title: "Water Supply",
-    body: "Expanding access to clean and safe water in rural areas.",
-    tone: "blue",
-  },
-  {
-    icon: Toilet,
-    title: "Sanitation & Hygiene",
-    body: "Promoting sanitation and hygiene for healthier communities.",
-    tone: "green",
-  },
-  {
-    icon: Users,
-    title: "Capacity Building",
-    body: "Building local capacity for sustainable water and sanitation services.",
-    tone: "blue",
-  },
-  {
-    icon: Sprout,
-    title: "Community Engagement",
-    body: "Engaging communities in planning and managing water resources.",
-    tone: "blue",
-  },
-];
-
-const stats = [
-  { icon: Droplet, value: "312+", label: "Water Points Constructed" },
-  { icon: Users, value: "245,000+", label: "People with Improved Water Access" },
-  { icon: MapPin, value: "114+", label: "Communities Served" },
-  { icon: Handshake, value: "25+", label: "Partners & Donors" },
-  { icon: Award, value: "100%", label: "Commitment to Service Excellence" },
-];
-
-export default function Home() {
   return (
     <main className="page-shell">
       <header className="topbar">
         <div className="wrap header-grid">
-          <Image
-            className="logo"
-            src="/brand-logo.png"
-            width={265}
-            height={88}
-            alt="Gombe State RUWASA"
-            priority
-          />
+          <Link href="/" aria-label="Gombe State RUWASA - Go to homepage">
+            <Image
+              className="logo"
+              src={settings.logo}
+              width={236}
+              height={78}
+              alt="Gombe State RUWASA"
+              priority
+            />
+          </Link>
           <nav className="nav" aria-label="Primary navigation">
-            {nav.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className={item.label === "Home" ? "is-active" : ""}
-                aria-current={item.label === "Home" ? "page" : undefined}
-              >
-                {item.label}
-              </a>
-            ))}
+            <Link href="/" className="is-active" aria-current="page">Home</Link>
+            <a href="/about">About Us</a>
+            <a href="/projects">Projects</a>
+            <a href="/programs">Programs</a>
+            <a href="/news">News &amp; Updates</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/contact">Contact</a>
           </nav>
-          <a className="phone" href="tel:08132696321">
+          <a className="phone" href={"tel:" + settings.phone.replace(/[^0-9]/g, "")}>
             <Phone size={22} strokeWidth={3} />
             <span>
-              <strong>0813 269 6321</strong>
-              <small>info@ruwasa.gombe.gov.ng</small>
+              <strong>{settings.phone}</strong>
+              <small>{settings.email}</small>
             </span>
           </a>
         </div>
@@ -177,28 +93,18 @@ export default function Home() {
       <section className="hero">
         <div className="wrap hero-grid">
           <div className="hero-copy">
-            <h1>
-              Providing Sustainable
-              <br />
-              Water &amp; Sanitation
-              <br />
-              Services
-            </h1>
-            <p className="hero-lead">for Rural Communities in Gombe State</p>
-            <p className="hero-text">
-              We are committed to improving access to clean water, promoting
-              sanitation and enhancing the quality of life in every rural
-              community.
-            </p>
+            <h1 dangerouslySetInnerHTML={{ __html: hero.title.replace(/\n/g, "<br />") }} />
+            <p className="hero-lead">{hero.subtitle}</p>
+            <p className="hero-text">{hero.description}</p>
             <div className="actions">
-              <a className="button button-primary" href="#">Learn More</a>
-              <a className="button button-secondary" href="#">Our Projects</a>
+              <a className="button button-primary" href={hero.primaryBtnLink}>{hero.primaryBtnText}</a>
+              <a className="button button-secondary" href={hero.secondaryBtnLink}>{hero.secondaryBtnText}</a>
             </div>
           </div>
           <div className="hero-photo">
             <Image
-              src="/hero-water-facility.png"
-              alt="Children washing hands at a Gombe State RUWASA water facility"
+              src={hero.heroImageUrl}
+              alt="Gombe State RUWASA water facility"
               fill
               priority
               sizes="580px"
@@ -209,15 +115,18 @@ export default function Home() {
 
       <section className="values">
         <div className="wrap value-grid">
-          {values.map(({ icon: Icon, title, body, tone }) => (
-            <article className="value-card" key={title}>
-              <span className={`round-icon ${tone}`}>
-                <Icon size={29} strokeWidth={2.25} />
-              </span>
-              <h3>{title}</h3>
-              <p>{body}</p>
-            </article>
-          ))}
+          {values.map(({ iconName, title, description, tone }) => {
+            const Icon = getIcon(iconName);
+            return (
+              <article className="value-card" key={title + tone}>
+                <span className={"round-icon " + tone}>
+                  <Icon size={29} strokeWidth={2.25} />
+                </span>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -230,25 +139,25 @@ export default function Home() {
               We are implementing sustainable water supply schemes across
               communities to ensure no one is left behind.
             </p>
-            <a className="button button-primary arrow" href="#">View All Projects <span>→</span></a>
+            <a className="button button-primary arrow" href="/projects">View All Projects <span>&rarr;</span></a>
           </div>
           <div className="cards">
-            {projects.map((project) => (
-              <article className="project-card" key={project.title}>
+            {featuredProjects.map((project) => (
+              <Link href={"/projects/" + project.id} className="project-card" key={project.id}>
                 <div className="card-image">
-                  <Image src={project.image} fill sizes="210px" alt="" />
-                  <b className={project.badge === "COMPLETED" ? "done" : ""}>
-                    {project.badge}
+                  <Image src={project.featuredImageUrl || "/project-solar.png"} fill sizes="210px" alt="" />
+                  <b className={project.status === "completed" ? "done" : ""}>
+                    {project.status === "ongoing" ? "IN PROGRESS" : project.status.toUpperCase()}
                   </b>
                 </div>
                 <div className="card-body">
-                  <p className="place"><MapPin size={13} />{project.location}</p>
+                  <p className="place"><MapPin size={13} />{project.lga}</p>
                   <h3>{project.title}</h3>
-                  <p>{project.body}</p>
+                  <p>{project.description}</p>
                   <strong>{project.progress}% Complete</strong>
-                  <span className="meter"><i style={{ width: `${project.progress}%` }} /></span>
+                  <span className="meter"><i style={{ width: project.progress + "%" }} /></span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
@@ -259,50 +168,56 @@ export default function Home() {
           <div>
             <div className="section-line">
               <h2>Latest News &amp; Updates</h2>
-              <a href="#">View All News <span>→</span></a>
+              <a href="/news">View All News <span>&rarr;</span></a>
             </div>
             <div className="news-list">
-              {news.map((item) => (
-                <article className="news-item" key={item.title}>
-                  <Image src={item.image} width={147} height={84} alt="" />
+              {featuredNews.map((item) => (
+                <Link href={"/news/" + item.slug} className="news-item" key={item.id}>
+                  <Image src={item.featuredImageUrl || "/news-meeting.png"} width={147} height={84} alt="" />
                   <div>
                     <h3>{item.title}</h3>
-                    <time>{item.date}</time>
-                    <p>{item.body}</p>
+                    <time>{item.publishedAt ? new Date(item.publishedAt).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }) : ""}</time>
+                    <p>{item.excerpt}</p>
                   </div>
-                </article>
+                </Link>
               ))}
             </div>
           </div>
           <aside className="programs">
             <h2>Our Programs</h2>
-            {programs.map(({ icon: Icon, title, body, tone }) => (
-              <article className="program" key={title}>
-                <span className={`program-icon ${tone}`}>
-                  <Icon size={29} strokeWidth={2.5} />
-                </span>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{body}</p>
-                </div>
-                <b>→</b>
-              </article>
-            ))}
+            {programs.map(({ iconName, title, description, tone, linkUrl }) => {
+              const Icon = getIcon(iconName);
+              return (
+                <Link href={linkUrl} className="program" key={title + tone}>
+                  <span className={"program-icon " + tone}>
+                    <Icon size={29} strokeWidth={2.5} />
+                  </span>
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                  </div>
+                  <b>&rarr;</b>
+                </Link>
+              );
+            })}
           </aside>
         </div>
       </section>
 
       <section className="stats">
         <div className="wrap stat-grid">
-          {stats.map(({ icon: Icon, value, label }) => (
-            <article className="stat" key={label}>
-              <Icon size={50} strokeWidth={2.2} />
-              <div>
-                <strong><StatCounter value={value} /></strong>
-                <p>{label}</p>
-              </div>
-            </article>
-          ))}
+          {stats.map(({ iconName, value, label }) => {
+            const Icon = getIcon(iconName);
+            return (
+              <article className="stat" key={label}>
+                <Icon size={50} strokeWidth={2.2} />
+                <div>
+                  <strong><StatCounter value={value} /></strong>
+                  <p>{label}</p>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
     </main>

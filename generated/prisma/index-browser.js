@@ -282,6 +282,61 @@ exports.Prisma.ContactSubmissionScalarFieldEnum = {
   deletedAt: 'deletedAt'
 };
 
+exports.Prisma.HomepageHeroScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  subtitle: 'subtitle',
+  description: 'description',
+  heroImageUrl: 'heroImageUrl',
+  primaryBtnText: 'primaryBtnText',
+  primaryBtnLink: 'primaryBtnLink',
+  secondaryBtnText: 'secondaryBtnText',
+  secondaryBtnLink: 'secondaryBtnLink',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.HomepageValueCardScalarFieldEnum = {
+  id: 'id',
+  iconName: 'iconName',
+  title: 'title',
+  description: 'description',
+  tone: 'tone',
+  displayOrder: 'displayOrder',
+  active: 'active'
+};
+
+exports.Prisma.HomepageStatisticScalarFieldEnum = {
+  id: 'id',
+  iconName: 'iconName',
+  value: 'value',
+  label: 'label',
+  displayOrder: 'displayOrder',
+  active: 'active'
+};
+
+exports.Prisma.HomepageFeaturedProjectScalarFieldEnum = {
+  id: 'id',
+  projectId: 'projectId',
+  displayOrder: 'displayOrder'
+};
+
+exports.Prisma.HomepageFeaturedNewsScalarFieldEnum = {
+  id: 'id',
+  articleId: 'articleId',
+  displayOrder: 'displayOrder'
+};
+
+exports.Prisma.HomepageProgramScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  iconName: 'iconName',
+  tone: 'tone',
+  linkUrl: 'linkUrl',
+  displayOrder: 'displayOrder',
+  active: 'active'
+};
+
 exports.Prisma.SiteSettingScalarFieldEnum = {
   key: 'key',
   value: 'value',
@@ -374,6 +429,12 @@ exports.Prisma.ModelName = {
   GalleryItem: 'GalleryItem',
   Program: 'Program',
   ContactSubmission: 'ContactSubmission',
+  HomepageHero: 'HomepageHero',
+  HomepageValueCard: 'HomepageValueCard',
+  HomepageStatistic: 'HomepageStatistic',
+  HomepageFeaturedProject: 'HomepageFeaturedProject',
+  HomepageFeaturedNews: 'HomepageFeaturedNews',
+  HomepageProgram: 'HomepageProgram',
   SiteSetting: 'SiteSetting',
   AuditLog: 'AuditLog'
 };

@@ -9,7 +9,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// ─── Enums ───────────────────────────────────────────────────────────────────
+// --- Enums ----------------------------------------------------------------
 
 enum Role {
   Super_Admin
@@ -42,7 +42,7 @@ enum Tone {
   green
 }
 
-// ─── Users & Sessions ────────────────────────────────────────────────────────
+// --- Users & Sessions -----------------------------------------------------
 
 model User {
   id             String    @id @default(uuid())
@@ -87,7 +87,7 @@ model PasswordResetToken {
   @@map("password_reset_tokens")
 }
 
-// ─── News ─────────────────────────────────────────────────────────────────────
+// --- News -----------------------------------------------------------------
 
 model NewsCategory {
   id       String        @id @default(uuid())
@@ -121,6 +121,7 @@ model NewsArticle {
   title            String
   categoryId       String
   category         NewsCategory  @relation(fields: [categoryId], references: [id])
+  homepageFeatured  HomepageFeaturedNews[]
   excerpt          String
   body             String
   featuredImageUrl String
@@ -140,7 +141,7 @@ model NewsArticle {
   @@map("news_articles")
 }
 
-// ─── Projects ────────────────────────────────────────────────────────────────
+// --- Projects -------------------------------------------------------------
 
 model ProjectType {
   id       String    @id @default(uuid())
@@ -157,6 +158,7 @@ model Project {
   community        String
   typeId           String
   projectType      ProjectType   @relation(fields: [typeId], references: [id])
+  featuredHomepage  HomepageFeaturedProject[]
   status           ProjectStatus @default(planned)
   year             Int
   progress         Int           @default(0)
@@ -175,7 +177,7 @@ model Project {
   @@map("projects")
 }
 
-// ─── Gallery ──────────────────────────────────────────────────────────────────
+// --- Gallery --------------------------------------------------------------
 
 model GalleryCategory {
   id    String        @id @default(uuid())
@@ -210,7 +212,7 @@ model GalleryItem {
   @@map("gallery_items")
 }
 
-// ─── Programs ────────────────────────────────────────────────────────────────
+// --- Programs -------------------------------------------------------------
 
 model Program {
   id             String        @id @default(uuid())
@@ -240,7 +242,7 @@ model Program {
   @@map("programs")
 }
 
-// ─── Contact ──────────────────────────────────────────────────────────────────
+// --- Contact --------------------------------------------------------------
 
 model ContactSubmission {
   id          String    @id @default(uuid())
@@ -259,7 +261,80 @@ model ContactSubmission {
   @@map("contact_submissions")
 }
 
-// ─── Site Settings ───────────────────────────────────────────────────────────
+// --- Homepage CMS ---------------------------------------------------------
+
+model HomepageHero {
+  id               String  @id @default(uuid())
+  title            String  @default("Providing Sustainable Water & Sanitation Services")
+  subtitle         String  @default("for Rural Communities in Gombe State")
+  description      String  @default("We are committed to improving access to clean water, promoting sanitation and enhancing the quality of life in every rural community.")
+  heroImageUrl     String  @default("/hero-water-facility.png")
+  primaryBtnText   String  @default("Learn More")
+  primaryBtnLink   String  @default("/about")
+  secondaryBtnText String  @default("Our Projects")
+  secondaryBtnLink String  @default("/projects")
+  updatedAt        DateTime @updatedAt
+
+  @@map("homepage_hero")
+}
+
+model HomepageValueCard {
+  id           String  @id @default(uuid())
+  iconName     String  @default("Droplet")
+  title        String
+  description  String
+  tone         Tone    @default(blue)
+  displayOrder Int     @default(0)
+  active       Boolean @default(true)
+
+  @@map("homepage_value_cards")
+}
+
+model HomepageStatistic {
+  id           String  @id @default(uuid())
+  iconName     String  @default("Droplet")
+  value        String
+  label        String
+  displayOrder Int     @default(0)
+  active       Boolean @default(true)
+
+  @@map("homepage_statistics")
+}
+
+model HomepageFeaturedProject {
+  id        String  @id @default(uuid())
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id])
+  displayOrder Int @default(0)
+
+  @@unique([projectId])
+  @@map("homepage_featured_projects")
+}
+
+model HomepageFeaturedNews {
+  id        String      @id @default(uuid())
+  articleId String
+  article   NewsArticle @relation(fields: [articleId], references: [id])
+  displayOrder Int @default(0)
+
+  @@unique([articleId])
+  @@map("homepage_featured_news")
+}
+
+model HomepageProgram {
+  id           String  @id @default(uuid())
+  title        String
+  description  String
+  iconName     String  @default("Wrench")
+  tone         Tone    @default(blue)
+  linkUrl      String  @default("/programs")
+  displayOrder Int     @default(0)
+  active       Boolean @default(true)
+
+  @@map("homepage_programs")
+}
+
+// --- Site Settings --------------------------------------------------------
 
 model SiteSetting {
   key         String   @id
@@ -270,7 +345,7 @@ model SiteSetting {
   @@map("site_settings")
 }
 
-// ─── Audit Log ───────────────────────────────────────────────────────────────
+// --- Audit Log ------------------------------------------------------------
 
 model AuditLog {
   id            String   @id @default(uuid())
@@ -285,6 +360,3 @@ model AuditLog {
 
   @@map("audit_logs")
 }
-
-
-

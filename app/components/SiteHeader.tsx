@@ -1,6 +1,7 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { Phone } from "lucide-react";
+import { getSiteSettings } from "@/lib/services/homepage.service";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -16,14 +17,16 @@ interface SiteHeaderProps {
   activePage?: string;
 }
 
-export default function SiteHeader({ activePage = "Home" }: SiteHeaderProps) {
+export default async function SiteHeader({ activePage = "Home" }: SiteHeaderProps) {
+  const settings = await getSiteSettings();
+
   return (
     <header className="topbar">
       <div className="wrap header-grid">
         <Link href="/" aria-label="Gombe State RUWASA - Go to homepage">
           <Image
             className="logo"
-            src="/brand-logo.png"
+            src={settings.logo}
             width={265}
             height={88}
             alt=""
@@ -42,11 +45,11 @@ export default function SiteHeader({ activePage = "Home" }: SiteHeaderProps) {
             </Link>
           ))}
         </nav>
-        <a className="phone" href="tel:08132696321">
+        <a className="phone" href={"tel:" + settings.phone.replace(/[^0-9]/g, "")}>
           <Phone size={22} strokeWidth={3} />
           <span>
-            <strong>0813 269 6321</strong>
-            <small>info@ruwasa.gombe.gov.ng</small>
+            <strong>{settings.phone}</strong>
+            <small>{settings.email}</small>
           </span>
         </a>
       </div>
